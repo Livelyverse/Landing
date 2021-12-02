@@ -1,0 +1,14 @@
+body {
+  margin: 0 !important;
+  font-family: 'Exo', sans-serif;
+  color: #fff !important;
+  overflow-x: hidden;
+  max-width: 1920px;
+  padding-left: 0px  !important;
+  padding-right: 0px !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
