@@ -306,7 +306,7 @@ $mediaMinWidth: 480px;
     box-shadow: 0px 0px 20px rgba(1, 2, 8, 0.64);
     min-height: 426px;
     margin-bottom: 40px;
-    padding: 40px 10px;
+    padding: 40px 25px;
     .image{
         height: 140px;
         img{
@@ -323,7 +323,7 @@ $mediaMinWidth: 480px;
     }
     .desc{
         font-size: 13px;
-        text-align: justify;
+        text-align: center;
         .moreBtn{
             color: #52BAE9;
             cursor: pointer;
@@ -521,9 +521,14 @@ $mediaMinWidth: 480px;
     background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.95) 100%);
     min-height: 500px;
     padding: 80px 60px;
-
+    @include media("retina", "<minWidth"){
+        padding: 20px 60px;
+    }
     .map{
         margin-top: 60px;
+        @include media("retina", "<minWidth"){
+            display: none;
+        }
         img{
             width: 75%;
             @include media("retina", "<minWidth"){
@@ -532,8 +537,11 @@ $mediaMinWidth: 480px;
         }
     }
     .carousel{
-        margin-top: 80px;
-        margin-bottom: 200px;
+        margin-top: 140px;
+        margin-bottom: 160px;
+        @include media("retina", "<minWidth"){
+            margin-bottom: 60px;
+        }
         .logo{
             width: 120px;
             height: 120px;
@@ -552,7 +560,46 @@ $mediaMinWidth: 480px;
 .footer{
     min-height: 500px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 65%, rgba(0,0,0,0.75) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.75) 100%);
     padding: 80px 60px;
-
+    padding-bottom: 10px;
+    .logoWrapper{
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #000;
+        img{
+            @include media("retina", "<minWidth"){
+                width: 100%;
+            }
+        }
+    }
+    .footerInfo{
+        font-size: 20px;
+        p{
+            width: 80%;
+            @include media("retina", "<minWidth"){
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    .footerWrapper{
+        min-height: 300px;
+        .footerLinks{
+            .footerColumn{
+                .footerTitle{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .copyRight{
+        @include media("retina", "<minWidth"){
+            text-align: center;
+        }
+        span{
+            font-size: 12px ;
+        }
+    }
+    
 }

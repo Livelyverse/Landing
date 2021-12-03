@@ -8,6 +8,7 @@ import coin2 from './../img/coin2.svg';
 import chart from './../img/chart.svg';
 import util from './../img/utiliBg.png';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 
 export default function ForthSection(){
@@ -70,7 +71,7 @@ export default function ForthSection(){
                         <Col>
                             <Stack gap={2} className="col-md-6 col-xs-12 utilData">
                                 <div className="title">
-                                    <h2>Token Utility</h2>
+                                    <h2>Utility Token</h2>
                                 </div>
                                 <div className="desc">
                                     Currently, low economic budgets, lack of support and
@@ -79,7 +80,9 @@ export default function ForthSection(){
                                     Lively Coin (LVL) is a cryptocurrency with several utilities such as Commercial transactions, Fees, Fundraising, Rewards system, Donations and gaming.  
                                 </div>
                                 <div className="moreBtn" >
-                                    <Button type="color" className="button download">Learn More</Button>
+                                    <Link to="/utility">
+                                        <Button type="color" className="button download">Learn More</Button>
+                                    </Link>
                                 </div>
                             </Stack>
                         </Col>

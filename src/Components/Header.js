@@ -19,7 +19,7 @@ export default function Header(){
         // </Navbar>
         <Container className="header" fluid>
 
-            <Offcanvas show={show} onHide={handleClose} placement="end" className="drawer"> 
+            {/* <Offcanvas show={show} onHide={handleClose} placement="end" className="drawer"> 
                 <Offcanvas.Header className="title">
                     <Offcanvas.Title className="titleChild">
                         <Row>
@@ -55,12 +55,12 @@ export default function Header(){
                         </Col>
                     </Row>
                 </Offcanvas.Body>
-            </Offcanvas>
+            </Offcanvas> */}
             <Row>
                 <Col xs={6}>  
                     <img src={logo} className="logo"/>
                 </Col>
-                <Col xs={6}>
+                {/* <Col xs={6}>
                     <Row className="rightMenu">
                         <Col xs={4} lg={1}  onClick={handleShow}>
                             <img className="menutoggle" src={menu}></img>
@@ -69,7 +69,7 @@ export default function Header(){
                             <Button type="transparent"> Register </Button>
                         </Col>
                     </Row>
-                </Col>
+                </Col> */}
             </Row>           
         </Container>
     )
