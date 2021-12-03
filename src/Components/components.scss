@@ -558,9 +558,10 @@ $mediaMinWidth: 480px;
 }
 
 .footer{
-    min-height: 500px;
+    min-height: 100px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.75) 100%);
+    // background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.75) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 100%);
     padding: 80px 60px;
     padding-bottom: 10px;
     .logoWrapper{
@@ -594,9 +595,9 @@ $mediaMinWidth: 480px;
         }
     }
     .copyRight{
-        @include media("retina", "<minWidth"){
+        // @include media("retina", "<minWidth"){
             text-align: center;
-        }
+        // }
         span{
             font-size: 12px ;
         }

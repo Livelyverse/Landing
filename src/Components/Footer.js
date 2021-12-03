@@ -8,12 +8,12 @@ import Button from "./Button";
 export default function Footer(){
     return(
         <Container fluid className="footer">
-            <Row className="logoWrapper">
+            {/* <Row className="logoWrapper">
                 <Col>
                     <img src={logo} />
                 </Col>
-            </Row>
-            <Row className="footerWrapper">
+            </Row> */}
+            {/* <Row className="footerWrapper">
                 <Col lg={7} className="footerInfo">
                     <p>
                         The Latest Blockhain Powered Solution made for streaming creators with the newest paying system & entertainment platform.
@@ -35,7 +35,7 @@ export default function Footer(){
 
                     </Row>
                 </Col>
-            </Row>
+            </Row> */}
             <Row className="copyRight">
                 <span> &copy; 2021 Lively planet Development Foundation</span>
             </Row>
