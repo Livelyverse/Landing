@@ -45,7 +45,7 @@ export default function ForthSection(){
                 <Col xs={12} lg={6} className="tokenomics">
                     <Row>
                         <Col lg={5} xs={12} className="data">
-                            <span>Total supply :</span><span> 100.000.000</span>
+                            <span>Total supply :</span><span> 1.000.000.000</span>
                             <div className="dividerCircle"></div>
                         </Col>
                         <Col lg={4} xs={12} className="data">
