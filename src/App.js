@@ -1,22 +1,27 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import FirstSection from './Components/FirstSection';
-import ForthSection from './Components/ForthSection';
-import SecondSection from './Components/SecendSection';
-import ThirdSection from './Components/ThirdSection';
+import Home from './pages/Home';
 
+import Utitlity from './pages/Utility';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-function App() {
-    return (
-        <Container fluid className="App" style={{padding:'0'}}>
-           <FirstSection />
-           <SecondSection />
-           <ThirdSection />
-           <ForthSection />
-           <div style={{height:'100px' , width:'100%'}}></div>
-        </Container>
-    
-    );
+export default function App() {
+  return (
+    <Router>
+      <div>
+        <Switch>
+            <Route path="/Utility">
+                <Utitlity />
+            </Route>
+            <Route path="/">
+                <Home />
+            </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
-export default App;
