@@ -6,6 +6,8 @@ import coin1 from './../img/coin1.svg';
 import coin2 from './../img/coin2.svg';
 
 import chart from './../img/chart.svg';
+import util from './../img/utiliBg.png';
+import Button from './Button';
 
 
 export default function ForthSection(){
@@ -59,6 +61,29 @@ export default function ForthSection(){
             <Row className="chart">
                 <Col xs={12}>
                     <img src={chart} />
+                </Col>
+            </Row>
+
+            <Row className="utility" style={{backgroundImage:`url(${util})`}}>
+                <Col>
+                    <Row>
+                        <Col>
+                            <Stack gap={2} className="col-md-6 col-xs-12 utilData">
+                                <div className="title">
+                                    <h2>Token Utility</h2>
+                                </div>
+                                <div className="desc">
+                                    Currently, low economic budgets, lack of support and
+                                    subsidies are a problem for the professional development of
+                                    producers and content creators.
+                                    Lively Coin (LVL) is a cryptocurrency with several utilities such as Commercial transactions, Fees, Fundraising, Rewards system, Donations and gaming.  
+                                </div>
+                                <div className="moreBtn" >
+                                    <Button type="color" className="button download">Learn More</Button>
+                                </div>
+                            </Stack>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
             

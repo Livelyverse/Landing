@@ -68,12 +68,13 @@ $mediaMinWidth: 480px;
     color: white;
     padding: 10px;
     background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6782913849133403) 37%, rgba(0,0,0,0.9976191160057774) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7782913849133403) 37%, rgba(0,0,0,0.9976191160057774) 100%);
     z-index: 100;
     padding: 20px 60px;
     @include media("retina", "<minWidth"){
         padding: 20px 15px;
     }
+    
 }
 .logo{
     width: 180px;
@@ -85,7 +86,7 @@ $mediaMinWidth: 480px;
 
 .rightMenu{
     list-style: none;
-    padding: 20px 60px;
+    padding: 30px 20px;
     direction: rtl;
     @include media("retina", "<minWidth"){
         padding: 20px 0px;
@@ -109,6 +110,48 @@ $mediaMinWidth: 480px;
             cursor: pointer;
             @include media("retina", "<minWidth"){
                 width: 45px;
+            }
+        }
+    }
+}
+.drawer{
+    width: 428px;
+    background-color: #141414 ;
+    font-size: 30px;
+    padding: 0px 0px;
+    .title{
+        .titleChild{
+            width: 100%;;
+        }
+        background-color: #3587E9;
+        font-weight: bold;
+        color: #333;
+        padding:18px 40px;
+        div{
+            font-weight: bold;
+            font-size: 30px;
+            img{
+                cursor: pointer;
+                width: 90%;
+                @include media("retina", "<minWidth"){
+                    width: 110%;
+                }
+            }
+        }
+        
+    }
+    .drawerMenu{
+        padding: 0px 26px;
+        div{
+            line-height: 85px;
+            border-bottom: 1px solid #363636;
+            cursor: pointer;
+            
+            &:hover{
+                color: #52BAE9;
+            }
+            &.active{
+                color: #3587E9;
             }
         }
     }
@@ -194,7 +237,7 @@ $mediaMinWidth: 480px;
     position: relative;
     min-height: 400px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.96) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.96) 100%);
     padding-top: 100px;
     @include media("retina", "<minWidth"){
         text-align: center;
@@ -243,7 +286,7 @@ $mediaMinWidth: 480px;
     position: relative;
     min-height: 600px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.95) 100%);
     text-align: center;
     padding: 160px 60px;
     @include media("retina", "<minWidth"){
@@ -280,6 +323,12 @@ $mediaMinWidth: 480px;
     }
     .desc{
         font-size: 13px;
+        text-align: justify;
+        .moreBtn{
+            color: #52BAE9;
+            cursor: pointer;
+            font-weight: bold;
+        }
     }
 }
 
@@ -291,7 +340,7 @@ $mediaMinWidth: 480px;
 .forthSection{
     text-align: center;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.75) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.75) 100%);
     min-height: 500px;
     padding: 80px 60px;
     @include media("retina", "<minWidth"){
@@ -314,7 +363,7 @@ $mediaMinWidth: 480px;
     .links{
         margin-top: 65px;
         @include media("retina", "<minWidth"){
-            padding: 0px 40px;
+            padding: 0px 20px;
          }
         .linkRow{
             margin-bottom: 10px;
@@ -322,18 +371,21 @@ $mediaMinWidth: 480px;
         img{
             width: 50px;
             @include media("retina", "<minWidth"){
-                width: 42px;
+                width: 40px;
             }
         }
         .link{
             line-height: 46px;
             @include media("retina", "<minWidth"){
                 line-height: 40px;
+                padding-right: 0px;
+                padding-left: 20px;
              }
             span{
                 font-weight: bold;
                 @include media("retina", "<minWidth"){
                     display: block;
+                   
                  }
             }
             a{
@@ -397,12 +449,110 @@ $mediaMinWidth: 480px;
     }
 
     .chart{
-        margin-top: 50px;
+        margin-top: 80px;
         img{
-            width: 65%;
+            width: 50%;
             @include media("retina", "<minWidth"){
                 width: 100%;
              }
         }
     }
+    .utility{
+        border: 2px solid #52BAE9;
+        box-sizing: border-box;
+        border-radius: 60px;
+        padding: 60px 60px;
+        text-align: left;
+        margin-top: 180px;
+        margin-bottom: 50px;
+        
+
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right;
+        @include media("retina", "<minWidth"){
+            padding: 40px 10px;
+            background: none !important;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 10px;
+        }
+        .title{
+            margin-bottom: 30px;
+            
+            h2{
+                font-weight: bold;
+                font-size: 50px;
+                @include media("retina", "<minWidth"){
+                    font-size: 40px;
+                }
+            }
+        }
+        .desc{
+            font-size: 24px;
+            @include media("retina", "<minWidth"){
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+        .moreBtn{
+            text-align: left;
+            margin-top: -50px;
+            @include media("retina", "<minWidth"){
+                text-align: center;
+                margin-top: 30px;
+            }
+            .button{
+                margin-left: 0px;
+                width: 280px;
+                height: 64px;
+                line-height: 62px;
+                @include media("retina", "<minWidth"){
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.fifthSection{
+    text-align: center;
+    background-color: #000;
+    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.95) 100%);
+    min-height: 500px;
+    padding: 80px 60px;
+
+    .map{
+        margin-top: 60px;
+        img{
+            width: 75%;
+            @include media("retina", "<minWidth"){
+                width: 100%;
+            }
+        }
+    }
+    .carousel{
+        margin-top: 80px;
+        margin-bottom: 200px;
+        .logo{
+            width: 120px;
+            height: 120px;
+            // border: 1px solid #3587E9;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 130px;
+            background: rgba($color: #fff, $alpha: 0.8);
+            img{
+                width: 80%;
+            }
+        }
+    }
+}
+
+.footer{
+    min-height: 500px;
+    background-color: #000;
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.60) 65%, rgba(0,0,0,0.75) 100%);
+    padding: 80px 60px;
+
 }

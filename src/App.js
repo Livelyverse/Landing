@@ -1,9 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import FifthSection from './Components/FifthSection';
 import FirstSection from './Components/FirstSection';
+import Footer from './Components/Footer';
 import ForthSection from './Components/ForthSection';
 import SecondSection from './Components/SecendSection';
 import ThirdSection from './Components/ThirdSection';
+
 
 
 function App() {
@@ -13,7 +16,8 @@ function App() {
            <SecondSection />
            <ThirdSection />
            <ForthSection />
-           <div style={{height:'100px' , width:'100%'}}></div>
+           <FifthSection />
+           <Footer />
         </Container>
     
     );

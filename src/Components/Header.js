@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 import './components.scss';
 import logo from './../img/logo.svg';
 import menu from './../img/menu.svg';
+import drawer from './../img/drawer.svg';
 import Button from "./Button";
 import { Col, Container, Form, FormControl, Nav, Navbar, NavDropdown, Offcanvas, Row } from "react-bootstrap";
 
@@ -11,18 +12,30 @@ export default function Header(){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [active , setActive] = useState(0);
+
     return(
 
         // </Navbar>
         <Container className="header" fluid>
 
-            <Offcanvas show={show} onHide={handleClose} placement="end" style={{backgroundColor:"black", width:"200px"}}> 
-                <Offcanvas.Header>
-                    <Offcanvas.Title>LiveLy Planet</Offcanvas.Title>
+            <Offcanvas show={show} onHide={handleClose} placement="end" className="drawer"> 
+                <Offcanvas.Header className="title">
+                    <Offcanvas.Title className="titleChild">
+                        <Row>
+                            <Col xs={10}>
+                                LiveLy Planet
+                            </Col>
+                            <Col xs={2} style={{textAlign:'right'}}>
+                                <img src={drawer} onClick={handleClose} />
+                            </Col>
+                        </Row>
+                    </Offcanvas.Title>
+
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    <Row>
-                        <Col xs={12}>
+                    <Row className="drawerMenu">
+                        <Col xs={12} className="active">
                             Home
                         </Col>
                         <Col xs={12}>
