@@ -16,10 +16,12 @@ export default function Banner(){
                 </Col>
 
                 <Col xs={12} lg={8}>
-                    <Button type="color" className="button download"> 
-                        <img  src={download} />
-                        <div>  Download Whitepaper</div>
-                    </Button>
+                    <a href="http://livelyplanet.io/whitepaper/LivelyPlanetWhitepaperEng.pdf" download>
+                        <Button type="color" className="button download"> 
+                            <img  src={download} />
+                            <div>  Download Whitepaper</div>
+                        </Button>
+                    </a>
                 </Col>
             </Row>
             
