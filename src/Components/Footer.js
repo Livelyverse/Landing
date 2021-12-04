@@ -38,6 +38,9 @@ export default function Footer(){
             </Row> */}
             <Row className="copyRight">
                 <span> &copy; 2021 Lively planet Development Foundation</span>
+                <div className="socials">
+                    
+                </div>
             </Row>
         </Container>
     )
