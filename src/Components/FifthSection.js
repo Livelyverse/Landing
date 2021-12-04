@@ -7,7 +7,7 @@ import './components.scss';
 
 import partner from './../img/ucl.svg';
 import ucl from './../img/partners/ucl.svg';
-import coinage from './../img/partners/coinage.svg'
+import coinage from './../img/partners/coinage.png'
 
 import PartnersLogo from "./PartnersLogo";
 
