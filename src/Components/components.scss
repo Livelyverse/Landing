@@ -237,14 +237,14 @@ $mediaMinWidth: 480px;
     position: relative;
     min-height: 400px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.96) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
     padding-top: 100px;
     @include media("retina", "<minWidth"){
         text-align: center;
         padding-top: 50px;
     }   
     .desc{
-        padding-top: 90px;
+        padding-top: 160px;
         @include media("retina", "<minWidth"){
             padding-top: 50px;
         }
@@ -273,9 +273,12 @@ $mediaMinWidth: 480px;
             padding: 20px 0px;
         }  
         img{
-            width: 150px;
+            width: 50%;
             height: auto;
-            margin-top: 10px;
+            // margin-top: 10px;
+            @include media("retina", "<minWidth"){
+                width: 100%;
+            }
         }
     }
 }
@@ -286,7 +289,7 @@ $mediaMinWidth: 480px;
     position: relative;
     min-height: 600px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.95) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.90) 100%);
     text-align: center;
     padding: 160px 60px;
     @include media("retina", "<minWidth"){
@@ -411,12 +414,12 @@ $mediaMinWidth: 480px;
             }
             &:first-child{
                 div{
-                    right: -30px;
+                    right: -5px;
                 }
             }
             &:nth-child(2){
                 div{
-                    right: 20px;
+                    right: -5px;
                 }
             }
             &:last-child{

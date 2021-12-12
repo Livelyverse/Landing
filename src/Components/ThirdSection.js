@@ -16,7 +16,7 @@ export default function ThirdSection(){
     return(
         <Container className="thirdSection" fluid>
             <Row className="title">
-                <h1>What can  do here?</h1>
+                <h1>Our Ecosystem</h1>
             </Row>
             <Row className="justify-content-md-center">
                 <Col xs={12} lg={3}>
