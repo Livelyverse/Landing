@@ -1,6 +1,6 @@
 import React from "react";
 import './components.scss';
-import core from './../img/core.svg';
+import core from './../img/core.png';
 import { Container, Row , Col } from "react-bootstrap";
 
 export default function SecondSection(){

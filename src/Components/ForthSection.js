@@ -16,7 +16,7 @@ export default function ForthSection(){
         <Container className="forthSection justify-content-md-center" fluid>
             <Row className="title">
                 <h1>LIVELY TOKEN</h1>
-                <span>Lively Coin (LVL) is a standard utility token ERC-20 created on Polygon Network.</span>
+                <span>Lively Token (LVL) is a standard utility token ERC-20 created on Polygon Network.</span>
             </Row>
             <Stack  gap={2} className="col-md-3 col-xs-12 mx-auto links">
                 <Row className="linkRow" >
