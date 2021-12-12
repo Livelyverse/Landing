@@ -15,7 +15,7 @@ export default function ForthSection(){
     return(
         <Container className="forthSection justify-content-md-center" fluid>
             <Row className="title">
-                <h1>LIVELY TOEKN</h1>
+                <h1>LIVELY TOKEN</h1>
                 <span>Lively Coin (LVL) is a standard utility token ERC-20 created on Polygon Network.</span>
             </Row>
             <Stack  gap={2} className="col-md-3 col-xs-12 mx-auto links">
@@ -42,18 +42,18 @@ export default function ForthSection(){
                 <h1>Tokenomics</h1>
             </Row>
             <Row className="justify-content-md-center">
-                <Col xs={12} lg={6} className="tokenomics">
+                <Col xs={12} lg={7} className="tokenomics">
                     <Row>
                         <Col lg={5} xs={12} className="data">
-                            <span>Total supply :</span><span> 1.000.000.000</span>
-                            <div className="dividerCircle"></div>
-                        </Col>
-                        <Col lg={4} xs={12} className="data">
-                            <span> Type : </span><span>  ERC-20</span>
+                            <span>Total Supply :</span><span> 1.000.000.000</span>
                             <div className="dividerCircle"></div>
                         </Col>
                         <Col lg={3} xs={12} className="data">
-                            <span>1 LVL : </span><span>0,0376 $</span>
+                            <span> Type : </span><span>  ERC-20</span>
+                            <div className="dividerCircle"></div>
+                        </Col>
+                        <Col lg={4} xs={12} className="data">
+                            <span>Initial Price : </span><span>0,0376 $</span>
                         </Col>
                     </Row>
                 </Col>

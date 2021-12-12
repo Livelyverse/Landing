@@ -10,7 +10,7 @@ export default function BackgroundParticles(){
         <>
             <Particles options={particlesOptions}/>
 
-            <div style={{width:'100%', height:'100%', position:'absolute' ,top:'0', background:'#000', background:'linear-gradient(0deg, rgba(0,0,0,0.95) 0%,  rgba(9,9,121,0) 50%, rgba(0,0,0,0.95) 95%)'}}></div>
+            <div style={{width:'100%', height:'100%', position:'absolute' ,top:'0', background:'#000', background:'linear-gradient(0deg, rgba(0,0,0,0.88) 0%,  rgba(9,9,121,0) 50%, rgba(0,0,0,0.95) 95%)'}}></div>
         </>
     )
 }
