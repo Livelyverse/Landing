@@ -2,6 +2,7 @@ $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
 $mediaMinWidth: 480px;
 
+
 @function translate-media-condition($c) {
   $condMap: (
     "screen": "only screen",
@@ -606,4 +607,84 @@ $mediaMinWidth: 480px;
         }
     }
     
+}
+
+.Token-Section{
+    position: relative;
+    background-color: #000;    
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.9) 100%);
+    text-align: left;
+    padding: 160px 60px;
+    @include media("retina", "<minWidth"){
+        padding-bottom: 50px;
+    }
+    .title{
+        text-align: center;
+        margin-bottom: 100px;
+        h1{
+            font-weight: bold;
+        }
+    }
+}
+
+.token-section-image {
+    position: absolute;
+    top: 159px;
+    right: 220px;    
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.9) 100%);
+    background-image: url(../img/tokenSection/commercialtrans.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 90%;
+    z-index: 0;
+    opacity: 0.75;
+    @media (max-width: 768px) {
+        top: -50px;
+        right: 35px; 
+        position: relative;
+        width: 100%;
+        height: 200px;
+    }
+}
+
+.light-blue-color {
+    color: #66DAE9;
+}
+
+.arrow {
+    border: 3px solid #66DAE9;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    top: 60px;
+    @media (max-width: 768px) {
+        display: none;
+     }
+}
+
+.prev-arrow {
+    left: -120px;
+}
+
+.token-slider-container {
+    height: 460px;
+    margin-left: 20px;
+    @media (max-width: 768px) {
+        height: 100%;
+        margin-left: 0px;
+    }
+}
+
+.slider-title-container {
+    border-bottom: 3px solid #66DAE9;
+    margin-bottom: 20px;
+}
+
+.token-slider-item-text {
+    font-size: 32px;
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
 }
