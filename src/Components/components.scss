@@ -192,6 +192,7 @@ $lightBlueColor: #66DAE9;
         right: 0;
         position: relative;
         margin-top: 80px;
+        z-index: 10;
         img{
             position: absolute;
             width: 40px;
@@ -609,12 +610,22 @@ $lightBlueColor: #66DAE9;
     
 }
 
-.Token-Section{
+.token-parent-container {
+    @media (max-width: 768px) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.token-section{
     position: relative;
-    background-color: #000;    
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.9) 100%);
+    background-color: #000;
+    background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
     text-align: left;
     padding: 160px 60px;
+    @media (max-width: 768px) {
+        padding: 160px 12px;
+    }
     @include media("retina", "<minWidth"){
         padding-bottom: 50px;
     }
@@ -631,15 +642,14 @@ $lightBlueColor: #66DAE9;
     position: absolute;
     top: 159px;
     right: 220px;    
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.9) 100%);
     background-image: url(../img/tokenSection/commercialtrans.svg);
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    width: 50%;
+    width: 40%;
     height: 90%;
     z-index: 0;
-    opacity: 0.75;
+    opacity: 0.45;
     @media (max-width: 768px) {
         top: -50px;
         right: 35px; 

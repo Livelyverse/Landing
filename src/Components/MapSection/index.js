@@ -7,7 +7,9 @@ import TeamSection from './TeamSection';
 const MapSection = () => (
   <div className="partner-part">
     <HeaderCard />
-    <img src={partner} alt="map" className="map" />
+    <div className="map">
+      <img src={partner} alt="map" />
+    </div>
     <TeamSection />
   </div>
 );
