@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import nextImage from "../../img/tokenSection/CaretRight.svg";
 import prevImage from "../../img/tokenSection/CaretLeft.svg";
 import clsx from "clsx";
@@ -45,18 +45,16 @@ const sliderItem = [
 ]
 
 
-const TokenUtilitySlider = (props) => {
-    return (<div>
-        <div className="token-section-image"></div>
-        <Slider {...settings}>
-            {sliderItem.map((item) =>
-                <div key={item.title}>
-                    <Item title={item.title} desc={item.desc} />
-                </div>
-            )}
-        </Slider>
-    </div>);
-}
+const TokenUtilitySlider = (props) => (<div>
+    <div className="token-section-image"></div>
+    <Slider {...settings}>
+        {sliderItem.map((item) =>
+            <div key={item.title}>
+                <Item title={item.title} desc={item.desc} />
+            </div>
+        )}
+    </Slider>
+</div>);
 
 
 const Item = (props) => {

@@ -6,11 +6,11 @@ import '../components.scss';
 
 export default function TokenUtlitySection() {
 
-    return (<Container className="justify-content-md-center Token-Section" fluid>
+    return (<Container className="justify-content-md-center token-section" fluid>
         <Row>
             <h1 className="title">Token Utility</h1>
         </Row>
-        <Container>
+        <Container className="token-parent-container">
             <TokenUtilitySlider />
         </Container>
     </Container>)
