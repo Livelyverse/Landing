@@ -5,8 +5,8 @@ import './components.scss';
 import logo from './../img/footerlogo.svg'
 import Button from "./Button";
 
-export default function Footer(){
-    return(
+export default function Footer() {
+    return (
         <Container fluid className="footer">
             {/* <Row className="logoWrapper">
                 <Col>
@@ -16,7 +16,7 @@ export default function Footer(){
             {/* <Row className="footerWrapper">
                 <Col lg={7} className="footerInfo">
                     <p>
-                        The Latest Blockhain Powered Solution made for streaming creators with the newest paying system & entertainment platform.
+                        The Latest Blockchain Powered Solution made for streaming creators with the newest paying system & entertainment platform.
                     </p>
                 </Col>
                 <Col lg={5}>
@@ -39,7 +39,7 @@ export default function Footer(){
             <Row className="copyRight">
                 <span> &copy; 2021 Lively planet Development Foundation</span>
                 <div className="socials">
-                    
+
                 </div>
             </Row>
         </Container>
