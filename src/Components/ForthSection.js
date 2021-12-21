@@ -33,7 +33,7 @@ export default function ForthSection() {
 
                     </Col>
                     <Col xs={10} style={{ textAlign: 'left' }} className="link">
-                        <span>Contract address:</span> <a href="#">0x1a8a28a605a6e8aeaf3ca7c847c4a561b9d328a9</a>
+                        <span>Contract address:</span> <a href="#">0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c</a>
                     </Col>
                 </Row>
 
