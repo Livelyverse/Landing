@@ -9,16 +9,16 @@ const ContactUsSection = () => (
         <Row >
             <div className="contact-us-container mt60px">
                 <div className="contact-us-card">
-                    <div key="tecnical" className="contact-us-text-div">
+                    <div key="sales" className="contact-us-text-div">
+                        <h3>Lively Consulting:</h3>
+                        <a className="email-link" href="mailto:info@livelyplanet.es">
+                            <span>info@livelyplanet.es</span>
+                        </a>
+                    </div>
+                    <div key="technical" className="contact-us-text-div mt20px">
                         <h3>Technical:</h3>
                         <a className="email-link" href="mailto:info@solunomi.team" >
                             <span>info@solunomi.team</span>
-                        </a>
-                    </div>
-                    <div key="sales" className="contact-us-text-div mt20px">
-                        <h3>Sales:</h3>
-                        <a className="email-link" href="mailto:info@livelyplanet.es">
-                            <span>info@livelyplanet.es</span>
                         </a>
                     </div>
                 </div>

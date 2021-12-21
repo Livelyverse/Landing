@@ -10,7 +10,7 @@ const HeaderCard = () => (
                 </div>
                 <div><span className="partner-card-bold-text"> + 40 million Households</span></div>
                 <div><span className="partner-card-text">in the main operators in Latin America</span></div>
-                <div><span className="partner-card-bold-text"> + 80 million viewvers</span></div>
+                <div><span className="partner-card-bold-text"> + 80 million viewers</span></div>
                 <div><span className="partner-card-text">on platforms OTT, app & Smart tv</span></div>
             </div>
         </div>

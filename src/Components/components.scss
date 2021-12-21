@@ -840,6 +840,10 @@ $lightBlueColor: #66DAE9;
     padding: 20px;
     min-width: 400px;
     min-height: 200px;
+    @media (max-width: 768px) {
+        min-width: unset;
+        min-height: unset;
+    }
 }
 
 .contact-us-text-div {

@@ -12,7 +12,7 @@ export default function Banner() {
                     <h2>LIVELY PLANET</h2>
                 </Col>
                 <Col xs={12} lg={9}>
-                    <span>The Latest Blockhain Powered Solution made for audiovisual creators <br /> with the newest paying systems, entertainment platform & with our own tv program show</span>
+                    <span>The Latest Blockchain Powered Solution made for audiovisual creators <br /> with the newest paying systems, entertainment platform & with our own tv program show</span>
                 </Col>
 
                 <Col xs={12} lg={8}>
