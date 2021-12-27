@@ -34,6 +34,8 @@ const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
     className: "center",
+    autoplay: true,
+    autoplaySpeed: 3000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />
 }
@@ -59,7 +61,10 @@ const TokenUtilitySlider = (props) => (<div>
 
 const Item = (props) => {
     const { title, desc } = props;
-    return (<div className="token-slider-container"><Row className="col-md-8 col-xs-12">
+    return (<Container className="token-slider-container">
+        <Row className="justify-content-md-center">
+            <Col lg={8} xs={12}>
+            
         <div className="slider-title-container">
             <h1 className="light-blue-color">
                 {title}
@@ -69,8 +74,8 @@ const Item = (props) => {
             <p className="token-slider-item-text">
                 {desc}
             </p>
-        </div>
-    </Row></div>)
+        </div></Col>
+    </Row></Container>)
 
 }
 

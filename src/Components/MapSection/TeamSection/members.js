@@ -8,6 +8,7 @@ import pedro from '../../../img/TeamMembers/pedro.png';
 import danny from '../../../img/TeamMembers/danny.png';
 import lean from '../../../img/TeamMembers/lean.png';
 import daniela from '../../../img/TeamMembers/daniela.png';
+import mark from '../../../img/TeamMembers/mark.png';
 
 
 const members = [
@@ -17,10 +18,12 @@ const members = [
     { name: 'Parsa Abbasi', position: 'CTO & Co-Founder', image: parsa },
     { name: 'Roberto Luis Garay', position: 'Producer of UCL Partner of Lively', image: roberto },
     { name: 'José Salas', position: 'Head of Development & Business Partnerships', image: jose },
+    { name: 'Mark Tan' , position: 'Head of Business Strategies & Community Manager in USA', image: mark},
     { name: 'Pedro Julian Chavernas Ruiz', position: 'Project Manager & Business Partnerships', image: pedro },
     { name: 'Danny Di Giorgio', position: 'Project Manager & Business Partnerships', image: danny },
-    { name: 'Lean Rivadeo', position: 'Head of LATAM Marketing  Development', image: lean },
+    { name: 'Lean Rivadeo', position: 'Head of LATAM Marketing Development', image: lean },
     { name: 'Daniela Reyes', position: 'Community Manager & Content Creator', image: daniela },
+
 ]
 
 export default members;
