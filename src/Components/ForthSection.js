@@ -11,29 +11,29 @@ import Button from './Button';
 import { Link } from 'react-router-dom';
 
 
-export default function ForthSection(){
-    return(
+export default function ForthSection() {
+    return (
         <Container className="forthSection justify-content-md-center" fluid>
             <Row className="title">
                 <h1>LIVELY TOKEN</h1>
                 <span>Lively Token (LVL) is a standard utility token ERC-20 created on Polygon Network.</span>
             </Row>
-            <Stack  gap={2} className="col-md-3 col-xs-12 mx-auto links">
+            <Stack gap={2} className="col-md-3 col-xs-12 mx-auto links">
                 <Row className="linkRow" >
-                    <Col xs={2} style={{textAlign:'right'}}>
+                    <Col xs={2} style={{ textAlign: 'right' }}>
                         <img src={coin1} />
                     </Col>
-                    <Col xs={10} style={{textAlign:'left'}} className="link">
+                    <Col xs={10} style={{ textAlign: 'left' }} className="link">
                         <span>Available soon on Uniswap: </span> <a href="#">Comming Soon...</a>
                     </Col>
                 </Row>
                 <Row className="linkRow">
-                    <Col xs={2} style={{textAlign:'right'}}>
+                    <Col xs={2} style={{ textAlign: 'right' }}>
                         <img src={coin2} />
-                        
+
                     </Col>
-                    <Col xs={10} style={{textAlign:'left'}} className="link">
-                        <span>Contract address:</span> <a href="#">Comming Soon...</a>
+                    <Col xs={10} style={{ textAlign: 'left' }} className="link">
+                        <span>Contract address:</span> <a href="#">0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c</a>
                     </Col>
                 </Row>
 
@@ -65,31 +65,6 @@ export default function ForthSection(){
                 </Col>
             </Row>
 
-            <Row className="utility" style={{backgroundImage:`url(${util})`}}>
-                <Col>
-                    <Row>
-                        <Col>
-                            <Stack gap={2} className="col-md-6 col-xs-12 utilData">
-                                <div className="title">
-                                    <h2>Utility Token</h2>
-                                </div>
-                                <div className="desc">
-                                    Currently, low economic budgets, lack of support and
-                                    subsidies are a problem for the professional development of
-                                    producers and content creators.
-                                    Lively Coin (LVL) is a cryptocurrency with several utilities such as Commercial transactions, Fees, Fundraising, Rewards system, Donations and gaming.  
-                                </div>
-                                <div className="moreBtn" >
-                                    <Link to="/utility">
-                                        <Button type="color" className="button download">Learn More</Button>
-                                    </Link>
-                                </div>
-                            </Stack>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-            
         </Container>
     )
 }
