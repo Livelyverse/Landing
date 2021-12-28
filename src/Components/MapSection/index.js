@@ -1,5 +1,5 @@
 import React from 'react';
-import partner from './../../img/ucl.svg';
+import partner from './../../img/map.png';
 import HeaderCard from './HeaderCard';
 import TeamSection from './TeamSection';
 

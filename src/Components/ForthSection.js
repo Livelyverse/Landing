@@ -5,10 +5,7 @@ import './components.scss';
 import coin1 from './../img/coin1.svg';
 import coin2 from './../img/coin2.svg';
 
-import chart from './../img/chart.svg';
-import util from './../img/utiliBg.png';
-import Button from './Button';
-import { Link } from 'react-router-dom';
+import chart from './../img/chart.png';
 
 
 export default function ForthSection() {
