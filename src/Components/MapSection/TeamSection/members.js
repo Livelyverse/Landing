@@ -12,8 +12,8 @@ import mark from '../../../img/TeamMembers/mark.png';
 
 
 const members = [
-    { name: 'Gabriela Reyes', position: 'CEO & Co-Founder', image: gabriela },
-    { name: 'Rong Ying Zhou', position: 'COO & Co-Founder', image: rong },
+    { name: 'Gabriela Reyes', position: 'CEO & Founder', image: gabriela },
+    { name: 'Rong Ying Zhou', position: 'COO & Founder', image: rong },
     { name: 'Mariano Javier Quadrini', position: 'CFO & Co-Founder', image: mariano },
     { name: 'Parsa Abbasi', position: 'CTO & Co-Founder', image: parsa },
     { name: 'Roberto Luis Garay', position: 'Producer of UCL Partner of Lively', image: roberto },

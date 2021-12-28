@@ -12,7 +12,7 @@ const ContactUsSection = () => (
                     <div key="sales" className="contact-us-text-div">
                         <h3>Lively Consulting:</h3>
                         <a className="email-link" href="mailto:info@livelyplanet.es">
-                            <span>info@livelyplanet.es</span>
+                            <span>Info@livelyplanet.io</span>
                         </a>
                     </div>
                     <div key="technical" className="contact-us-text-div mt20px">
