@@ -537,9 +537,9 @@ $lightBlueColor: #66DAE9;
     }
     .map{
         margin-top: 60px;
-        @include media("retina", "<minWidth"){
-            display: none;
-        }
+        // @include media("retina", "<minWidth"){
+        //     display: none;
+        // }
         img{
             width: 75%;
             @include media("retina", "<minWidth"){
