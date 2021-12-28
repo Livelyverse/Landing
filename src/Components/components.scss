@@ -1,6 +1,6 @@
 $mediaMaxWidth: 1260px;
 $mediaBp1Width: 960px;
-$mediaMinWidth: 480px;
+$mediaMinWidth: 320px;
 $lightBlueColor: #66DAE9;
 
 @function translate-media-condition($c) {
@@ -537,9 +537,9 @@ $lightBlueColor: #66DAE9;
     }
     .map{
         margin-top: 60px;
-        @include media("retina", "<minWidth"){
-            display: none;
-        }
+        // @include media("retina", "<minWidth"){
+        //     display: none;
+        // }
         img{
             width: 75%;
             @include media("retina", "<minWidth"){
@@ -894,4 +894,17 @@ $lightBlueColor: #66DAE9;
         text-decoration: none;
     }
 
+}
+
+
+.show-desktop {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.show-mobile {
+    @media (min-width: 767px) {
+        display: none;
+    }
 }
