@@ -138,6 +138,7 @@ $lightBlueColor: #66DAE9;
                     width: 110%;
                 }
             }
+            
         }
         
     }
@@ -148,11 +149,16 @@ $lightBlueColor: #66DAE9;
             border-bottom: 1px solid #363636;
             cursor: pointer;
             
-            &:hover{
-                color: #52BAE9;
-            }
-            &.active{
-                color: #3587E9;
+            
+            a{
+                text-decoration: none;
+                color: white;
+                &:hover{
+                    color: #52BAE9;
+                }
+                &.active{
+                    color: #3587E9;
+                }
             }
         }
     }
@@ -239,7 +245,8 @@ $lightBlueColor: #66DAE9;
     position: relative;
     min-height: 400px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
+    // background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
+    background: rgba(0, 0, 0, 0.7);
     padding-top: 100px;
     @include media("retina", "<minWidth"){
         text-align: center;
@@ -291,7 +298,8 @@ $lightBlueColor: #66DAE9;
     position: relative;
     min-height: 600px;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.90) 100%);
+    // background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.90) 100%);
+    background: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding: 160px 60px;
     @include media("retina", "<minWidth"){
@@ -345,7 +353,9 @@ $lightBlueColor: #66DAE9;
 .forthSection{
     text-align: center;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.75) 100%);
+    // background: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.75) 100%);
+    background: rgba(0, 0, 0, 0.7);
+
     min-height: 500px;
     padding: 80px 60px;
     @include media("retina", "<minWidth"){
@@ -523,7 +533,9 @@ $lightBlueColor: #66DAE9;
 .fifthSection{
     text-align: center;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.95) 100%);
+    // background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.95) 100%);
+    background: rgba(0, 0, 0, 0.7);
+
     min-height: 500px;
     padding: 80px 60px;
     @include media("retina", "<minWidth"){
@@ -537,7 +549,7 @@ $lightBlueColor: #66DAE9;
     }
     .map{
         margin-top: 60px;
-        @include media("retina", "<minWidth"){
+        @include media("retina","<minWidth"){
             display: none;
         }
         img{
@@ -569,24 +581,30 @@ $lightBlueColor: #66DAE9;
 }
 
 .footer{
-    min-height: 100px;
+    // min-height: 100px;
     background-color: #000;
     // background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.75) 100%);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 100%);
+    // background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 100%);
+    background: rgba(0, 0, 0, 0.7);
+
     padding: 80px 60px;
     padding-bottom: 10px;
     .logoWrapper{
         margin-bottom: 40px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #000;
+        padding-bottom: 40px;
+        border-bottom: 1px solid rgba($color: #eee, $alpha: 0.9);
+        @include media("retina", "<minWidth"){display: none;}
         img{
+            width: 18%;
             @include media("retina", "<minWidth"){
                 width: 100%;
+                display: none;
             }
         }
     }
     .footerInfo{
-        font-size: 20px;
+        font-size: 24px;
+        @include media("retina", "<minWidth"){display: none;}
         p{
             width: 80%;
             @include media("retina", "<minWidth"){
@@ -600,7 +618,28 @@ $lightBlueColor: #66DAE9;
         .footerLinks{
             .footerColumn{
                 .footerTitle{
-                    font-weight: bold;
+                    font-size: 26px;
+                    margin-bottom: 30px;
+                }
+                .footerItem{
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    a{
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+                .footerSocial{
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                    line-height: 40px;
+                    img{
+                        width: 40px;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: white;
+                    }
                 }
             }
         }
@@ -616,6 +655,18 @@ $lightBlueColor: #66DAE9;
     
 }
 
+.hideOnMobile{
+    @include media("retina", "<minWidth"){
+        display: none;
+    }
+}
+.showOnMobile{
+    display: none;
+    @include media("retina", "<minWidth"){
+        display: block;
+    }
+}
+
 .token-parent-container {
     @media (max-width: 768px) {
         padding-left: 0px;
@@ -626,7 +677,9 @@ $lightBlueColor: #66DAE9;
 .token-section{
     position: relative;
     background-color: #000;
-    background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
+    // background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
+    background: rgba(0, 0, 0, 0.7);
+
     text-align: left;
     padding: 160px 60px;
     @media (max-width: 768px) {
@@ -670,24 +723,24 @@ $lightBlueColor: #66DAE9;
 }
 
 .arrow {
-    border: 3px solid #{$lightBlueColor};
-    border-radius: 50px;
-    width: 80px;
-    height: 80px;
-    top: 60px;
-    z-index: 10;
+    border: 3px solid #{$lightBlueColor} !important;
+    border-radius: 50px !important;
+    width: 80px !important;
+    height: 80px !important;
+    top: 60px !important;
+    z-index: 10 !important;
     @media (max-width: 768px) {
-        display: none;
+        display: none !important;
      }
 }
 
 .member-arrow {
-    border-radius: 50px;
-    width: 80px;
-    height: 80px;
-    top: 60px;
+    border-radius: 50px !important;
+    width: 80px !important;
+    height: 80px !important;
+    top: 60px !important;
     @media (max-width: 768px) {
-        display: none;
+        display: none !important;
      }
 }
 
@@ -737,6 +790,9 @@ $lightBlueColor: #66DAE9;
         text-align: center !important;
 
     }
+    a{
+        text-decoration: none;
+    }
 }
 
 .partner-card {
@@ -746,6 +802,7 @@ $lightBlueColor: #66DAE9;
     border-radius: 10px;
     &.transparent{
         background: transparent;
+        box-shadow: none;
     }
     @media (min-width: 767px) {
         margin-bottom: -120px;       
@@ -772,11 +829,12 @@ $lightBlueColor: #66DAE9;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    text-decoration: none;
 }
 
 .partner-card-text {
     font-size: 24px;
-    color: 20px;
+    color: $lightBlueColor;
 }
 
 .team-section-container {
@@ -894,4 +952,175 @@ $lightBlueColor: #66DAE9;
         text-decoration: none;
     }
 
+}
+
+
+.pageTitleWrapper{
+    padding-top: 250px;
+    padding-left:0px;
+    padding-right: 0px;
+    text-align: center;
+    .pageTitle{
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #ccc;
+        margin-bottom: 30px;
+    }
+    .pageTitleArc{
+        opacity: 0.7;
+        img{
+            width: 100%;
+
+        }
+    }
+}
+.departmentsWrapper{
+    background: rgba($color: #000, $alpha: 0.7);
+    padding: 40px 70px;
+    @include media("retina", "<minWidth"){
+        padding: 30px 0px;
+    }
+    .memberCard{
+        width: 95%;
+        position: relative;
+        border-radius: 40px;
+        margin-bottom: 50px;
+        overflow: hidden;
+        img{
+            width: 100%;
+        }
+        .overlayData{
+            position: absolute;
+            bottom: 0;
+            border-radius: 0px 0px 38px 38px;
+            width: 100%;
+            background: rgba($color: #000, $alpha: 0.75);
+            padding: 25px 20px;
+            @include media("retina", "<minWidth"){
+                padding: 10px 20px;
+            }
+            .memberName{
+                color: $lightBlueColor;
+                font-weight: bold;
+                font-size: 20px;
+                @include media("retina", "<minWidth"){
+                    font-size: 18px;
+                }
+            }
+            .memberPosition{
+                font-size: 20px;
+                @include media("retina", "<minWidth"){
+                    font-size: 18px;
+                }
+            }
+        
+            .memberBio{
+                @include media("retina", "<minWidth"){
+                    font-size: 13px;
+                }
+                margin-top: 10px;
+                line-height: 27px;
+                &.close{
+                    height: 0px;
+                    opacity: 0;
+                }
+                &.open{
+                    height: auto;
+                    opacity: 1;
+                }
+            }
+        }
+       
+    }
+}
+
+
+.accordion-item{
+    background: transparent;
+  
+    .accordion-header{
+        background: transparent;
+        button{
+            background: transparent;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            border: none !important;
+            outline: 0 !important;
+            box-shadow: none;
+            &:focus{
+                border: none !important;
+                outline: 0 !important;
+            }
+            &:active{
+                border: none !important;
+            outline: 0 !important;
+            }
+            &::after{
+                margin-left: 20px;                
+            }
+        }
+    }
+}
+
+.partnersDesc{
+    padding: 40px 70px;
+    background: rgba($color: #000, $alpha: 0.7);
+    @include media("retina", "<minWidth"){
+        padding: 30px 30px;
+        text-align: center;
+    }
+    h3{
+        margin-top: 90px;
+        margin-bottom: 10px;
+        font-size: 46px;
+    }
+    p{
+        font-size: 24px;
+        a{
+            color: $lightBlueColor;
+            text-decoration: none;
+        }
+    }
+    img{
+        width: 83%;
+    }
+}
+
+.PartnersLogo{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 195px;
+    margin-right: 120px;
+    @include media("retina", "<minWidth"){
+        margin-right: 10px;
+        width: 160px;
+        height: 160px;
+    }
+    img{
+        width: 100%;
+    }
+}
+
+.partnerDetails{
+    background: rgba($color: #000, $alpha: 0.7);
+    text-align: center;
+    padding: 0px 70px;
+    @include media("retina", "<minWidth"){
+        padding: 30px 30px;
+        text-align: center;
+    }
+    .partnerDetailsLogo{
+        margin-bottom: 40px;
+        img{
+            width: 300px;
+        }
+    }
+    .partnerDetailsdesc{
+        font-size: 22px;
+        text-align: justify;
+    }
 }

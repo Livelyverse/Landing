@@ -10,7 +10,7 @@ const MapSection = () => (
     <div className="map">
       <img src={partner} alt="map" />
     </div>
-    <TeamSection />
+    {/* <TeamSection /> */}
   </div>
 );
 
