@@ -1124,3 +1124,17 @@ $lightBlueColor: #66DAE9;
         text-align: justify;
     }
 }
+
+
+
+.show-desktop {
+    @media (max-width: 767px) {
+        display: none;
+    }
+}
+
+.show-mobile {
+    @media (min-width: 767px) {
+        display: none;
+    }
+} 
