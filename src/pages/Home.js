@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Container } from 'react-bootstrap';
+import Layout from '../Components/Basic/Layout';
 import TokenUtlitySection from '../Components/TokenUtiltySection';
 import FifthSection from './../Components/FifthSection';
 import FirstSection from './../Components/FirstSection';
@@ -11,15 +12,15 @@ import ThirdSection from './../Components/ThirdSection';
 
 const Home = function () {
     return (
-        <Container fluid className="App" style={{ padding: '0' }}>
+        <Layout containerClassName={'App'} menuActive={0}>
             <FirstSection />
             <SecondSection />
             <TokenUtlitySection />
             <ThirdSection />
             <ForthSection />
             <FifthSection />
-            <Footer />
-        </Container>
+        </Layout>
+        
     )
 }
 

@@ -1,24 +1,24 @@
 import React from 'react';
 import Home from './pages/Home';
 
-import Utitlity from './pages/Utility';
+import Team from './pages/Team';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import Partners from './pages/Partners';
+import Partner from './pages/Partner';
 
 export default function App() {
   return (
     <Router>
       <div>
         <Switch>
-            <Route path="/Utility">
-                <Utitlity />
-            </Route>
-            <Route path="/">
-                <Home />
-            </Route>
+            <Route exact path="/partners" component={Partners} /> 
+            <Route exact path="/partner/:name" component={Partner}/>
+            <Route exact path="/team" component={Team} />
+            <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>

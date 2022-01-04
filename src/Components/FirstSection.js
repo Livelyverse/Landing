@@ -13,8 +13,8 @@ export default function FirstSection(){
     }, [height])
     return(
         <div className="firstSection" style={{minHeight:height}}>
-            <BackgroundParticles />
-            <Header/>
+            <div style={{width:'100%', height:'100%', position:'absolute' ,top:'0', background:'#000', background:'linear-gradient(0deg, rgba(0,0,0,0.70) 0%,  rgba(9,9,121,0) 50%, rgba(0,0,0,0.95) 95%)'}}></div>
+
             <Banner />
         </div>
     )

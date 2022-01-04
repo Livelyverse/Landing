@@ -1,9 +1,11 @@
 import React from 'react';
 import uclLogo from '../../../img/partners/UCL-Logo.svg';
 import capital from '../../../img/partners/capital.png';
+import { Link } from 'react-router-dom';
 
 const HeaderCard = () => (
     <div className="partner-header-container">
+        <Link to={'/partner/TCapital'}>
         <div className="partner-card transparent">
             <div className="partner-card-contianer">
                 <div className="partner-card-image">
@@ -11,7 +13,9 @@ const HeaderCard = () => (
                 </div>
             </div>
         </div>
-        <div className="partner-card ">
+        </Link>
+        <Link to={'/partner/UCL'}>
+        <div className="partner-card">
             <div className="partner-card-contianer">
                 <div className="partner-card-image">
                     <img className="logo" src={uclLogo} alt="ucl-logo" />
@@ -22,7 +26,7 @@ const HeaderCard = () => (
                 <div><span className="partner-card-text">on platforms OTT, app & Smart tv</span></div>
             </div>
         </div>
-        
+        </Link>
     </div>
 );
 
