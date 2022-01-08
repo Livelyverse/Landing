@@ -1,10 +1,24 @@
 import React, { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
-
+import { Col } from 'react-bootstrap';
+import {isMobile} from 'react-device-detect';
 
 export default function DepMembers(props) {
     const {image , name , position , bio} = props;
-    const [showBio , setShowBio] = useState(false)
+    const [showBio , setShowBio] = useState(false);
+
+    if(isMobile){
+        return(
+            <Col lg={4} xs={12} >
+                <div className='memberCard'>
+                    <img src={image}/>
+                    <div className='overlayData'>
+                        <span className='memberName'> {name} </span> <br/>
+                        <span className='memberPosition'> {position} </span>
+                    </div>
+                </div>
+            </Col>
+        )
+    }
     return (
         
             <Col lg={4} xs={12} >

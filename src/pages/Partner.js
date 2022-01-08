@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 import Layout from "../Components/Basic/Layout";
@@ -12,7 +13,7 @@ const Partner = function(props){
 
     return(
         <Layout containerClassName={'App'} menuActive={1}>
-            <PageTitle title={name} />
+            <PageTitle title={""} />
             <PartnerDetails name = {name} />
         </Layout>
     )

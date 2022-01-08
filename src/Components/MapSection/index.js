@@ -1,7 +1,6 @@
 import React from 'react';
 import partner from './../../img/map.png';
 import HeaderCard from './HeaderCard';
-import TeamSection from './TeamSection';
 import partnerMobile from './../../img/mobile-map.svg';
 
 const MapSection = () => (
@@ -13,7 +12,6 @@ const MapSection = () => (
     <div className="map show-mobile">
       <img src={partnerMobile} alt="map" />
     </div>
-    <TeamSection />
   </div>
 );
 

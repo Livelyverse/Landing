@@ -40,8 +40,8 @@ $lightBlueColor: #66DAE9;
 .firstSection{
     position: relative;
     min-height: 850px;
-    @include media("retina", "<minWidth"){
-        min-height: 1100px !important;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        // min-height: 1100px !important;
     }
 }
 
@@ -72,7 +72,7 @@ $lightBlueColor: #66DAE9;
     background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7782913849133403) 37%, rgba(0,0,0,0.9976191160057774) 100%);
     z-index: 100;
     padding: 20px 60px;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding: 20px 15px;
     }
     
@@ -80,7 +80,7 @@ $lightBlueColor: #66DAE9;
 .logo{
     width: 180px;
     display: inline-block;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         width: 120px;
     }
 }
@@ -89,7 +89,7 @@ $lightBlueColor: #66DAE9;
     list-style: none;
     padding: 30px 20px;
     direction: rtl;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding: 20px 0px;
     }
     li{
@@ -102,23 +102,23 @@ $lightBlueColor: #66DAE9;
         margin-left: 50px;
         position: relative;
         cursor: pointer;
-        @include media("retina", "<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             margin-left: 25px;
         }
         img{
             position: absolute;
             top: 4px;
             cursor: pointer;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 width: 45px;
             }
         }
     }
 }
 .drawer{
-    width: 428px;
+    width: 320px;
     background-color: #141414 ;
-    font-size: 30px;
+    font-size: 22px;
     padding: 0px 0px;
     .title{
         .titleChild{
@@ -130,11 +130,11 @@ $lightBlueColor: #66DAE9;
         padding:18px 40px;
         div{
             font-weight: bold;
-            font-size: 30px;
+            font-size: 24px;
             img{
                 cursor: pointer;
                 width: 90%;
-                @include media("retina", "<minWidth"){
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     width: 110%;
                 }
             }
@@ -148,8 +148,6 @@ $lightBlueColor: #66DAE9;
             line-height: 85px;
             border-bottom: 1px solid #363636;
             cursor: pointer;
-            
-            
             a{
                 text-decoration: none;
                 color: white;
@@ -177,7 +175,7 @@ $lightBlueColor: #66DAE9;
     cursor: pointer;
     padding-left: 10px;
     padding-right: 10px;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         font-size: 14px;
     }
     &.color{
@@ -227,15 +225,15 @@ $lightBlueColor: #66DAE9;
     h2{
         font-size: 60px;
         margin-bottom: 30px;
-        @include media("retina", "<minWidth"){
-            font-size: 50px;
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+            font-size: 38px;
         }
     }
     span{
         font-size: 42px;
         text-shadow: #333 5px 5px 15px;
-        @include media("retina", "<minWidth"){
-            font-size: 36px;
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+            font-size: 26px;
         }
     }
 }
@@ -243,32 +241,32 @@ $lightBlueColor: #66DAE9;
 
 .secondSection{
     position: relative;
-    min-height: 400px;
+    min-height: 300px;
     background-color: #000;
     // background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
     background: rgba(0, 0, 0, 0.7);
-    padding-top: 100px;
-    @include media("retina", "<minWidth"){
+    padding-top: 60px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         text-align: center;
-        padding-top: 50px;
+        padding-top: 100px;
     }   
     .desc{
         padding-top: 160px;
-        @include media("retina", "<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             padding-top: 50px;
         }
         
         h4{
             font-size: 38px;
             margin-bottom: 10px;
-            @include media("retina", "<minWidth"){
-                font-size: 34px;
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                font-size: 30px;
                 margin-bottom: 20px;
             }
         }
         span{
             font-size: 28px;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 font-size: 24px;
             }
         }
@@ -277,15 +275,15 @@ $lightBlueColor: #66DAE9;
         text-align: right;
         padding-right: 90px;
         padding-top: 30px;
-        @include media("retina", "<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             text-align: center;
             padding: 20px 0px;
         }  
         img{
-            width: 50%;
+            width: 75%;
             height: auto;
             // margin-top: 10px;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 width: 100%;
             }
         }
@@ -296,14 +294,14 @@ $lightBlueColor: #66DAE9;
 
 .thirdSection{
     position: relative;
-    min-height: 600px;
+    min-height: 300px;
     background-color: #000;
     // background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.90) 100%);
     background: rgba(0, 0, 0, 0.7);
     text-align: center;
     padding: 160px 60px;
-    @include media("retina", "<minWidth"){
-        padding-bottom: 50px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        padding: 60px 50px;
     }
     .title{
         margin-bottom: 100px;
@@ -358,7 +356,7 @@ $lightBlueColor: #66DAE9;
 
     min-height: 500px;
     padding: 80px 60px;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding: 70px 30px;
     }
     .title{
@@ -370,14 +368,14 @@ $lightBlueColor: #66DAE9;
         }
         span{
             font-size: 28px;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                font-size: 20px;
             }
         }
     }
     .links{
         margin-top: 65px;
-        @include media("retina", "<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             padding: 0px 20px;
          }
         .linkRow{
@@ -385,20 +383,20 @@ $lightBlueColor: #66DAE9;
         }
         img{
             width: 50px;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 width: 40px;
             }
         }
         .link{
             line-height: 46px;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 line-height: 40px;
                 padding-right: 0px;
                 padding-left: 20px;
              }
             span{
                 font-weight: bold;
-                @include media("retina", "<minWidth"){
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     display: block;
                    
                  }
@@ -416,12 +414,12 @@ $lightBlueColor: #66DAE9;
         border-radius: 74px;
         padding: 20px 10px;
         margin-top: 30px;
-        @include media("retina", "<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             padding: 20px 5px;
         }
         .data{
             position: relative;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 margin-bottom: 10px;
             }
             &:first-child{
@@ -435,7 +433,7 @@ $lightBlueColor: #66DAE9;
                 }
             }
             &:last-child{
-                    @include media("retina", "<minWidth"){
+                    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                         margin-bottom: 0px;
                     }
             }
@@ -444,7 +442,7 @@ $lightBlueColor: #66DAE9;
                 &:first-child{
                     font-weight: bold;
                 }
-                @include media("retina", "<minWidth"){
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     font-size: 20px;
                 }
             }
@@ -456,7 +454,7 @@ $lightBlueColor: #66DAE9;
                 position: absolute;
                 right: 0;
                 bottom: 11px;
-                @include media("retina", "<minWidth"){
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     display: none;
                 }
             }
@@ -467,7 +465,7 @@ $lightBlueColor: #66DAE9;
         margin-top: 80px;
         img{
             width: 50%;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 width: 100%;
              }
         }
@@ -485,7 +483,7 @@ $lightBlueColor: #66DAE9;
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right;
-        @include media("retina", "<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             padding: 40px 10px;
             background: none !important;
             text-align: center;
@@ -498,14 +496,14 @@ $lightBlueColor: #66DAE9;
             h2{
                 font-weight: bold;
                 font-size: 50px;
-                @include media("retina", "<minWidth"){
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     font-size: 40px;
                 }
             }
         }
         .desc{
             font-size: 24px;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 font-size: 20px;
                 text-align: center;
             }
@@ -513,7 +511,7 @@ $lightBlueColor: #66DAE9;
         .moreBtn{
             text-align: left;
             margin-top: -50px;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 text-align: center;
                 margin-top: 30px;
             }
@@ -522,7 +520,7 @@ $lightBlueColor: #66DAE9;
                 width: 280px;
                 height: 64px;
                 line-height: 62px;
-                @include media("retina", "<minWidth"){
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     margin: 0 auto;
                 }
             }
@@ -538,23 +536,26 @@ $lightBlueColor: #66DAE9;
 
     min-height: 500px;
     padding: 80px 60px;
-    @include media("retina", "<minWidth"){
-        padding: 20px 60px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        padding: 20px 20px;
     }
     .title{
         margin-bottom: 40px;
+        h1{
+            font-weight: bold;
+        }
        &:last-child{
            margin-bottom: 20px;
        }
     }
     .map{
         margin-top: 60px;
-        @include media("retina","<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             display: none;
         }
         img{
             width: 75%;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 width: 100%;
             }
         }
@@ -562,7 +563,7 @@ $lightBlueColor: #66DAE9;
     .carousel{
         margin-top: 140px;
         margin-bottom: 160px;
-        @include media("retina", "<minWidth"){
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             margin-bottom: 60px;
         }
         .logo{
@@ -589,40 +590,44 @@ $lightBlueColor: #66DAE9;
 
     padding: 80px 60px;
     padding-bottom: 10px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        padding: 90px 20px;
+        padding-bottom: 10px;
+    }
     .logoWrapper{
         margin-bottom: 40px;
         padding-bottom: 40px;
         border-bottom: 1px solid rgba($color: #eee, $alpha: 0.9);
-        @include media("retina", "<minWidth"){display: none;}
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){display: none;}
         img{
             width: 18%;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 width: 100%;
                 display: none;
             }
         }
     }
     .footerInfo{
-        font-size: 24px;
-        @include media("retina", "<minWidth"){display: none;}
+        font-size: 18px;
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){display: none;}
         p{
             width: 80%;
-            @include media("retina", "<minWidth"){
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 width: 100%;
                 text-align: center;
             }
         }
     }
     .footerWrapper{
-        min-height: 300px;
         .footerLinks{
             .footerColumn{
                 .footerTitle{
-                    font-size: 26px;
+                    font-size: 18px;
                     margin-bottom: 30px;
+                    font-weight: bold;
                 }
                 .footerItem{
-                    font-size: 18px;
+                    font-size: 14px;
                     margin-bottom: 20px;
                     a{
                         text-decoration: none;
@@ -630,11 +635,11 @@ $lightBlueColor: #66DAE9;
                     }
                 }
                 .footerSocial{
-                    font-size: 18px;
+                    font-size: 14px;
                     margin-bottom: 20px;
                     line-height: 40px;
                     img{
-                        width: 40px;
+                        width: 30px;
                     }
                     a{
                         text-decoration: none;
@@ -645,7 +650,7 @@ $lightBlueColor: #66DAE9;
         }
     }
     .copyRight{
-        // @include media("retina", "<minWidth"){
+        // @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             text-align: center;
         // }
         span{
@@ -656,13 +661,13 @@ $lightBlueColor: #66DAE9;
 }
 
 .hideOnMobile{
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         display: none;
     }
 }
 .showOnMobile{
     display: none;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         display: block;
     }
 }
@@ -679,21 +684,19 @@ $lightBlueColor: #66DAE9;
     background-color: #000;
     // background: linear-gradient(0deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.88) 100%);
     background: rgba(0, 0, 0, 0.7);
-
     text-align: left;
     padding: 160px 60px;
     @media (max-width: 768px) {
-        padding: 160px 12px;
+        padding: 80px 12px;
     }
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding-bottom: 50px;
     }
     .title{
         text-align: center;
         margin-bottom: 100px;
-        h1{
+        
             font-weight: bold;
-        }
     }
 }
 
@@ -762,12 +765,18 @@ $lightBlueColor: #66DAE9;
 .slider-title-container {
     border-bottom: 3px solid #{$lightBlueColor};
     margin-bottom: 20px;
+    h1{
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+            font-size: 22px;
+        }
+    }
+    
 }
 
 .token-slider-item-text {
     font-size: 24px;
-    @media (max-width: 768px) {
-        font-size: 24px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        font-size: 18px;
     }
 }
 
@@ -785,7 +794,7 @@ $lightBlueColor: #66DAE9;
         margin-right: 60px;
         margin-left: 60px;        
     }
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         flex-direction: column;
         text-align: center !important;
 
@@ -807,7 +816,7 @@ $lightBlueColor: #66DAE9;
     @media (min-width: 767px) {
         margin-bottom: -120px;       
     }
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         margin-bottom: 30px;
     }
     
@@ -816,7 +825,7 @@ $lightBlueColor: #66DAE9;
 .partner-card-image {
     text-align: left;
     margin-bottom: 15px;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         text-align: center;
     }
     & .logo {
@@ -927,14 +936,12 @@ $lightBlueColor: #66DAE9;
         min-height: unset;
     }
 }
-
 .contact-us-text-div {
     text-align: start !important;
     & span{ 
         cursor: pointer
     }
 }
-
 .email-link {
     color: #fff;
     font-size: 18px;
@@ -953,24 +960,31 @@ $lightBlueColor: #66DAE9;
     }
 
 }
-
-
 .pageTitleWrapper{
-    padding-top: 250px;
+    padding-top: 230px;
     padding-left:0px;
+    padding-bottom: 150px;
     padding-right: 0px;
     text-align: center;
+    position: relative;
     .pageTitle{
         color: white;
-        font-size: 50px;
+        font-size: 42px;
         font-weight: bold;
-        text-shadow: 1px 1px 1px #ccc;
-        margin-bottom: 30px;
+        text-shadow: 1px 1px 1px #ccc; 
+        position: absolute;
+        z-index: 2;
+        left: 0; right: 0;
+        margin: 0 auto;  
+        bottom: 40px;     
     }
     .pageTitleArc{
-        opacity: 0.7;
         img{
+            z-index: 1;
             width: 100%;
+            opacity: 0.7;
+            position: absolute;
+            left: 0; right: 0;bottom: 0;
 
         }
     }
@@ -978,7 +992,7 @@ $lightBlueColor: #66DAE9;
 .departmentsWrapper{
     background: rgba($color: #000, $alpha: 0.7);
     padding: 40px 70px;
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding: 30px 0px;
     }
     .memberCard{
@@ -996,30 +1010,31 @@ $lightBlueColor: #66DAE9;
             border-radius: 0px 0px 38px 38px;
             width: 100%;
             background: rgba($color: #000, $alpha: 0.75);
-            padding: 25px 20px;
-            @include media("retina", "<minWidth"){
+            padding: 10px 20px;
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 padding: 10px 20px;
             }
             .memberName{
                 color: $lightBlueColor;
                 font-weight: bold;
-                font-size: 20px;
-                @include media("retina", "<minWidth"){
+                font-size: 18px;
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     font-size: 18px;
                 }
             }
             .memberPosition{
-                font-size: 20px;
-                @include media("retina", "<minWidth"){
+                font-size: 16px;
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     font-size: 18px;
                 }
             }
         
             .memberBio{
-                @include media("retina", "<minWidth"){
-                    font-size: 13px;
+                font-size: 14px;
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                    font-size: 12px;
                 }
-                margin-top: 10px;
+                margin-top: 5px;
                 line-height: 27px;
                 &.close{
                     height: 0px;
@@ -1067,41 +1082,57 @@ $lightBlueColor: #66DAE9;
 .partnersDesc{
     padding: 40px 70px;
     background: rgba($color: #000, $alpha: 0.7);
-    @include media("retina", "<minWidth"){
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding: 30px 30px;
         text-align: center;
     }
     h3{
         margin-top: 90px;
         margin-bottom: 10px;
-        font-size: 46px;
+        font-size: 38px;
     }
     p{
-        font-size: 24px;
+        font-size: 18px;
         a{
             color: $lightBlueColor;
             text-decoration: none;
         }
     }
     img{
-        width: 83%;
+        width: 80%;
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+            line-height: 30px;
+        }
     }
 }
 
 .PartnersLogo{
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     border-radius: 100%;
     text-align: center;
-    line-height: 195px;
-    margin-right: 120px;
-    @include media("retina", "<minWidth"){
-        margin-right: 10px;
-        width: 160px;
-        height: 160px;
+    line-height: 120px;
+    border: 2px solid $lightBlueColor;
+    &:hover{
+        background-color: $lightBlueColor;
+        img{
+            filter: grayscale(0);
+        }
     }
     img{
-        width: 100%;
+        width: 80%;
+        filter: grayscale(0.4);
+    }
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        margin-right: 10px;
+        width: 110px;
+        height: 110px;
+        background-color: $lightBlueColor;
+        line-height: 110px;
+        img{
+            filter: grayscale(0);
+            width: 80%;
+        }
     }
 }
 
@@ -1109,23 +1140,38 @@ $lightBlueColor: #66DAE9;
     background: rgba($color: #000, $alpha: 0.7);
     text-align: center;
     padding: 0px 70px;
-    @include media("retina", "<minWidth"){
+    min-height: 600px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding: 30px 30px;
         text-align: center;
     }
     .partnerDetailsLogo{
         margin-bottom: 40px;
         img{
-            width: 300px;
+            width: 220px;
         }
     }
     .partnerDetailsdesc{
-        font-size: 22px;
+        font-size: 18px;
         text-align: justify;
     }
+
+    .partnerBackButton{
+        text-align: left;
+        padding-top: 50px;
+        a{
+            padding: 20px 20px;
+            border-radius: 14px;
+            color: white;
+            border: 2px solid $lightBlueColor;
+            &:hover{
+                background-color: $lightBlueColor;
+                color: #000;
+            }
+        }
+        
+    }
 }
-
-
 
 .show-desktop {
     @media (max-width: 767px) {

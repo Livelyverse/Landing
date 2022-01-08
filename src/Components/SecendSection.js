@@ -2,11 +2,11 @@ import React from "react";
 import './components.scss';
 import core from './../img/core.png';
 import { Container, Row , Col } from "react-bootstrap";
+import MobileContainer from "./Basic/MobileContainer";
 
 export default function SecondSection(){
     return(
-        <div className="secondSection section">
-            <Container fluid>
+            <MobileContainer className="secondSection ">
                 <Row className="justify-content-md-center"> 
                    
                     <Col xs={12} lg={7} className="desc">
@@ -18,7 +18,6 @@ export default function SecondSection(){
                     </Col>
                     
                 </Row>
-            </Container>
-        </div>
+            </MobileContainer>
     )
 }
