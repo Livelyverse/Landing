@@ -8,8 +8,8 @@ export default function PageTitle(props){
 
     return(
         <Container fluid className='pageTitleWrapper'>
-            <span className='pageTitle'>{title}</span>
             <div className='pageTitleArc'>
+               <div className='pageTitle'>{title}</div>
                 <img src={arc} />
             </div>
         </Container>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import {partners} from './data';
 
 const PartnerDetails = (props) => {
@@ -9,14 +10,23 @@ const PartnerDetails = (props) => {
             p = partners[i]
     }
     return(
-        <Row className='justify-content-md-center partnerDetails'>
-            <Col xs={12} className='partnerDetailsLogo'>
-                <img src={p.image} />
-            </Col>
-            <Col xs={12} className="partnerDetailsdesc">
-                {p.description.replace("\\n" , "\n")}
-            </Col>
-        </Row>
+        <Container  className='partnerDetails' fluid>
+            <Container>
+                <Row className='justify-content-md-center '>
+                    <Col xs={12} className='partnerDetailsLogo'>
+                        <img src={p.fullImage} />
+                    </Col>
+                    <Col xs={12} className="partnerDetailsdesc">
+                        {p.description.replace("\\n" , "\n")}
+                    </Col>
+                    <Col xs={12} className='partnerBackButton'>
+                        <Link to={'/partners'}>
+                            Back To Partners
+                        </Link>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     )
 }
 export default PartnerDetails;

@@ -9,18 +9,19 @@ import {
 } from "react-router-dom";
 import Partners from './pages/Partners';
 import Partner from './pages/Partner';
+import ScrollToTop from './Components/Basic/ScrollToTop';
 
 export default function App() {
   return (
     <Router>
-      <div>
+      <ScrollToTop>
         <Switch>
-            <Route exact path="/partners" component={Partners} /> 
-            <Route exact path="/partner/:name" component={Partner}/>
-            <Route exact path="/team" component={Team} />
+            <Route  path="/partners" component={Partners} /> 
+            <Route  path="/partner/:name" component={Partner}/>
+            <Route  path="/team" component={Team} />
             <Route path="/" component={Home} />
         </Switch>
-      </div>
+      </ScrollToTop>
     </Router>
   );
 }
