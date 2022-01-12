@@ -24,7 +24,7 @@ export default function DepMembers(props) {
             <Col lg={4} xs={12} >
                 <div className='memberCard'  onMouseOver={() => setShowBio(true) } onMouseLeave={() => setShowBio(false)}>
                     <img src={image}/>
-                    <div className='overlayData'>
+                    <div className={`overlayData ${showBio ? 'open' : 'close'}`}>
                         <span className='memberName'> {name} </span> <br/>
                         <span className='memberPosition'> {position} </span>
                         <p className={`memberBio ${showBio ? 'open' : 'close'}`}> {bio} </p>

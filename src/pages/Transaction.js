@@ -7,8 +7,7 @@ import Departments from "../Components/Departments";
 const Team = function(){
     return(
         <Layout containerClassName={'App'} menuActive={2}>
-            <PageTitle title={'Our Team'} />
-            <Departments />
+            <PageTitle title={'Transaction History'} />
         </Layout>
     )
 }

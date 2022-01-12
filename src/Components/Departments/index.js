@@ -27,7 +27,7 @@ const Departments = () => {
                 </Accordion>
                 <Accordion defaultActiveKey={'1'}>
                     <Accordion.Item eventKey="1" >
-                        <Accordion.Header>Marketing</Accordion.Header>
+                        <Accordion.Header>Marketing Development</Accordion.Header>
                         <Accordion.Body>
                             <Row>
                                 {marketing.map((item) => {
@@ -39,7 +39,7 @@ const Departments = () => {
                 </Accordion>
                 <Accordion defaultActiveKey={'2'}>
                     <Accordion.Item eventKey="2" >
-                        <Accordion.Header>Business Development</Accordion.Header>
+                        <Accordion.Header>Strategic consultant </Accordion.Header>
                         <Accordion.Body>
                             <Row>
                                 {business.map((item) => {
