@@ -6,10 +6,10 @@ import partnerMobile from './../../img/mobile-map.svg';
 const MapSection = () => (
   <div className="partner-part">
     <HeaderCard />
-    <div className="map show-desktop">
+    <div className="map hideOnMobile">
       <img src={partner} alt="map" />
     </div>
-    <div className="map show-mobile">
+    <div className="map showOnMobile">
       <img src={partnerMobile} alt="map" />
     </div>
   </div>

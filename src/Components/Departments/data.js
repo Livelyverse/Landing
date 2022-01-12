@@ -19,7 +19,7 @@ export const headBoard = [
     { name: 'Parsa Abbasi', position: 'CTO & Co-Founder', image: parsa , 
     bio: "Successful and specialist in the field of cryptocurrencies, he is also a great business developer. Parsa Abbasi is known for being Co-founder and CEO at Intoken, obtaining very good results. He graduated from Allameh Tabataba'i University, holds a master's degree in Finance and worked as manager of the innovation department at Mahan Business School. Thanks to his knowledge and dedication, technologically Lively Planet is in the best hands. " },
     { name: 'Mariano Javier Quadrini', position: 'CFO & Co-Founder', image: mariano , 
-    bio : "specialist in crypto operations and projects, with experience in companies such as CoinSource. he graduated from La Universidad Nacional de La Plata and has studies in business for cross cultural communication at The Hong Kong University of Science and Technology.  She worked as an audiovisual journalist in Argentina and now her vision for Lively Planet is to create a solution for audiovisual content creators based on Blockchain."},
+    bio : "Mariano Quadrini is a crypto-enthusiast, he has spent the last 3 years of his life mastering network marketing on a deep level, and for all angles. He is known to be an accomplished entrepreneur in a broad type of business and is on a mission to make an impact on the usability of cryptocurrencies worldwide. He loves extreme sports and works hard creating opportunities and making use of his networks to elevate Lively Planet to the top.          "},
 ];
 
 export const marketing = [
@@ -36,7 +36,7 @@ export const business = [
     bio: "Dani di Giorgio, investor and expert in cryptocurrencies and decentralized finance, has been featured in newspapers such as 'Última hora' due to his knowledge in this industry and the large networks he has worked and developed during the last years, standing out for his good results. " },
     { name: 'Pedro Julian Chavernas Ruiz', position: 'Project Manager & Business Partnerships', image: pedro ,
     bio: "Pedro is a crypto investor and in addition to his career as a  military in the air force in Spain he is a specialist on public relations with big knowledge in network marketing, which has resulted in great success for him and all those around him. Now his goal is to grow the Lively Planet community and make great use of his talents ." },
-        { name: 'José Salas', position: 'Head of Development & Business Partnerships', image: jose , 
+    { name: 'José Salas', position: 'Head of Development & Business Partnerships', image: jose , 
     bio:"José Salas also has a military career in the Spanish air force. He began to enter the world of cryptocurrencies as an investor and in recent years has created a large network and participated in several projects that have given him great results. Jose is determined to build strategic relationships for Lively Planet." },
     { name: 'Mark Tan' , position: 'Head of Business Strategies & Community Manager in USA', image: mark , 
     bio: "Mark A. Tan is the founder and owner of T Capital Management LLC based in Lake Forest, IL. He has more than a decade of experience in the financial markets and investments. Graduated from Northwestern University and have previously participated in community works with CASA of Cook County, Lake County Cares, Philippine American Cultural Foundation &  Gawad Kalinga."},

@@ -81,7 +81,7 @@ $lightBlueColor: #66DAE9;
     width: 180px;
     display: inline-block;
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-        width: 120px;
+        width: 100px;
     }
 }
 
@@ -550,9 +550,7 @@ $lightBlueColor: #66DAE9;
     }
     .map{
         margin-top: 60px;
-        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-            display: none;
-        }
+        
         img{
             width: 75%;
             @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
@@ -786,8 +784,8 @@ $lightBlueColor: #66DAE9;
 
 .partner-header-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row-reverse;
+    // justify-content: space-between;
     // align-items: flex-end;
     line-height: 40px;
     @media (min-width: 768px) {
@@ -797,7 +795,6 @@ $lightBlueColor: #66DAE9;
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         flex-direction: column;
         text-align: center !important;
-
     }
     a{
         text-decoration: none;
@@ -827,6 +824,7 @@ $lightBlueColor: #66DAE9;
     margin-bottom: 15px;
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         text-align: center;
+        margin: 0 auto;
     }
     & .logo {
         width: 50% !important;
@@ -839,6 +837,9 @@ $lightBlueColor: #66DAE9;
     justify-content: flex-start;
     align-items: flex-start;
     text-decoration: none;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        text-align: center;
+    }
 }
 
 .partner-card-text {
@@ -1014,6 +1015,8 @@ $lightBlueColor: #66DAE9;
             @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 padding: 10px 20px;
             }
+            &.open{height: 100%; padding: 20px 20px;}
+            &.close{height: auto; }
             .memberName{
                 color: $lightBlueColor;
                 font-weight: bold;
@@ -1041,7 +1044,7 @@ $lightBlueColor: #66DAE9;
                     opacity: 0;
                 }
                 &.open{
-                    height: auto;
+                    height: 100%;
                     opacity: 1;
                 }
             }
@@ -1113,6 +1116,7 @@ $lightBlueColor: #66DAE9;
     text-align: center;
     line-height: 120px;
     border: 2px solid $lightBlueColor;
+    background-color: white;
     &:hover{
         background-color: $lightBlueColor;
         img{
@@ -1184,3 +1188,66 @@ $lightBlueColor: #66DAE9;
         display: none;
     }
 } 
+
+
+
+
+.modal-content{
+    background-color: #141414;
+    padding: 20px 100px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+    .modal-header{
+        border: none;
+        text-align: center;
+        .modal-title{
+            margin: 0 auto;
+            font-weight: bold;
+        }
+        .btn-close{
+            display: none;
+        }
+    }
+    .modal-body{
+        form{
+            div{
+                margin-bottom: 25px !important;
+            }
+            input{
+                border-radius: 75px;
+                font-size: 13px;
+                padding: 10px 20px;
+                color: #141414;
+                &.error{
+                    color: red;
+                    border: 2px solid red;
+                }
+            }
+            label{
+                font-weight: bold;
+            }
+        }
+        .formBtn{
+            width: 40%;
+            background-color: #52BAE9;
+            color: white;
+            margin: 0 auto;
+            text-align: center;
+            padding: 12px 20px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 75px;
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            margin-top: 50px;
+        }
+        .verificationMessage{
+            text-align: center;
+            img{
+                width: 50%;
+            }
+        }
+    }
+    
+}
+

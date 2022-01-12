@@ -4,18 +4,26 @@ import logo from './../img/logo.svg';
 import menu from './../img/menu.svg';
 import drawer from './../img/drawer.svg';
 import Button from "./Button";
-import { Col, Container, Form, FormControl, Nav, Navbar, NavDropdown, Offcanvas, Row } from "react-bootstrap";
+import { Col, Container, Offcanvas, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Cookies from 'universal-cookie';
+import { getUserName } from "./Util/helper";
+import RegisterModal from "./Auth/RegisterModal";
+import LoginModal from "./Auth/LoginModal";
 
 export default function Header(props){
     const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    const [registerShow , setRegisterShow] = useState(false);
+    const [loginShow , setLoginShow] = useState(false)
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const {active} = props;
+    const Cookie = new Cookies();
+    const isAuth = Cookie.get('auth');
 
-    
+    console.log(process.env)
+
     return(
 
         // </Navbar>
@@ -41,15 +49,15 @@ export default function Header(props){
                             <Link className={active === 0 ? 'active' : ''} to={'/'}> Home </Link>
                         </Col>
                         <Col xs={12} >
-                            <Link className={active === 1 ? 'active' : ''} to={'/Partners'}> Partners </Link>
+                            <Link className={active === 1 ? 'active' : ''} to={'/partners'}> Partners </Link>
                         </Col>
                         <Col xs={12}>
-                            <Link className={active === 2 ? 'active' : ''} to={'/Team'}> Team </Link>
+                            <Link className={active === 2 ? 'active' : ''} to={'/team'}> Team </Link>
                         </Col>
-                        <Col xs={12}>
-                            <Link className={active === 3 ? 'active' : ''} to={'./Transaction'}>
+                        {/* <Col xs={12}>
+                            <Link className={active === 3 ? 'active' : ''} to={'./transaction'}>
                             Transaction History</Link>
-                        </Col>
+                        </Col> */}
                         
                     </Row>
                 </Offcanvas.Body>
@@ -63,15 +71,28 @@ export default function Header(props){
                         <Col xs={4} lg={1}  onClick={handleShow}>
                             <img className="menutoggle" src={menu}></img>
                         </Col>
-                        {/* <Col xs={6} lg={2}>
-                            <Button type="color"> login </Button>
-                        </Col>
-                        <Col xs={6} lg={2}>
-                            <Button type="transparent"> Register </Button>
-                        </Col> */}
+                        {/* {(isAuth === undefined || isAuth === null) && 
+                            <>
+                            <Col xs={6} lg={2}>
+                            <Button type="color" onClick={()=> setLoginShow(true)}> login </Button>
+                            </Col>
+                            <Col xs={6} lg={2}>
+                                <Button type="transparent" onClick={() => setRegisterShow(true)}> Register </Button>
+                            </Col>
+                            </>
+                        }
+                        {isAuth && 
+                            <Col xs={6} lg={2}>
+                                {getUserName()}
+                            </Col>
+                        }
+                         */}
                     </Row>
                 </Col>
-            </Row>           
+            </Row>    
+            <RegisterModal show={registerShow} onHide={()=> setRegisterShow(false)} />  
+            <LoginModal show={loginShow} onHide={()=> setLoginShow(false)} /> 
         </Container>
     )
 }
+
