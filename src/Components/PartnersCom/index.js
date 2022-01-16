@@ -14,7 +14,7 @@ const PartnersCom = () => {
                         <p>
                     Lively Planet has strong partnerships in place to create alliances that lead to audience expansion and community growth. Our current partners are an important part of our ecosystem, share our vision and provide benefits to each other.
 
-                    If you have any questions about partnership agreements please contact us through our email: <a href='mailto:suppoer@livelyplanet.io'> suppoer@livelyplanet.io</a> 
+                    If you have any questions about partnership agreements please contact us through our email: <a href='mailto:support@livelyplanet.io'> support@livelyplanet.io</a> 
                     </p>
                     </Col>
                     <Col xs={12} lg={4} style={{lineHeight:'360px'}}>

@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import ok from './../../img/ok.png';
 import { inputValidation } from '../Util/Validation';
+import { Register } from '../../API/Auth';
 
 
 const RegisterModal = (props) => {
@@ -27,42 +28,44 @@ const RegisterModal = (props) => {
     const tmp = noError;
     
     const validation = () => {
-
-
         if(!inputValidation(userName , 'userName')){
             tmp.userName = true;
             tmp.all = true;
-            console.log('bad1')
-        }else  {tmp.userName = false}
+        }else  {tmp.userName = false; tmp.all = false}
         if(!inputValidation(email , 'email')){
             tmp.email = true;
             tmp.all = true;
-            console.log('bad2')
-        }else{ tmp.email = false}
+        }else{ tmp.email = false; tmp.all = false}
         if(!inputValidation(password , 'password')){
             tmp.password = true;
             tmp.all = true;
-            console.log('bad3')
-        } else{tmp.password = false}
+        } else{tmp.password = false; tmp.all = false}
         if(password !== vpassword && password.length === 0){
             tmp.vpassword = true;
             tmp.all = true
-            console.log('bad4')
-        } else{ tmp.vpassword = false}
+        } else{ tmp.vpassword = false; tmp.all = false}
         
-        console.log(tmp)
         setErrors(tmp)
-        console.log(errors);
     }
 
     const registerToVerify = () =>{
         validation()
         if(!tmp.all){
-            // setErrors(noError);
+            
+            Register({username : userName , password : password , email : email}).
+                then(res => {
+                    console.log(res)
+                }).catch(err=>{
+                    console.log(err)
+                })
+
+
             onHide();
             setEmailVerify(true);
         }
     }
+
+
     const finalVerify = () => {
         setEmailVerify(false);
         setVerify(true)

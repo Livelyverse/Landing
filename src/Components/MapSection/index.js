@@ -1,7 +1,7 @@
 import React from 'react';
 import partner from './../../img/map.png';
 import HeaderCard from './HeaderCard';
-import partnerMobile from './../../img/mobile-map.svg';
+import partnerMobile from './../../img/mobile-map.png';
 
 const MapSection = () => (
   <div className="partner-part">

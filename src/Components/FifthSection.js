@@ -17,11 +17,11 @@ export default function FifthSection() {
                     <MapSection />
                 </Col>
             </Row>
-            {/* <Row>
+            <Row>
                 <Col>
                     <ContactUsSection />
                 </Col>
-            </Row> */}
+            </Row>
         </Container>
     )
 }
