@@ -3,11 +3,9 @@ import './components.scss';
 import logo from './../img/logo.svg';
 import menu from './../img/menu.svg';
 import drawer from './../img/drawer.svg';
-import Button from "./Button";
 import { Col, Container, Offcanvas, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
-import { getUserName } from "./Util/helper";
 import RegisterModal from "./Auth/RegisterModal";
 import LoginModal from "./Auth/LoginModal";
 

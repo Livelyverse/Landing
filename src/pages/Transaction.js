@@ -15,13 +15,12 @@ const Team = function(){
     if(loaded){
         return(
             <Layout containerClassName={'App'} menuActive={3}>
-                <PageTitle title={'Transaction History'} />
+                <PageTitle title={'Lively Contract Transactions'} />
                 <TransactionTable />
             </Layout>
         )
     }
     else return(<div className="loading"> <img src={loading} /> </div>)
-    
 }
 
 export default Team;

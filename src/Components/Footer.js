@@ -117,7 +117,7 @@ export default function Footer() {
                     </Col>
                 </Row>
                 <Row className="copyRight">
-                    <span> &copy; 2021 Lively planet Development Foundation</span>
+                    <span> &copy; 2022 Lively planet Development Foundation</span>
                     <div className="socials">
 
                     </div>
