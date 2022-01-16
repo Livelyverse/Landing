@@ -51,17 +51,14 @@ const RegisterModal = (props) => {
     const registerToVerify = () =>{
         validation()
         if(!tmp.all){
-            
             Register({username : userName , password : password , email : email}).
                 then(res => {
                     console.log(res)
+                    onHide();
+                    setEmailVerify(true);
                 }).catch(err=>{
                     console.log(err)
                 })
-
-
-            onHide();
-            setEmailVerify(true);
         }
     }
 
