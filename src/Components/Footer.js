@@ -35,7 +35,7 @@ export default function Footer() {
                                         Lively Consulting
                                     </Col>
                                     <Col xs={6} className="footerItem">
-                                        <a href="mailto:suppoer@livelyplanet.io">suppoer@livelyplanet.io</a>
+                                        <a href="mailto:support@livelyplanet.io">support@livelyplanet.io</a>
                                     </Col>
                                     <Col xs={6} className="footerItem">
                                         Technical

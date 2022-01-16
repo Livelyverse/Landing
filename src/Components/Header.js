@@ -34,7 +34,7 @@ export default function Header(props){
                     <Offcanvas.Title className="titleChild">
                         <Row>
                             <Col xs={10}>
-                                LiveLy Planet
+                                Lively Planet
                             </Col>
                             <Col xs={2} style={{textAlign:'right'}}>
                                 <img src={drawer} onClick={handleClose} />
@@ -54,10 +54,10 @@ export default function Header(props){
                         <Col xs={12}>
                             <Link className={active === 2 ? 'active' : ''} to={'/team'}> Team </Link>
                         </Col>
-                        {/* <Col xs={12}>
+                        <Col xs={12}>
                             <Link className={active === 3 ? 'active' : ''} to={'./transaction'}>
                             Transaction History</Link>
-                        </Col> */}
+                        </Col>
                         
                     </Row>
                 </Offcanvas.Body>
@@ -85,8 +85,8 @@ export default function Header(props){
                             <Col xs={6} lg={2}>
                                 {getUserName()}
                             </Col>
-                        }
-                         */}
+                        } */}
+                        
                     </Row>
                 </Col>
             </Row>    
