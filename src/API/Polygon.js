@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 export const getAllTransaction = () => {
-    return axios.get('https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c&page=1&offset=100&startblock=0&endblock=99999999&sort=asc&apikey=TYUH9E2R8NNJFQS21Y8ZQKQZEW58ZM81D5')
+    return axios.get('https://api.polygonscan.com/api?module=account&action=tokentx&contractaddress=0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c&page=1&offset=100&startblock=0&endblock=99999999&sort=desc&apikey=TYUH9E2R8NNJFQS21Y8ZQKQZEW58ZM81D5')
 }
 
 export const getAllTransactionByWallet = (wallet) => {

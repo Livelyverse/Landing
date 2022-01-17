@@ -66,44 +66,48 @@ const DataTable  = ({ columns, data }) => {
                 </tbody>
             </table>
             </Container>
-            <div className="pagination">
-                
-                <div className={`pervBtn ${!canPreviousPage ? 'disable' : ""}`} onClick={() => {previousPage(); window.scroll(0 , 0)}} ></div>
+            {data.length > 0 ? (
+                <div className="pagination">
+                    
+                    <div className={`pervBtn ${!canPreviousPage ? 'disable' : ""}`} onClick={() => {previousPage(); window.scroll(0 , 0)}} ></div>
 
-                {pageIndex === 0 && 
-                    <div className='pageNumberWrapper'>
-                        {[1 , 2 , 3].map((index) => {
-                            if(index <= pageCount){
-                               
-                                return(
-                                    <div className={`pageNumber ${index === 1 ? 'active' : ''}`} onClick={()=>{gotoPage(index-1); window.scroll(0 , 0) }}>
-                                        {index}
-                                    </div>
-                                )
-                            }   
-                            
-                        })}
-                    </div>
+                    {pageIndex === 0 && 
+                        <div className='pageNumberWrapper'>
+                            {[1 , 2 , 3].map((index) => {
+                                if(index <= pageCount){
+                                
+                                    return(
+                                        <div className={`pageNumber ${index === 1 ? 'active' : ''}`} onClick={()=>{gotoPage(index-1); window.scroll(0 , 0) }}>
+                                            {index}
+                                        </div>
+                                    )
+                                }   
+                                
+                            })}
+                        </div>
+                    }
+
+                {pageIndex > 0 && 
+                        <div className='pageNumberWrapper'>
+                            {[pageIndex-1 , pageIndex , pageIndex+1].map((index) => {
+                                if(index <= pageCount-1){
+                                    return(
+                                        <div className={`pageNumber ${index === pageIndex ? 'active' : ''}`} onClick={()=>{gotoPage(index); window.scroll(0 , 0)}}>
+                                            {index+1}
+                                        </div>
+                                    )
+                                }
+                                
+                            })}
+                        </div>
                 }
-
-               {pageIndex > 0 && 
-                    <div className='pageNumberWrapper'>
-                        {[pageIndex-1 , pageIndex , pageIndex+1].map((index) => {
-                            if(index <= pageCount-1){
-                                return(
-                                    <div className={`pageNumber ${index === pageIndex ? 'active' : ''}`} onClick={()=>{gotoPage(index); window.scroll(0 , 0)}}>
-                                        {index+1}
-                                    </div>
-                                )
-                            }
-                            
-                        })}
-                    </div>
-               }
-                
-                <div className={`nextBtn ${!canNextPage ? 'disable' : ""}`} onClick={() => {nextPage(); window.scroll(0 , 0)}} ></div>                
-                
-            </div>
+                    
+                    <div className={`nextBtn ${!canNextPage ? 'disable' : ""}`} onClick={() => {nextPage(); window.scroll(0 , 0)}} ></div>                
+                    
+                </div>
+            ) : (
+                <div style={{marginTop: '50px' , textAlign: 'center' , fontWeight:'bold'}}> No Record Avaliable  </div>
+            )}
         </>
       )
 }

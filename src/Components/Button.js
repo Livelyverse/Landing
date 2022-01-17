@@ -8,7 +8,7 @@ export default function Button(props){
 
 
     return(
-        <div className={` button ${type=== 'transparent' ? 'transparent' : 'color'}`} {...props}>
+        <div className={` button ${ type==='disable' ? 'disable' : type=== 'transparent' ? 'transparent' : 'color'} `} {...props}>
            {props.children}
         </div>
     )
