@@ -13,10 +13,12 @@ import ThirdSection from './../Components/ThirdSection';
 import loading from './../img/loading.gif';
 import Cookies from 'universal-cookie';
 import { useHistory } from 'react-router-dom';
+import LoginModal from '../Components/Auth/LoginModal';
 
 const Home = function () {
     const [loaded , setLoaded] = useState(false)
     const [registerShow , setRegisterShow] = useState(false)
+    const [loginShow , setLoginShow] = useState(false);
 
     const Cookie = new Cookies();
     const isConfirmed = Cookie.get('confirmed')
@@ -43,7 +45,14 @@ const Home = function () {
                 <ThirdSection />
                 <ForthSection />
                 <FifthSection />
-                <RegisterModal show={registerShow} onHide={()=> setRegisterShow(false)} />  
+                <RegisterModal show={registerShow} onHide={()=> setRegisterShow(false)} toggle={()=>{
+                    setRegisterShow(false);
+                    setLoginShow(true)
+                    }}/> 
+                <LoginModal show={loginShow} onHide={()=> setLoginShow(false)} toggle={()=>{
+                    setLoginShow(false)
+                    setRegisterShow(true);
+                }}/> 
             </Layout>
             
         )

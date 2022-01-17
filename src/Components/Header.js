@@ -24,7 +24,7 @@ export default function Header(props){
     const Cookie = new Cookies();
     const isConfirmed = Cookie.get('confirmed');
     const history = useHistory();
-
+    console.log(process.env)
     return(
         <Container className="header" fluid>
             <Offcanvas show={show} onHide={handleClose} placement="end" className="drawer"> 
