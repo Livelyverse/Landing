@@ -147,7 +147,7 @@ const RegisterModal = (props) => {
                     placeholder="Password" 
                     msg="repeate your selected password" 
                     value={vpassword} 
-                    onChange={(text) => setvPassword(text)} 
+                    onChange={(text) => setvPassword(text.target.value)} 
                     error={errors.vpassword}
                     />
                 </Form>
