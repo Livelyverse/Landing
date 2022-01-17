@@ -1329,6 +1329,10 @@ $lightBlueColor: #66DAE9;
                 background-color: #999;
                 cursor: default;
             }
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                width: 60%;
+            }
+
         }
         .verificationMessage{
             text-align: center;
