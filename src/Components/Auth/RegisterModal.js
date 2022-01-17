@@ -62,7 +62,7 @@ const RegisterModal = (props) => {
         if(!tmp.all){
             Register({username : userName , password : password , email : email}).
                 then(res => {
-                    Cookie.set('auth', res?.data?.accessToken);
+                    Cookie.set('auth', res?.data?.access_token);
                     Cookie.set('userName' , userName);
                     Cookie.set('confirmed' , false);
                     Cookie.set('refresh' , '');
