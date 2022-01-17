@@ -35,7 +35,7 @@ const ContactUsSection = () => {
     const sendMessage =() => {
         validation();
         if(!tmp.all){
-            SentContactMessage({email , message : msg , name: user}).then(res=> {
+            SentContactMessage({email , message : msg , name: (user === undefined || user === null) ? 'Guest' : user}).then(res=> {
                 setFinalMessage('Your Message Sent!!');
                 setMsg('');
                 setEmail('');

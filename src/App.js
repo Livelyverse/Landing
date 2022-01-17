@@ -11,6 +11,8 @@ import Partners from './pages/Partners';
 import Partner from './pages/Partner';
 import Transaction from './pages/Transaction';
 import ScrollToTop from './Components/Basic/ScrollToTop';
+import Dashboard from './pages/Dashboard';
+import Profile from './pages/Profile';
 
 export default function App() {
   return (
@@ -21,6 +23,8 @@ export default function App() {
             <Route  path="/partner/:name" component={Partner}/>
             <Route  path="/team" component={Team} />
             <Route  path="/transaction" component={Transaction} />
+            <Route  path="/dashboard" component={Dashboard} />
+            {/* <Route  path="/profile" component={Profile} /> */}
             <Route  path="/" component={Home} />
         </Switch>
       </ScrollToTop>

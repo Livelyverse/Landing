@@ -1,16 +1,20 @@
 import BasicModal from './../Basic/BasicModal';
 import AuthInput from './../Basic/AuthInput';
-import {Form, Row, ThemeProvider} from 'react-bootstrap';
+import {Form, Row} from 'react-bootstrap';
 import Button from '../Button';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import ok from './../../img/ok.png';
 import { inputValidation } from '../Util/Validation';
-import { Register } from '../../API/Auth';
+import { MailCodeVerified, Register } from '../../API/Auth';
+import CountDown from '../Basic/CountDown';
+import Cookies from 'universal-cookie';
+
+import { useHistory } from 'react-router-dom';
 
 
 const RegisterModal = (props) => {
-    const {show , onHide} = props;
+    const {show , onHide , toggle} = props;
     const [emailverify , setEmailVerify] = useState(false);
     const [verify , setVerify] = useState(false);
     
@@ -19,6 +23,8 @@ const RegisterModal = (props) => {
     const [vpassword , setvPassword] = useState('');
     const [email , setEmail] = useState('');
 
+    const [generalMsg , setGeneralMsg] = useState('')
+
     const [confirmCode , setConfirmCode] = useState('');
 
     const noError = {userName : false , email : false , password : false , confirm:false , vpassword : false , all: false};
@@ -26,6 +32,9 @@ const RegisterModal = (props) => {
 
 
     const tmp = noError;
+    const Cookie = new Cookies();
+    const isConfirmed = Cookie.get('confirm');
+    const history = useHistory();
     
     const validation = () => {
         if(!inputValidation(userName , 'userName')){
@@ -53,23 +62,53 @@ const RegisterModal = (props) => {
         if(!tmp.all){
             Register({username : userName , password : password , email : email}).
                 then(res => {
-                    console.log(res)
+                    Cookie.set('auth', res?.data?.accessToken);
+                    Cookie.set('userName' , userName);
+                    Cookie.set('confirmed' , false);
+                    Cookie.set('refresh' , '');
                     onHide();
+                    setGeneralMsg('')
                     setEmailVerify(true);
                 }).catch(err=>{
-                    console.log(err)
+                    console.log(err.response)
+                    if(err.response.data.message.length > 0){
+                        setGeneralMsg(err.response.data.message)
+                        setErrors({...errors , email : true , userName : true});
+                        setPassword('')
+                        setvPassword('')
+                    }
                 })
         }
     }
 
-
     const finalVerify = () => {
-        setEmailVerify(false);
-        setVerify(true)
+        MailCodeVerified({verifyCode : confirmCode}).then(res =>{ 
+            console.log(res);
+            Cookie.set('refresh' , res?.data?.refresh_token)
+            Cookie.set('confirmed' , true)
+            setEmailVerify(false);
+            setVerify(true)
+            history.push('/dashboard')
+        }).catch(err => {
+            console.log(err)
+            if(err.response.data.message.length > 0){
+                setGeneralMsg(err.response.data.message)
+                setErrors({...errors , confirm : true})
+            }
+        })
     }
+
+    useEffect(()=>{
+        if(isConfirmed === false){
+            onHide();
+            setEmailVerify(true);
+        }
+    } , [])
     return(
         <>
             <BasicModal title="Sign Up" show={show} onHide={onHide} >
+                
+
                 <Form>
                     <AuthInput 
                     title="UserName :" 
@@ -96,7 +135,7 @@ const RegisterModal = (props) => {
                     controlId="SignUpForm.Password1" 
                     type="password" 
                     placeholder="Password" 
-                    msg="6 characters at least" 
+                    msg="8 characters at least - include Upper and Lower case and digit" 
                     value={password} 
                     onChange={(text) => setPassword(text.target.value)} 
                     error={errors.password}
@@ -112,6 +151,8 @@ const RegisterModal = (props) => {
                     error={errors.password}
                     />
                 </Form>
+                <span className='generalFormMsg'> {generalMsg} </span>
+                <div style={{marginTop:'20px'}}> If you already have an account <strong style={{color:'#66DAE9' , cursor:'pointer'}}  onClick={toggle}> Login </strong> </div>
                 <Button type="color" className="formBtn" onClick={registerToVerify}> Sign Up </Button>
             </BasicModal>
 
@@ -128,8 +169,10 @@ const RegisterModal = (props) => {
                         onChange={(text) => setConfirmCode(text.target.value)}
                         error = {errors.confirm}
                     />
+                    <CountDown limit={60}/>
                 </Form>
-                <Button type="color" className="formBtn" onClick={finalVerify}> Verify </Button>
+                <span className='generalFormMsg'> {generalMsg} </span>
+                <Button type='color'  className={`formBtn ${confirmCode.length > 0 ? '' : 'disable'}` } onClick={ confirmCode.length > 0 ? finalVerify : ''}> Verify </Button>
             </BasicModal>
 
             <BasicModal title="Email Verification" show={verify} onHide={()=>{setVerify(false)}}> 

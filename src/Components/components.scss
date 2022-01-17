@@ -78,10 +78,13 @@ $lightBlueColor: #66DAE9;
     
 }
 .logo{
-    width: 180px;
-    display: inline-block;
+    img{
+        width: 180px;
+        display: inline-block;
+    }
+    
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-        width: 100px;
+        display: none;
     }
 }
 
@@ -95,6 +98,14 @@ $lightBlueColor: #66DAE9;
     li{
         display: inline-block;
         padding-left: 20px;
+    }
+    div{
+        a{
+            text-decoration: none;
+            color: $lightBlueColor;
+            line-height: 35px;
+            font-size: 20px;
+        }
     }
     .menutoggle{
         height: 38px;
@@ -215,6 +226,10 @@ $lightBlueColor: #66DAE9;
         }
     }
     
+    &.disable{
+        background-color: #999;
+        color: white;
+    }
 }
 
 // Banner
@@ -592,9 +607,12 @@ $lightBlueColor: #66DAE9;
 
     padding: 80px 60px;
     padding-bottom: 10px;
+    padding-top: 200px;
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         padding: 90px 20px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
+        padding-top: 100px;
+
     }
     .logoWrapper{
         margin-bottom: 40px;
@@ -688,6 +706,7 @@ $lightBlueColor: #66DAE9;
     background: rgba(0, 0, 0, 0.7);
     text-align: left;
     padding: 160px 60px;
+    padding-bottom: 10px;
     @media (max-width: 768px) {
         padding: 80px 12px;
     }
@@ -1020,6 +1039,9 @@ $lightBlueColor: #66DAE9;
     padding-right: 0px;
     text-align: center;
     position: relative;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        padding-top: 120px;
+    }
     .pageTitle{
         color: white;
         font-size: 42px;
@@ -1073,27 +1095,33 @@ $lightBlueColor: #66DAE9;
                 height: auto;
                 // top: 70%;
             }
-            &.open{height: 100%; padding: 20px 20px;}
+            &.open{
+                height: 100%; padding: 20px 20px;
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                    padding: 13px 20px;
+                }
+
+            }
             &.close{height: auto; }
             .memberName{
                 color: $lightBlueColor;
                 font-weight: bold;
                 font-size: 18px;
                 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
             .memberPosition{
                 font-size: 16px;
                 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-                    font-size: 18px;
+                    font-size: 16px;
                 }
             }
         
             .memberBio{
                 font-size: 14px;
                 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-                    font-size: 12px;
+                    font-size: 11px;
                 }
                 margin-top: 5px;
                 line-height: 27px;
@@ -1186,11 +1214,11 @@ $lightBlueColor: #66DAE9;
         filter: grayscale(0.4);
     }
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-        margin-right: 10px;
-        width: 110px;
-        height: 110px;
+        width: 90px;
+        height: 90px;
         background-color: $lightBlueColor;
-        line-height: 110px;
+        line-height: 90px;
+        margin : 0 auto;
         img{
             filter: grayscale(0);
             width: 80%;
@@ -1243,6 +1271,11 @@ $lightBlueColor: #66DAE9;
     border-radius: 15px;
     width: 80%;
     margin: 0 auto;
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        width: 90%;
+        padding: 10px 20px;           
+    }
     .modal-header{
         border: none;
         text-align: center;
@@ -1258,6 +1291,13 @@ $lightBlueColor: #66DAE9;
         form{
             div{
                 margin-bottom: 25px !important;
+                position: relative;
+                img{
+                    position: absolute;
+                    width: 20px;
+                    right: 20px;
+                    top: 42px;
+                }
             }
             input{
                 border-radius: 75px;
@@ -1285,6 +1325,10 @@ $lightBlueColor: #66DAE9;
             text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
             cursor: pointer;
             margin-top: 50px;
+            &.disable{
+                background-color: #999;
+                cursor: default;
+            }
         }
         .verificationMessage{
             text-align: center;
@@ -1292,13 +1336,26 @@ $lightBlueColor: #66DAE9;
                 width: 50%;
             }
         }
+        .resendBtn{
+            margin: 0 auto;
+            font-size: 14px;
+            position: absolute;
+            top: 58px;
+            color: #141414;
+            right: 34px;
+            cursor: default;
+            &.cursorPoint{
+                cursor: pointer;
+            }
+            
+        }
     }
     
 }
 
 
 
-.transactions{
+.transactions , .userTransaction{
     background: rgba($color: #000, $alpha: 0.7);
     padding-top: 100px;
     .tableFilter{
@@ -1331,14 +1388,19 @@ $lightBlueColor: #66DAE9;
         th{
             font-size: 22px;
             padding-bottom: 20px;
-            // text-align: center;
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                font-size: 18px;
+            }
         }
         tbody{
             tr{
                 td{
                     padding-top: 30px;
                     font-size: 18px;
-                    // text-align: center;
+                    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                        font-size: 16px;
+                        padding: 10px 20px;
+                    }
                     a{
                         color: $lightBlueColor;
                     }
@@ -1420,5 +1482,167 @@ $lightBlueColor: #66DAE9;
     height: 100%;
     img{
         margin: 0 auto;
+    }
+}
+
+.dropdown-toggle{
+    background-color: transparent !important;
+    border-color: $lightBlueColor;
+    border-radius: 15px;
+    &:active{
+        outline-color: $lightBlueColor;
+    }
+    &:focus{
+        outline-color: $lightBlueColor;
+    }
+    &::after{
+        margin-right: 20px;
+    }
+}
+
+.dropdown-menu{
+    background-color: rgba(0, 0, 0, 0.25);
+    border-color: $lightBlueColor;
+    a{
+        text-decoration: none;
+        &:hover{
+            color: #141414;
+        }
+    }
+}
+
+.walletConnectBtn{
+    border: 1px solid $lightBlueColor;
+    border-radius: 15px;
+    margin-top: 7px;
+    padding: 4px 15px ;
+    text-align: center;
+    height: 40px;
+    cursor: pointer;
+    line-height: 28px;
+}
+
+.dashboard , .userProfile{
+    background: rgba(0, 0, 0, 0.7);
+    padding-top: 20px;
+
+    .dashboardData {
+        .dashboardUserData{
+            display: flex;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            img{
+                width: 44px;
+                height: 44px;
+                margin-right: 15px;
+                &.copyIcon{
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
+            span{
+                line-height: 50px;
+                font-size: 30px;
+                @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                    font-size: 22px;
+                }
+                &.title{
+                    font-weight: bold;
+                    margin-right: 20px;
+                }
+                &.unit{
+                    font-size: 28;
+                    font-weight: bold;
+                    margin-left: 10px;
+                }
+            } 
+        }
+        .userTransaction{
+            background: transparent;
+            padding-top: 15px;
+            margin-top: 40px;
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                margin-top: 0px;
+                padding-top: 0px;
+            }
+
+            table{
+                th{
+                    font-size: 18px;
+                    padding-bottom: 10px;
+                }
+                tbody{
+                    tr{
+                        td{
+                            padding-top: 20px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .buyToken{
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        margin-top: 120px;
+        min-height: 200px;
+        padding: 20px 0px;
+        background: rgba($color: #fff, $alpha: 0.3);
+        // color: #141414;
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+            display: none;       
+        }
+        h3{
+            margin-top: 40px;
+        }
+        img{
+            width: 65%;
+           
+        }
+        .qr{
+            text-align: right;
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                text-align: center;
+            }
+        }
+    }
+}
+
+.userProfile{
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.registerSlogan{
+    padding-top: 150px;
+    background: rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 10;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        padding-top: 50px;
+        padding-bottom: 150px;
+        text-align: center;
+    }
+    .registerBtn{
+        position: relative;
+        div{
+            background-color:#52BAE9 ;
+            width: 200px;
+            font-size: 26px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+                margin: 0 auto; right:0; left:0;
+                margin-top: 20px;
+            }
+        }
+       
     }
 }
