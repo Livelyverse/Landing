@@ -45,7 +45,11 @@ const WalletConnect = ({purpose}) => {
         )
     }
     return(
+        <>{purpose === 'address' && 
             <div className="walletConnectBtn" onClick={()=> {connect();} }> Connect </div>
+        }
+        </>
+
     )
 
 }
