@@ -1587,7 +1587,7 @@ $lightBlueColor: #66DAE9;
             }
         }
     }
-    .buyToken{
+    .buyToken , .buyTutor{
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
         margin-top: 120px;
@@ -1603,12 +1603,32 @@ $lightBlueColor: #66DAE9;
         }
         img{
             width: 65%;
+            cursor: pointer;
            
         }
         .qr{
             text-align: right;
+            position: relative;
             @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                 text-align: center;
+            }
+            small{
+                position: absolute;
+                bottom: -22px;
+                right: 17px;
+            }
+
+        }
+    }
+    .buyTutor{
+        margin-top: 10px;
+        .dlBtn{
+            line-height: 145px;
+            .btn{
+                color: white;
+                background-color: #52BAE9;
+                width: 60%;
+                font-size: 20px;
             }
         }
     }

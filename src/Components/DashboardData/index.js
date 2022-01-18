@@ -18,41 +18,65 @@ const DashboardData = () => {
             <MobileContainer className="dashboardData">
                 <Row>
                     <Col xs={12} lg={6}>
-                        {/* <a href="" onClick={(e)=> {
-                            e.preventDefault(); 
-                            var appWindow = window.open("metamask://www.ourdomain.com/files/12345","_blank");
-                            setTimeout( function () {if (appWindow) {
-                                appWindow.location ="http://www.ourdomain.com/buyourapp";
-                                    }
-                                    },1000);
-                            }}> test mobile </a> */}
+                        <UserData type={'address'}  icon={wallet} title={"Wallet Address"} unit={""}/>
+                    </Col>
+                    <Col xs={12} lg={6}>
                         <UserData type={'balance'}  icon={balance} title={"Balance"} unit={"LVL"}/>
                     </Col>
                     <Col xs={12} lg={6}>
                         <UserData type={'value'}  icon={lvl} title={"LVL Value"} unit={"$"}/>
                     </Col>
-                    <Col xs={12}>
-                        <UserData type={'address'}  icon={wallet} title={"Wallet Address"} unit={""}/>
-                    </Col>
+                   
                 </Row>
+                <Row className="buyToken">
+                        <Col xs={12} lg={9}>
+                            <h3>Welcome to Lively World! To buy your tokens, send the desired amount to this address and send your screenshot and your transaction hash to our email.You will see your tokens in your user panel and wallet within 24 hours.</h3>
+                        </Col>
+                        <Col xs={12} lg={3} className="qr">
+                            <img src={buy}  onClick={(e) => {
+                                e.preventDefault();
+                                navigator.clipboard.writeText('0x2344ccCA099F1060fbc299605A5E86E1f00690C1');
+                            }} />
+                            <small>For copy wallet address click </small>
+                        </Col>
+                    </Row>
+                <Row className="buyTutor">
+                        <Col xs={12} lg={5}>
+                            <h3>For having Lively in your wallet, Please Download the instructions.</h3>
+                        </Col>
+                        <Col xs={12} lg={7} className="dlBtn">
+                            <Row >
+                                <Col xs={4} >
+                                    <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyplanet.io/docs/instructionsLVLEnglish.pdf')}}>
+                                        English
+                                    </div>
+                                </Col >
+                                <Col xs={4} >
+                                <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyplanet.io/docs/instructionsLVLSpanish.pdf')}}>
+                                    Spanish
+                                        
+                                    </div>
+                                </Col>
+                                <Col xs={4} >
+                                <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyplanet.io/docs/instructionsLVLItalian.pdf')}}>
+                                Italian
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                    
                 <Row>
                     <Col>
                             <UserData type={'table'} icon={trans} title={'Transaction List'} unit={''} />
                     </Col>
                 </Row>
             </MobileContainer>
-            <div className="buyToken">
+            {/* <div >
                 <Container>
-                    <Row>
-                        <Col xs={12} lg={9}>
-                            <h3>Welcome to Lively World! To buy your tokens, send the desired amount to this address and send your screenshot and your transaction hash to our email.You will see your tokens in your user panel and wallet within 24 hours.</h3>
-                        </Col>
-                        <Col xs={12} lg={3} className="qr">
-                            <img src={buy} />
-                        </Col>
-                    </Row>
+                    
                 </Container>
-            </div>
+            </div> */}
         </Container>
     )
 }
