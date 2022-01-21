@@ -49,7 +49,7 @@ const RegisterModal = (props) => {
             tmp.password = true;
             tmp.all = true;
         } else{tmp.password = false; tmp.all = false}
-        if(password !== vpassword && password.length === 0){
+        if(password !== vpassword && vpassword.length === 0){
             tmp.vpassword = true;
             tmp.all = true
         } else{ tmp.vpassword = false; tmp.all = false}
@@ -64,7 +64,7 @@ const RegisterModal = (props) => {
                 then(res => {
                     Cookie.set('auth', res?.data?.access_token);
                     Cookie.set('userName' , userName);
-                    Cookie.set('confirmed' , false);
+                    Cookie.set('confirmed' , 'false');
                     Cookie.set('refresh' , '');
                     onHide();
                     setGeneralMsg('')
@@ -85,7 +85,7 @@ const RegisterModal = (props) => {
         MailCodeVerified({verifyCode : confirmCode}).then(res =>{ 
             console.log(res);
             Cookie.set('refresh' , res?.data?.refresh_token)
-            Cookie.set('confirmed' , true)
+            Cookie.set('confirmed' , 'true')
             setEmailVerify(false);
             setVerify(true)
             history.push('/dashboard')
@@ -99,7 +99,7 @@ const RegisterModal = (props) => {
     }
 
     useEffect(()=>{
-        if(isConfirmed === false){
+        if(isConfirmed === 'false'){
             onHide();
             setEmailVerify(true);
         }
@@ -107,8 +107,6 @@ const RegisterModal = (props) => {
     return(
         <>
             <BasicModal title="Sign Up" show={show} onHide={onHide} >
-                
-
                 <Form>
                     <AuthInput 
                     title="UserName :" 
