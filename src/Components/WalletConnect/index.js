@@ -5,12 +5,16 @@ import { injected } from "./../../API/Wallet";
 import Cookies from "universal-cookie";
 
 import copy from './../../img/dashboard/copy.png';
+import { lively_Abi } from "../Util/contract";
+import Web3 from "@web3-react/core";
+import { getUserBalance } from "../../API/Polygon";
+
 
 const WalletConnect = ({purpose}) => {
     const { active, account, library, connector, activate, deactivate } = useWeb3React()
 
     const [address , setAddress] = useState('');
-    const [balance , setBalance] = useState(0);
+    const [balance , setBalance] = useState(undefined);
 
     const Cookie = new Cookies();
 
@@ -26,19 +30,25 @@ const WalletConnect = ({purpose}) => {
                 await activate(injected)
                 setAddress(account);
                 
-                await library?.eth?.getBalance(account).then(res=> setBalance(res))
                 } catch (ex) {
                 console.log(ex)
                 }
         }
     }
 
-    console.log('balance = ' , balance)
-
 
     if(active){
-        Cookie.set('address' , account)
-        if(purpose === 'balance') return(<span> {balance} </span>)
+        if(purpose === 'balance'){ 
+            if(balance === undefined){
+                getUserBalance(account).then(res=> {
+                    console.log(res.data.result / Math.pow(10 , 18));
+                    setBalance(res.data.result / Math.pow(10 , 18));
+                }).catch(err => {
+                    console.log(err);
+                })
+            }
+            return(<span> {balance} </span>)
+        }
         else if(purpose === 'address') return (<span> {account.substring(0 , 6)+'...'+account.substring(account.length - 4 , account.length-1)}   <img onClick={(e)=> {e.preventDefault(); navigator.clipboard.writeText(account);}} className="copyIcon" src={copy}/>  </span>)
         return(
             <span> {' '} </span>

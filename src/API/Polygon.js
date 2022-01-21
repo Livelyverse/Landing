@@ -23,3 +23,19 @@ export const getAllTransactionByWallet = (wallet) => {
     }
     )
 }
+
+export const getUserBalance = (wallet) => {
+    return axios.get(
+        'https://api.polygonscan.com/api',
+        {
+            params : {
+                module:'account',
+                action:'tokenbalance',
+                contractaddress:process.env.REACT_APP_CONTRACT_ADDRESS,
+                address:wallet,
+                tag:'latest',
+                apikey:process.env.REACT_APP_POLYGONSCAN_KEY,
+            }
+        }
+    )
+}

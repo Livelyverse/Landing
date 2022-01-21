@@ -44,7 +44,7 @@ const LoginModal = (props) => {
                 console.log(res);
                 Cookie.set('auth' , res?.data?.access_token);
                 Cookie.set('userName' , userName);
-                Cookie.set('confirmed' , true);
+                Cookie.set('confirmed' , 'true');
                 Cookie.set('refresh' , res?.data?.refresh_token);
                 onHide()
                 history.push('/dashboard')

@@ -4,7 +4,7 @@ import logo from './../img/logo.svg';
 import menu from './../img/menu.svg';
 import drawer from './../img/drawer.svg';
 import { Col, Container, Dropdown, Offcanvas, Row } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { getUserName } from "./Util/helper";
 import RegisterModal from "./Auth/RegisterModal";
@@ -23,8 +23,6 @@ export default function Header(props){
     const {active} = props;
     const Cookie = new Cookies();
     const isConfirmed = Cookie.get('confirmed');
-    const history = useHistory();
-    console.log(process.env)
     return(
         <Container className="header" fluid>
             <Offcanvas show={show} onHide={handleClose} placement="end" className="drawer"> 
@@ -76,7 +74,7 @@ export default function Header(props){
                         <Col xs={2} lg={1}  onClick={handleShow}>
                             <img className="menutoggle" src={menu}></img>
                         </Col>
-                        {(isConfirmed === undefined || isConfirmed === null || !isConfirmed) && 
+                        {(isConfirmed === undefined || isConfirmed === null || isConfirmed === 'false') && 
                             <>
                             <Col xs={3} lg={2}>
                             <Button type="color" onClick={()=> setLoginShow(true)}> login </Button>
@@ -86,7 +84,7 @@ export default function Header(props){
                             </Col>
                             </>
                         }
-                        {isConfirmed && 
+                        {isConfirmed === 'true' && 
                             <Col xs={6} lg={2}>
                                 <Dropdown>
                                 <Dropdown.Toggle id="dropdown-basic">
@@ -101,7 +99,7 @@ export default function Header(props){
                                     </Dropdown.Item> */}
                                     <Dropdown.Item>
                                         <Link to={'./dashboard'}>
-                                            Dashboard
+                                            Planet
                                         </Link>
                                     </Dropdown.Item>
                                     <Dropdown.Item onClick={(e) => {e.preventDefault(); Logout(); }}>
