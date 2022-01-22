@@ -21,7 +21,7 @@ const Home = function () {
     const [loginShow , setLoginShow] = useState(false);
 
     const Cookie = new Cookies();
-    const isConfirmed = Cookie.get('confirmed')
+    const isConfirmed = Cookie.get('logged')
     const history = useHistory();
 
     useEffect(()=> {setLoaded(true)}, [loaded])
@@ -38,7 +38,7 @@ const Home = function () {
                             <h3>To buy your tokens, please Register and you’ll see the instructions how to buy and have Lively tokens...</h3>
                         </Col>
                         <Col xs={12} lg={4} className='registerBtn'>
-                            <div onClick={()=> {  isConfirmed ? history.push('./dashboard') : setRegisterShow(true)}}> Start Now </div>
+                            <div onClick={()=> {  isConfirmed ? history.push('./planet') : setRegisterShow(true)}}> Start Now </div>
                         </Col>
                     </Row>    
                 </MobileContainer>

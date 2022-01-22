@@ -175,7 +175,7 @@ $lightBlueColor: #66DAE9;
 
 
 .button{
-    min-width: 110px;
+    min-width: 92px;
     min-height: 22px;
     text-align: center;
     font-style: normal;
@@ -1557,7 +1557,7 @@ $lightBlueColor: #66DAE9;
             }
             span{
                 line-height: 50px;
-                font-size: 30px;
+                font-size: 26px;
                 @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
                     font-size: 22px;
                 }

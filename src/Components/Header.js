@@ -101,7 +101,7 @@ export default function Header(props){
                                     <Dropdown.Menu>
                                         
                                         <Dropdown.Item>
-                                            <Link to={'./dashboard'}>
+                                            <Link to={'./planet'}>
                                                 Planet<img src={dash}/>
                                             </Link>
                                         </Dropdown.Item>

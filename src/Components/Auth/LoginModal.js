@@ -51,7 +51,7 @@ const LoginModal = (props) => {
                     Cookie.set('refresh' , res?.data?.refresh_token);
                     Cookie.set('logged' , 'true');
                     onHide()
-                    history.push('/dashboard')
+                    history.push('/planet')
                 }
                 
                 
