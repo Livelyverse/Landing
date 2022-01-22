@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import Layout from "../Components/Basic/Layout";
 import PageBorderTitle from "../Components/Common/PageBorderTitle";
-import PageTitle from "../Components/Common/PageTitle";
 import DashboardData from "../Components/DashboardData";
 import { getUserName } from "../Components/Util/helper";
 
@@ -21,7 +20,6 @@ const Dashboard = function(){
                     <DashboardData />
                     
                 </PageBorderTitle>
-                {/* <PageTitle title={getUserName() +  "'s Planet"} /> */}
             </Layout>
         )
     }

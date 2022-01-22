@@ -24,7 +24,7 @@ export default function App() {
             <Route  path="/team" component={Team} />
             <Route  path="/transaction" component={Transaction} />
             <Route  path="/dashboard" component={Dashboard} />
-            {/* <Route  path="/profile" component={Profile} /> */}
+            <Route  path="/profile" component={Profile} />
             <Route  path="/" component={Home} />
         </Switch>
       </ScrollToTop>

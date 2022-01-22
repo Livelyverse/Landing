@@ -81,7 +81,7 @@ export default function Header(props){
                         <Col xs={2} lg={1}  onClick={handleShow}>
                             <img className="menutoggle" src={menu}></img>
                         </Col>
-                        {(logged === 'false') && 
+                        {(logged === 'false' || logged === undefined || logged === null) && 
                             <>
                             <Col xs={3} lg={2}>
                             <Button type="color" onClick={()=> setLoginShow(true)}> login </Button>
@@ -99,16 +99,17 @@ export default function Header(props){
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        {/* <Dropdown.Item>
-                                            <Link to={'./profile'}>
-                                                Profile
-                                            </Link>
-                                        </Dropdown.Item> */}
+                                        
                                         <Dropdown.Item>
                                             <Link to={'./dashboard'}>
                                                 Planet<img src={dash}/>
                                             </Link>
                                         </Dropdown.Item>
+                                        {/* <Dropdown.Item>
+                                            <Link to={'./profile'}>
+                                                Profile<img src={prof} />
+                                            </Link>
+                                        </Dropdown.Item> */}
                                         <Dropdown.Item onClick={(e) => {e.preventDefault(); Logout(); }} className="red">
                                                 LogOut <img src={lout} />
                                         </Dropdown.Item>
