@@ -175,7 +175,7 @@ $lightBlueColor: #66DAE9;
 
 
 .button{
-    min-width: 80px;
+    min-width: 110px;
     min-height: 22px;
     text-align: center;
     font-style: normal;
@@ -188,6 +188,7 @@ $lightBlueColor: #66DAE9;
     padding-right: 10px;
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
         font-size: 14px;
+        min-width: 86px
     }
     &.color{
         background-color: #52BAE9;
@@ -1490,8 +1491,8 @@ $lightBlueColor: #66DAE9;
 }
 
 .dropdown-toggle{
-    background-color: transparent !important;
-    border-color: $lightBlueColor;
+    background-color: $lightBlueColor;
+    color:#141414;
     border-radius: 15px;
     &:active{
         outline-color: $lightBlueColor;
@@ -1504,13 +1505,23 @@ $lightBlueColor: #66DAE9;
     }
 }
 
-.dropdown-menu{
-    background-color: rgba(0, 0, 0, 0.25);
-    border-color: $lightBlueColor;
+.dropdown-menu {
+    color: #141414 !important;
+    background-color: $lightBlueColor !important;
     a{
+        img{
+            width: 22px;
+            height: auto;
+        }
         text-decoration: none;
+        font-size: 18px !important;
+        color: #141414 !important;
+
         &:hover{
             color: #141414;
+        }
+        &.red{
+            color: red !important;
         }
     }
 }
@@ -1527,7 +1538,6 @@ $lightBlueColor: #66DAE9;
 }
 
 .dashboard , .userProfile{
-    background: rgba(0, 0, 0, 0.7);
     padding-top: 20px;
 
     .dashboardData {
@@ -1573,14 +1583,14 @@ $lightBlueColor: #66DAE9;
 
             table{
                 th{
-                    font-size: 18px;
+                    font-size: 15px;
                     padding-bottom: 10px;
                 }
                 tbody{
                     tr{
                         td{
                             padding-top: 20px;
-                            font-size: 16px;
+                            font-size: 13px;
                         }
                     }
                 }
@@ -1668,5 +1678,24 @@ $lightBlueColor: #66DAE9;
             }
         }
        
+    }
+}
+
+.pageBorder{
+    padding-top: 250px;
+    background: rgba($color: #000, $alpha: 0.7);
+    .pageBorderinner{
+        border: 2px solid #eee;
+        border-radius: 45px;
+        padding-bottom: 40px;
+    }
+    .pageBorderTtitle{
+        font-size: 36px;
+        font-weight: bold;
+        img{
+            width: 30px;
+            margin-left: 20px;
+        }
+        margin-bottom: 15px;
     }
 }

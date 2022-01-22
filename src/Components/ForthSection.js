@@ -30,7 +30,10 @@ export default function ForthSection() {
 
                     </Col>
                     <Col xs={10} style={{ textAlign: 'left' }} className="link">
-                        <span>Smart Contract:</span> <a href="https://polygonscan.com/address/0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c" target={'_blank'}>Trace on Polygon Scan</a>
+                        <span>Smart Contract:</span> 
+                        <a href="https://polygonscan.com/address/0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c" target={'_blank'}>
+                            {'0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c'.substring(0 , 8) + '...' + '0x60BC68f6B2F4eD1D1525D7BF01aA968155C8E52c'.substring(35 , 41)}
+                        </a>
                     </Col>
                 </Row>
 

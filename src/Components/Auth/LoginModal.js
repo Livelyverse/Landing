@@ -44,10 +44,17 @@ const LoginModal = (props) => {
                 console.log(res);
                 Cookie.set('auth' , res?.data?.access_token);
                 Cookie.set('userName' , userName);
-                Cookie.set('confirmed' , 'true');
-                Cookie.set('refresh' , res?.data?.refresh_token);
-                onHide()
-                history.push('/dashboard')
+                const confirm = Cookie.get('confirmed');
+                if(confirm === 'false'){
+                    toggle();
+                }else{
+                    Cookie.set('refresh' , res?.data?.refresh_token);
+                    Cookie.set('logged' , 'true');
+                    onHide()
+                    history.push('/dashboard')
+                }
+                
+                
             }).catch(err=> {
                 console.log(err?.response)
                 if(err?.response?.data?.message?.length > 0){

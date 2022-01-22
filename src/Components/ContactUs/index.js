@@ -16,7 +16,7 @@ const ContactUsSection = () => {
 
     const tmp = noError;
     const Cookie = new Cookies();
-    const user = Cookie.get('user');
+    const user = Cookie.get('userName');
 
     const validation = () => {
         if(!inputValidation(email , 'email')){
@@ -58,6 +58,7 @@ const ContactUsSection = () => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Control type="email" placeholder="name@example.com" value={email} onChange={(e) => setEmail(e.target.value)} className={errors.email ? 'error' : ''}/>
+
                        
                         <div className={`button`} onClick={sendMessage}> Send </div>
                     </Form.Group>
