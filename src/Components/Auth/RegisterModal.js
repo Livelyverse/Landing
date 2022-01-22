@@ -89,7 +89,7 @@ const RegisterModal = (props) => {
             Cookie.set('logged' , 'true');  
             setEmailVerify(false);
             setVerify(true)
-            history.push('/dashboard')
+            history.push('/planet')
         }).catch(err => {
             console.log(err)
             if(err.response.data.message.length > 0){

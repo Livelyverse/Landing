@@ -18,7 +18,7 @@ const DashboardData = () => {
             <MobileContainer className="dashboardData">
                 <Row>
                     <Col xs={12} lg={6}>
-                        <UserData type={'address'}  icon={wallet} title={"Wallet Address"} unit={""}/>
+                        <UserData type={'address'}  icon={wallet} title={"Wallet"} unit={""}/>
                     </Col>
                     <Col xs={12} lg={6}>
                         <UserData type={'balance'}  icon={balance} title={"Balance"} unit={"LVL"}/>
