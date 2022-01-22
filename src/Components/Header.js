@@ -12,6 +12,9 @@ import LoginModal from "./Auth/LoginModal";
 import Button from "./Button";
 import { Logout } from "../API/Auth";
 import { isMobile } from "react-device-detect";
+import dash from './../img/dash.png';
+import prof from './../img/prof.png';
+import lout from './../img/logout.png';
 
 export default function Header(props){
     const [show, setShow] = useState(false);
@@ -22,7 +25,7 @@ export default function Header(props){
 
     const {active} = props;
     const Cookie = new Cookies();
-    const isConfirmed = Cookie.get('confirmed');
+    const logged = Cookie.get('logged');
     return(
         <Container className="header" fluid>
             <Offcanvas show={show} onHide={handleClose} placement="end" className="drawer"> 
@@ -45,7 +48,9 @@ export default function Header(props){
                     <Row className="drawerMenu">
                         {isMobile && 
                             <Col xs={12} className="logoMobile" onClick={handleClose}>
-                                <img src={logo} />
+                                <Link to={'/'}>
+                                    <img src={logo} />
+                                </Link>
                             </Col>
                         }
                         <Col xs={12} >
@@ -67,14 +72,16 @@ export default function Header(props){
             </Offcanvas>
             <Row>
                 <Col xs={12} lg={6} className="logo">  
-                    <img src={logo} />
+                    <Link to={'/'}>
+                        <img src={logo} />
+                    </Link>
                 </Col>
                 <Col xs={12} lg={6}>
                     <Row className="rightMenu">
                         <Col xs={2} lg={1}  onClick={handleShow}>
                             <img className="menutoggle" src={menu}></img>
                         </Col>
-                        {(isConfirmed === undefined || isConfirmed === null || isConfirmed === 'false') && 
+                        {(logged === 'false') && 
                             <>
                             <Col xs={3} lg={2}>
                             <Button type="color" onClick={()=> setLoginShow(true)}> login </Button>
@@ -84,28 +91,28 @@ export default function Header(props){
                             </Col>
                             </>
                         }
-                        {isConfirmed === 'true' && 
+                        {(logged === 'true') && 
                             <Col xs={6} lg={2}>
                                 <Dropdown>
-                                <Dropdown.Toggle id="dropdown-basic">
-                                    {getUserName()}
-                                </Dropdown.Toggle>
+                                    <Dropdown.Toggle id="dropdown-basic">
+                                        {getUserName()}
+                                    </Dropdown.Toggle>
 
-                                <Dropdown.Menu>
-                                    {/* <Dropdown.Item>
-                                        <Link to={'./profile'}>
-                                            Profile
-                                        </Link>
-                                    </Dropdown.Item> */}
-                                    <Dropdown.Item>
-                                        <Link to={'./dashboard'}>
-                                            Planet
-                                        </Link>
-                                    </Dropdown.Item>
-                                    <Dropdown.Item onClick={(e) => {e.preventDefault(); Logout(); }}>
-                                            LogOut
-                                    </Dropdown.Item>
-                                </Dropdown.Menu>
+                                    <Dropdown.Menu>
+                                        {/* <Dropdown.Item>
+                                            <Link to={'./profile'}>
+                                                Profile
+                                            </Link>
+                                        </Dropdown.Item> */}
+                                        <Dropdown.Item>
+                                            <Link to={'./dashboard'}>
+                                                Planet<img src={dash}/>
+                                            </Link>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={(e) => {e.preventDefault(); Logout(); }} className="red">
+                                                LogOut <img src={lout} />
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
                                 </Dropdown>
                             </Col>
                         }

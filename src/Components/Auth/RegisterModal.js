@@ -33,7 +33,7 @@ const RegisterModal = (props) => {
 
     const tmp = noError;
     const Cookie = new Cookies();
-    const isConfirmed = Cookie.get('confirm');
+    const isConfirmed = Cookie.get('confirmed');
     const history = useHistory();
     
     const validation = () => {
@@ -86,6 +86,7 @@ const RegisterModal = (props) => {
             console.log(res);
             Cookie.set('refresh' , res?.data?.refresh_token)
             Cookie.set('confirmed' , 'true')
+            Cookie.set('logged' , 'true');  
             setEmailVerify(false);
             setVerify(true)
             history.push('/dashboard')
@@ -103,7 +104,7 @@ const RegisterModal = (props) => {
             onHide();
             setEmailVerify(true);
         }
-    } , [])
+    } , [show])
     return(
         <>
             <BasicModal title="Sign Up" show={show} onHide={onHide} >
@@ -167,7 +168,7 @@ const RegisterModal = (props) => {
                         onChange={(text) => setConfirmCode(text.target.value)}
                         error = {errors.confirm}
                     />
-                    <CountDown limit={60}/>
+                    <CountDown limit={180}/>
                 </Form>
                 <span className='generalFormMsg'> {generalMsg} </span>
                 <Button type='color'  className={`formBtn ${confirmCode.length > 0 ? '' : 'disable'}` } onClick={ confirmCode.length > 0 ? finalVerify : ''}> Verify </Button>
