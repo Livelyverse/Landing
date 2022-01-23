@@ -15,6 +15,7 @@ import { isMobile } from "react-device-detect";
 import dash from './../img/dash.png';
 import prof from './../img/prof.png';
 import lout from './../img/logout.png';
+import { IsUserLogged } from "./Util/CookieManager";
 
 export default function Header(props){
     const [show, setShow] = useState(false);
@@ -25,7 +26,8 @@ export default function Header(props){
 
     const {active} = props;
     const Cookie = new Cookies();
-    const logged = Cookie.get('logged');
+    const userName = Cookie.get('userName');
+    const logged = IsUserLogged(userName);
     return(
         <Container className="header" fluid>
             <Offcanvas show={show} onHide={handleClose} placement="end" className="drawer"> 
@@ -81,7 +83,7 @@ export default function Header(props){
                         <Col xs={2} lg={1}  onClick={handleShow}>
                             <img className="menutoggle" src={menu}></img>
                         </Col>
-                        {(logged === 'false' || logged === undefined || logged === null) && 
+                        {(!logged) && 
                             <>
                             <Col xs={3} lg={2}>
                             <Button type="color" onClick={()=> setLoginShow(true)}> login </Button>
@@ -91,7 +93,7 @@ export default function Header(props){
                             </Col>
                             </>
                         }
-                        {(logged === 'true') && 
+                        {(logged) && 
                             <Col xs={6} lg={2}>
                                 <Dropdown>
                                     <Dropdown.Toggle id="dropdown-basic">
@@ -105,12 +107,12 @@ export default function Header(props){
                                                 Planet<img src={dash}/>
                                             </Link>
                                         </Dropdown.Item>
-                                        {/* <Dropdown.Item>
+                                        <Dropdown.Item>
                                             <Link to={'./profile'}>
                                                 Profile<img src={prof} />
                                             </Link>
-                                        </Dropdown.Item> */}
-                                        <Dropdown.Item onClick={(e) => {e.preventDefault(); Logout(); }} className="red">
+                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={(e) => {e.preventDefault(); Logout(userName); }} className="red">
                                                 LogOut <img src={lout} />
                                         </Dropdown.Item>
                                     </Dropdown.Menu>

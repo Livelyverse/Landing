@@ -5,12 +5,10 @@ import { injected } from "./../../API/Wallet";
 import Cookies from "universal-cookie";
 
 import copy from './../../img/dashboard/copy.png';
-import { lively_Abi } from "../Util/contract";
-import Web3 from "@web3-react/core";
 import { getUserBalance } from "../../API/Polygon";
 
 
-const WalletConnect = ({purpose}) => {
+const WalletConnect = ({purpose }) => {
     const { active, account, library, connector, activate, deactivate } = useWeb3React()
 
     const [address , setAddress] = useState('');
@@ -29,7 +27,6 @@ const WalletConnect = ({purpose}) => {
             try {
                 await activate(injected)
                 setAddress(account);
-                
                 } catch (ex) {
                 console.log(ex)
                 }
@@ -38,6 +35,7 @@ const WalletConnect = ({purpose}) => {
 
 
     if(active){
+        Cookie.set('address' , account);
         if(purpose === 'balance'){ 
             if(balance === undefined){
                 getUserBalance(account).then(res=> {

@@ -9,10 +9,16 @@ import balance from './../../img/dashboard/balance.png';
 import trans from './../../img/dashboard/trans.png';
 import wallet from './../../img/dashboard/wallet.png';
 import buy from './../../img/buy.png';
+import { useEffect, useState } from "react";
+import ContactUsSection from "../ContactUs";
+
+
+
 
 const DashboardData = () => {
     const Cookie = new Cookies();
-
+    const add = Cookie.get('address');
+    
     return(
         <Container fluid className="dashboard">
             <MobileContainer className="dashboardData">
@@ -68,8 +74,11 @@ const DashboardData = () => {
                     
                 <Row>
                     <Col>
-                            <UserData type={'table'} icon={trans} title={'Transaction List'} unit={''} />
+                            <UserData type={'table'} icon={trans} title={'Transaction List'} unit={''}  />
                     </Col>
+                </Row>
+                <Row style={{textAlign:'center'}}>
+                    <ContactUsSection notitle={true} intro={"Send Us your transaction Hash together with the address where you want yout LVL tokens to be sent"}/>
                 </Row>
             </MobileContainer>
             {/* <div >

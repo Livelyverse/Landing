@@ -1,12 +1,17 @@
 import axios from 'axios';
 import { getAccessToken } from '../Components/Util/helper';
 import Cookies from 'universal-cookie';
+import { UserIsNotLogged } from '../Components/Util/CookieManager';
 
 
 const Cookie = new Cookies();
 const AUTH_PATH = process.env.REACT_APP_API_URL + "auth/";
 
-const confirmed = Cookie.get('confirmed');
+const user = Cookie.get('user');
+const userName = Cookie.get('userName');
+let confirmed = undefined;
+if(userName)
+    confirmed = user[userName]['confirm'];
 axios.interceptors.request.use(
     (res) => {
         return res;
@@ -22,10 +27,7 @@ axios.interceptors.response.use(
     },
     (err) => {
         if(err.response.status === 417){
-            // console.log('inter')
-            // console.log(err.response);
             if(confirmed === 'true'){
-                // Logout();
                 RefreshToekn().then(res=>{
                     Cookie.set('auth' , res.data.access_token);
                     Cookie.set('refresh' , res.data.refresh_token);
@@ -59,11 +61,11 @@ export const RefreshToekn = () => {
     return axios.post(AUTH_PATH+'refresh' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
 }
 
-export const Logout = () => {
+export const Logout = (user) => {
     Cookie.remove('auth');
     Cookie.remove('userName');
     Cookie.remove('refresh');
-    Cookie.set('logged' , 'false');
+    UserIsNotLogged(user)
     window.location.replace('/');
 }
 

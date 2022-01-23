@@ -8,12 +8,14 @@ import moment from 'moment';
 const TransactionTable  = () => {
 
     const [data , setData] = useState([]);
+    const [loading , setLoading] = useState(false);
 
     useEffect(()=> {
         allTrans();
     }, [])
 
     const allTrans = () => {
+        setLoading(true);
         getAllTransaction().then(res => {
             const t = [];
             res.data.result.map((item) => {
@@ -29,6 +31,7 @@ const TransactionTable  = () => {
             })
             
             setData(t);
+            setLoading(false);
         }).catch(err => {
             console.error(err)
         })       
@@ -83,7 +86,7 @@ const TransactionTable  = () => {
       
     return(
         <MobileContainer className="transactions">
-            {/* <div className='tableFilter'>
+            <div className='tableFilter'>
                 
                 <FormLabel> Filter By Wallet </FormLabel>
                 
@@ -96,9 +99,9 @@ const TransactionTable  = () => {
                     <option value="0x00fc4fBcf0F01553bfC470fF85FCA2F3F21e138b">Bounty Programs Wallet</option>
                     <option value="0x7A6D0f0F96f39E54AbfEbA3D1dA6f56c921B9cB7">Charity Wallet</option>
                 </Form.Select>
-            </div> */}
+            </div>
             
-            <DataTable columns={columns} data={data}/>
+            <DataTable columns={columns} data={data} loading={loading}/>
         </MobileContainer>
     )
 }
