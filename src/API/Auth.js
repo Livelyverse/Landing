@@ -33,8 +33,11 @@ axios.interceptors.response.use(
                     Cookie.set('refresh' , res.data.refresh_token);
                     return res;
                 }).catch(err => console.log(err)) 
-            }
+            }else Logout(userName);
         } 
+        else if(err.response.status === 401){
+            Logout(userName);
+        }
         return Promise.reject(err);
      }
 );
