@@ -5,7 +5,7 @@ import Cookies from 'universal-cookie';
 import { SentContactMessage } from '../../API/Contact';
 
 
-const ContactUsSection = () => {
+const ContactUsSection = ({notitle , intro}) => {
     
     const [msg , setMsg] = useState('');
     const [email , setEmail] = useState('');
@@ -46,9 +46,18 @@ const ContactUsSection = () => {
     }
     return(
     <Container className="mt90px" fluid>
-        <Row className="title">
-            <h1>Contact Us</h1>
-        </Row>
+        {!notitle ?( 
+            <Row className="title">
+                <h1>Contact Us</h1>
+            </Row>) : (
+                <Row style={{textAlign:'center' , fontSize:'20px'}}>
+                    <p>
+                        {intro}
+                    </p>
+                    
+                </Row>
+            )
+        }
         <Row >
             <div className="contact-us-container mt60px">
                 <Form className='homeContactUs'>

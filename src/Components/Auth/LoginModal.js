@@ -7,6 +7,8 @@ import Cookies from 'universal-cookie';
 import { Login } from '../../API/Auth';
 import { inputValidation } from '../Util/Validation';
 import { useHistory } from 'react-router-dom';
+import { CreatePastUserCookie, IsUserConfirmed, UserIsLogged } from '../Util/CookieManager';
+import { getUserProfile } from '../../API/Profile';
 
 const LoginModal = (props) => {
     const {show , onHide , toggle} = props;
@@ -33,28 +35,31 @@ const LoginModal = (props) => {
             tmp.password = true;
             tmp.all = true;
         } else{tmp.password = false; tmp.all = false}
-        
         setErrors(tmp)
     }
-
+    
     const loginUser = () => {
         validation();
         if(!tmp.all){
+
             Login({username : userName , password : password}).then(res=> {
                 console.log(res);
                 Cookie.set('auth' , res?.data?.access_token);
                 Cookie.set('userName' , userName);
-                const confirm = Cookie.get('confirmed');
-                if(confirm === 'false'){
-                    toggle();
-                }else{
-                    Cookie.set('refresh' , res?.data?.refresh_token);
-                    Cookie.set('logged' , 'true');
+                const refresh = res?.data?.refresh_token;
+                getUserProfile(userName).then(res => {
+                    console.log(res);
+                    CreatePastUserCookie(userName);
+                    Cookie.set('refresh' , refresh);
                     onHide()
                     history.push('/planet')
-                }
-                
-                
+                }).catch(err => {
+                    console.log(err);
+                    if(err?.response?.status === 401){
+                        IsUserConfirmed(userName);
+                        toggle();
+                    }
+                })
             }).catch(err=> {
                 console.log(err?.response)
                 if(err?.response?.data?.message?.length > 0){
@@ -65,8 +70,6 @@ const LoginModal = (props) => {
             })
         }
     }
-
-
     return(
         <BasicModal title="Sign In" show={show} onHide={onHide} >
             <Form>

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import WalletConnect from "../WalletConnect";
 import moment from 'moment';
 import { getAllTransactionByWallet } from './../../API/Polygon';
@@ -6,20 +6,23 @@ import DataTable from "../Basic/DataTable";
 import Cookies from "universal-cookie";
 
 const UserData = (props) => {
-    const {type , icon , title , unit , value} = props;
-    console.log(type)
+    const {type , icon , title , unit , value } = props;
+    
     const [data , setData] = useState([]);
     const [apiCall , setApiCall] = useState(true);
+    const [loading , setLoading] = useState(false);
+    const Coookie = new Cookies();
+    const add = Coookie.get('address'); 
+    const [address , setAddress]= useState(add)
 
-    const Cookie = new Cookies();
-    const add = Cookie.get('address');
-    
     useEffect(()=> {
+        console.log('new render' , address) ;
         if(apiCall && type === 'table'){
-            walletTrans(add);
+            console.log('now');
+            walletTrans(address);
             setApiCall(false)
         }
-    }, [])
+    }, [apiCall])
 
     const columns = useMemo(
         () => [
@@ -61,7 +64,8 @@ const UserData = (props) => {
     
      
       const walletTrans = (address) => {
-        getAllTransactionByWallet (address).then(res=> {
+        getAllTransactionByWallet(address).then(res=> {
+            setLoading(true);
             const t = [];
             res.data.result.map((item) => {
                 const n = moment.unix(item.timeStamp);
@@ -80,11 +84,11 @@ const UserData = (props) => {
             
             setData(t);
             setApiCall(false)
+            setLoading(false);
         }).catch(err => {
             console.error(err);
         })
     }
-
 
     if(type === 'common'){
         return(
@@ -102,7 +106,7 @@ const UserData = (props) => {
             <div className="dashboardUserData">
                 <img src={icon} />
                 <span className="title"> {title} : </span>
-                <WalletConnect purpose={'address'} />
+                <WalletConnect purpose={'address'}/>
                 <span className="unit"> {unit} </span>
             </div>
         )
@@ -127,9 +131,9 @@ const UserData = (props) => {
             <div className="dashboardUserData">
                 <img src={icon} />
                 <span className="title"> {title} : </span>
-                <span>{add === undefined  ? 'All Lively Contract Transactions' :  'Your Wallet Transactions' }  </span>  
+                <span>{address === undefined  ? 'All Lively Contract Transactions' :  'Your Wallet Transactions' }  </span>  
             </div>
-            <DataTable columns={columns} data={data}/>
+            <DataTable columns={columns} data={data} loading={loading}/>
         </div>
     )
     

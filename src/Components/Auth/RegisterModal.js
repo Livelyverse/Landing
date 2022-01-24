@@ -11,6 +11,7 @@ import CountDown from '../Basic/CountDown';
 import Cookies from 'universal-cookie';
 
 import { useHistory } from 'react-router-dom';
+import { IsUserConfirmed, UserIsConfirmed, UserIsLogged, UserIsNotConfirmed } from '../Util/CookieManager';
 
 
 const RegisterModal = (props) => {
@@ -33,7 +34,7 @@ const RegisterModal = (props) => {
 
     const tmp = noError;
     const Cookie = new Cookies();
-    const isConfirmed = Cookie.get('confirmed');
+    const cookieUserName = Cookie.get('userName');
     const history = useHistory();
     
     const validation = () => {
@@ -49,7 +50,7 @@ const RegisterModal = (props) => {
             tmp.password = true;
             tmp.all = true;
         } else{tmp.password = false; tmp.all = false}
-        if(password !== vpassword && vpassword.length === 0){
+        if(password !== vpassword || !inputValidation(vpassword , 'password')){
             tmp.vpassword = true;
             tmp.all = true
         } else{ tmp.vpassword = false; tmp.all = false}
@@ -64,15 +65,15 @@ const RegisterModal = (props) => {
                 then(res => {
                     Cookie.set('auth', res?.data?.access_token);
                     Cookie.set('userName' , userName);
-                    Cookie.set('confirmed' , 'false');
+                    UserIsNotConfirmed(userName);
                     Cookie.set('refresh' , '');
                     onHide();
                     setGeneralMsg('')
                     setEmailVerify(true);
                 }).catch(err=>{
-                    console.log(err.response)
-                    if(err.response.data.message.length > 0){
-                        setGeneralMsg(err.response.data.message)
+                    console.log(err?.response)
+                    if(err?.response?.data?.message?.length > 0){
+                        setGeneralMsg(err?.response?.data?.message)
                         setErrors({...errors , email : true , userName : true});
                         setPassword('')
                         setvPassword('')
@@ -85,24 +86,27 @@ const RegisterModal = (props) => {
         MailCodeVerified({verifyCode : confirmCode}).then(res =>{ 
             console.log(res);
             Cookie.set('refresh' , res?.data?.refresh_token)
-            Cookie.set('confirmed' , 'true')
-            Cookie.set('logged' , 'true');  
+            UserIsConfirmed(userName);
+            UserIsLogged(userName);
             setEmailVerify(false);
             setVerify(true)
             history.push('/planet')
         }).catch(err => {
             console.log(err)
-            if(err.response.data.message.length > 0){
-                setGeneralMsg(err.response.data.message)
+            if(err?.response?.data?.message?.length > 0){
+                setGeneralMsg(err?.response?.data?.message)
                 setErrors({...errors , confirm : true})
             }
         })
     }
 
     useEffect(()=>{
-        if(isConfirmed === 'false'){
-            onHide();
-            setEmailVerify(true);
+        console.log(show + '   ++++ ' + cookieUserName + " ---- " + IsUserConfirmed(cookieUserName))
+        if(show && cookieUserName){
+            if(!IsUserConfirmed(cookieUserName)){
+                onHide();
+                setEmailVerify(true);
+            }
         }
     } , [show])
     return(

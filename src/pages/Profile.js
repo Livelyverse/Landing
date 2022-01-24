@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 
 import Layout from "../Components/Basic/Layout";
 import PageBorderTitle from "../Components/Common/PageBorderTitle";
-import DashboardData from "../Components/DashboardData";
 import { getUserName } from "../Components/Util/helper";
 
 import loading from './../img/loading.gif';
 import profile from './../img/profileIcon.png';
+
+import UserProfile from "../Components/UserProfile/Index";
 const Profile = function(){
 
     const [loaded , setLoaded] = useState(false)
@@ -17,7 +18,7 @@ const Profile = function(){
         return(
             <Layout containerClassName={'App'} menuActive={-1}>
                 <PageBorderTitle title={getUserName() +  "'s Profile"} icon={profile}>
-                    <DashboardData />
+                    <UserProfile />
                     
                 </PageBorderTitle>
             </Layout>
