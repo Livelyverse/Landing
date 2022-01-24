@@ -12,14 +12,14 @@ const userName = Cookie.get('userName');
 let confirmed = undefined;
 if(userName)
     confirmed = user[userName]['confirm'];
-axios.interceptors.request.use(
-    (res) => {
-        return res;
-    },
-    (err) => {
-        return Promise.reject(err);
-     }
-);
+    axios.interceptors.request.use(
+        (res) => {
+            return res;
+        },
+        (err) => {
+            return Promise.reject(err);
+        }
+    );
 
 axios.interceptors.response.use(
     (res) => {
@@ -35,8 +35,8 @@ axios.interceptors.response.use(
                 }).catch(err => console.log(err)) 
             }else Logout(userName);
         } 
-        else if(err.response.status === 401){
-            Logout(userName);
+        if(err.response.status === 401){
+            LogoutAllUsers();
         }
         return Promise.reject(err);
      }
@@ -70,6 +70,20 @@ export const Logout = (user) => {
     Cookie.remove('refresh');
     UserIsNotLogged(user)
     window.location.replace('/');
+}
+
+export const LogoutAllUsers = () => {
+    Cookie.remove('auth');
+    Cookie.remove('userName');
+    Cookie.remove('refresh');
+    const userCookie = Cookie.get('user');
+    
+    Object.keys(userCookie).map((item) => {
+        userCookie[item]['logged'] = 'false';
+    })
+    Cookie.set('user' , userCookie);
+    window.location.replace('/');
+
 }
 
 
