@@ -12,26 +12,20 @@ const userName = Cookie.get('userName');
 let confirmed = undefined;
 if(userName)
     confirmed = user[userName]['confirm'];
-axios.interceptors.request.use(
-    (res) => {
-        return res;
-    },
-    (err) => {
-        console.log('ahhaaaaaaaaaaaaaaaaaa' , err.response)
-        if(err.response.status === 401){
-            Logout(userName);
+    axios.interceptors.request.use(
+        (res) => {
+            return res;
+        },
+        (err) => {
+            return Promise.reject(err);
         }
-        return Promise.reject(err);
-
-     }
-);
+    );
 
 axios.interceptors.response.use(
     (res) => {
         return res;
     },
     (err) => {
-        console.log('here' , err.response)
         if(err.response.status === 417){
             if(confirmed === 'true'){
                 RefreshToekn().then(res=>{
