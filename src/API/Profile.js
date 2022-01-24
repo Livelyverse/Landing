@@ -11,7 +11,7 @@ export const getUserProfile = (user) => {
 }
 
 export const UploadUserImage = (formData) => {
-    return axios.post(process.env.REACT_APP_API_URL+'profile/user/image/upload', formData , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
+    return axios.post(process.env.REACT_APP_API_URL+'profile/user/image/upload', formData , {headers : {'Authorization': 'Bearer ' + getAccessToken() , 'Content-Type': 'multipart/form-data'}})
 }
 
 export const UpdateUserProfile = (data) => {

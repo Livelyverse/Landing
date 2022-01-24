@@ -14,8 +14,7 @@ const UserAvatar = ({image}) => {
         console.log(event.target.files[0])
         setUserImage( URL.createObjectURL( event.target.files[0]));
         const formData = new FormData();
-        formData.append("file" , new Blob( [event.target.files[0].name , event.target.files[0]] , {type : 'image/jpeg'} ));
-
+        formData.append("file" , event.target.files[0] );
         UploadUserImage(formData).then(res=> console.log(res)).catch(err=> console.log(err));
     }
     
