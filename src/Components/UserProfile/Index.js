@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { Col, Form, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { getUserProfile, UpdateUserProfile } from "../../API/Profile";
 import MobileContainer from "../Basic/MobileContainer";
 import Cookies from "universal-cookie";
+import {Link, useHistory} from 'react-router-dom';
 
 import UserAvatar from "./UserAvatar";
 import UserFormData from "./UserFormData";
+import changep from './../../img/changep.png';
+import { LogoutAllUsers } from "../../API/Auth";
 
 
 const UserProfile = () => {
@@ -13,11 +16,16 @@ const UserProfile = () => {
     const add = Cookie.get('address');
     const userName = Cookie.get('userName');
 
+    const history = useHistory();
     const [data , setData] = useState([])
     const [load , setload] = useState(false);
     const [userData , setUserData] = useState({id:'' , firstname : '' , lastname: '' , userName : '' , walletAddress : ''})
    
     useEffect(()=> {
+        if(!userName){
+            LogoutAllUsers();
+            history.push('/');
+        }
         getUserProfile(userName).then(res=> {
             console.log(res.data); 
             setData(res.data);
@@ -56,7 +64,13 @@ const UserProfile = () => {
                             <UserFormData title={'Last Name'} value={userData.lastname} editable={true} onChange={(e)=> setUserData({...userData , lastname: e.target.value})} submit={updateUserData}/>
                             <UserFormData title={'Email'} value={data.email} />
                             <UserFormData title={'Wallet Address'} value={data.walletAddress}/>
+                            <Link to={'/changepassword'} className="changePasswordLink">
+                                Change Password  <img src={changep} />
+                            </Link>
                         </Col>
+                    </Row>
+                    <Row>
+                        
                     </Row>
                     
                 </MobileContainer>

@@ -64,6 +64,11 @@ export const RefreshToekn = () => {
     return axios.post(AUTH_PATH+'refresh' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
 }
 
+
+export const ChangePassword = (data) => {
+    return axios.post(AUTH_PATH+'changepassword' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
+}
+
 export const Logout = (user) => {
     Cookie.remove('auth');
     Cookie.remove('userName');
@@ -83,7 +88,6 @@ export const LogoutAllUsers = () => {
     })
     Cookie.set('user' , userCookie);
     window.location.replace('/');
-
 }
 
 

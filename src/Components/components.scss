@@ -960,7 +960,7 @@ $lightBlueColor: #66DAE9;
             border-color: #52BAE9;
             border-width: 2px;
             &.error{
-                border-color: red;
+                border-color: red !important;
             }
         }
         input{
@@ -971,7 +971,7 @@ $lightBlueColor: #66DAE9;
             border-color: #52BAE9;
             border-width: 2px;
             &.error{
-                border-color: red;
+                border-color: red !important;
             }
         }
         .button{
@@ -1646,6 +1646,13 @@ $lightBlueColor: #66DAE9;
 
 .userProfile{
     padding-top: 60px;
+    .changePasswordLink{
+        color: #52BAE9;
+        text-decoration: none;
+        img{
+            width: 20px;
+        }
+    }
 }
 .userAvatarWrapper{
     width: 120px;
@@ -1659,10 +1666,13 @@ $lightBlueColor: #66DAE9;
     background-repeat: no-repeat;
     text-align: center;
     cursor: pointer;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        margin-bottom: 30px;
+    }
 }
 
 .profileUserData{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     .profileUserTitle {
         font-size: 20px;
         font-weight: bold;
@@ -1749,5 +1759,84 @@ $lightBlueColor: #66DAE9;
     padding-top: 20px;
     img{
         width: 6%;
+    }
+}
+
+
+.changepTitle{
+    font-size: 28px;
+    margin-top: 40px;
+    margin-left: 60px;
+    display: flex;
+    img{
+        width: 30px;
+        margin-left: 10px;
+        height: 35px;
+    }
+}
+.changePasswordForm{
+    margin-top: 50px;
+    .changePasswordBtn{
+        background-color: #52BAE9;
+        padding: 10px 20px;
+        width:  100px;
+        text-align: center;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        &.cancel{
+            margin-left: 30px;
+        }
+    }
+}
+
+.changePasswordBtnWrapper{
+    padding-right: 60px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        padding-right: 15px;
+        display: flex;
+        align-items: center;
+    }
+}
+.changePasswordInputRow{
+    padding: 20px 60px;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+        padding: 0px;
+    }
+    .changePasswordInputRowTitle{
+        font-size: 22px;
+        font-weight: bold;
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+            font-size: 18px;
+        }
+    }
+    .changePasswordInputRowInput{
+        label{
+            display: none;
+        }
+        div{
+            position: relative;
+        }
+        input{
+            background: transparent;
+            border-color: $lightBlueColor;
+            color: white;
+            border-radius: 20px;
+            padding: 10px 20px;
+            &.error{
+                border-color: red;
+            }
+        }
+        small{
+            color: #ccc !important;
+        }
+        img{
+            position: absolute;
+            right: 20px;
+            top: 7px;
+            width: 30px;
+            filter: invert(1);
+            cursor: pointer;
+        }
     }
 }

@@ -13,6 +13,7 @@ import Transaction from './pages/Transaction';
 import ScrollToTop from './Components/Basic/ScrollToTop';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import ChangePassword from './pages/ChangePassword';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route  path="/transaction" component={Transaction} />
             <Route  path="/planet" component={Dashboard} />
             <Route  path="/profile" component={Profile} />
+            <Route  path="/changepassword" component={ChangePassword} />
             <Route  path="/" component={Home} />
         </Switch>
       </ScrollToTop>
