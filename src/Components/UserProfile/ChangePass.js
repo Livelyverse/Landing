@@ -9,7 +9,7 @@ import { inputValidation } from '../Util/Validation';
 import changep from './../../img/changepwhite.png';
 
 
-const ChangePasswordInput = ({title , value , onChange , error , msg , placeholder}) => {
+const ChangePasswordInput = ({title , value , onChange , error , msg , placeholder , id}) => {
 
     return(
         <Row className='changePasswordInputRow'>
@@ -19,7 +19,7 @@ const ChangePasswordInput = ({title , value , onChange , error , msg , placehold
             <Col xs={6} lg={9} className='changePasswordInputRowInput'>
                 <AuthInput 
                     title={''}
-                    controlId="ChangePassword.CurrentPassword" 
+                    controlId={id} 
                     type="password" 
                     placeholder={placeholder}
                     msg={msg}
@@ -39,6 +39,7 @@ const ChangePass = () => {
     const [newPass , setNewPass] = useState('');
     const [newPassV , setNewPassV] = useState('');
 
+    const [generalMsg , setGeneralMsg] = useState('');
 
     const noError = {password : false , newPass : false , newPassV : false , all : false};
     const [errors , setErrors] = useState({password : false , newPass : false , newPassV : false , all : false});
@@ -83,10 +84,14 @@ const ChangePass = () => {
                 newPassword : newPass,
             };
             ChangePassword(data).then(res => {
-                console.log(res);
                 history.push('/profile');
             }).catch(err => {
-                console.log(err)
+                if(err.response.status === 403){
+                    setGeneralMsg(err?.response?.data?.message);
+                    setOldPass('');
+                    setNewPassV('');
+                    setNewPass('');
+                }
             })
         }
     }
@@ -105,6 +110,7 @@ const ChangePass = () => {
                     error={errors.password}
                     msg={'Your Current Password'}
                     placeholder={'Current Password'}
+                    id={'ChangePassword.currentPassword'}
                 />
                 <ChangePasswordInput 
                     title={'New Password'}  
@@ -113,6 +119,8 @@ const ChangePass = () => {
                     error={errors.newPass}
                     msg={'8 characters at least - include Upper and Lower case and digit'}
                     placeholder={'New Password'}
+                    id={'ChangePassword.newPassword'}
+
                 />
                 <ChangePasswordInput 
                     title={'New Password Confirm'}  
@@ -121,7 +129,14 @@ const ChangePass = () => {
                     error={errors.newPassV}
                     msg={'8 characters at least - include Upper and Lower case and digit'}
                     placeholder={'New Password Confirm' }
+                    id={'ChangePassword.currentPasswordConfirm'}
                 />
+                <Row style={{marginBottom:'20px' , paddingLeft:'50px'}}> 
+                    <Col lg={3} xs={12}></Col>
+                    <Col lg={9} xs={12}>
+                        <span className='generalFormMsg'> {generalMsg} </span>
+                    </Col>
+                </Row>
                 <Row style={{paddingLeft:'60px'}}>
                     <Col lg={3} xs={12}></Col>
                     <Col lg={9} xs={12} style={{paddingLeft:'0px' , display:'flex'}}>
