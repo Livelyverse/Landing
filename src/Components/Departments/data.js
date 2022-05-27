@@ -29,6 +29,7 @@ export const marketing = [
     { name: 'Roberto Luis Garay', position: 'Producer of UCL Partner of Lively', image: roberto , 
     bio:"Since 1996 developing products such as fiction content, entertainment, independent miniseries, advertising, etc ... for Argentine, Italian, Spanish and Uruguayan television in various companies and broadcasters of air or cable TV and cinema. He is also the current producer of UCL and strategic partner of Lively Planet, supporting and being part of Lively project dedicated to content creators. "},
 
+    
 ]
 
 export const business = [

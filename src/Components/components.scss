@@ -241,7 +241,7 @@ $lightBlueColor: #66DAE9;
     height: 100%;
     top: 0;
     text-align: center;
-    padding-top: 300px;
+    padding-top: 160px;
     h2{
         font-size: 60px;
         margin-bottom: 30px;
@@ -250,10 +250,11 @@ $lightBlueColor: #66DAE9;
         }
     }
     span{
-        font-size: 42px;
+        // text-align: justify;
+        font-size: 32px;
         text-shadow: #333 5px 5px 15px;
         @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-            font-size: 26px;
+            font-size: 18px;
         }
     }
 }
@@ -788,6 +789,7 @@ $lightBlueColor: #66DAE9;
     border-bottom: 3px solid #{$lightBlueColor};
     margin-bottom: 20px;
     h1{
+        font-size: 39px;
         @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
             font-size: 22px;
         }

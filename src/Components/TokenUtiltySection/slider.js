@@ -41,8 +41,8 @@ const settings = {
 }
 
 const sliderItem = [
-    { title: "Commercial transactions", desc: "Users will be able to access certain PREMIUM utilities within the platform with Lively Coin (LVL), such as exclusive content access, enjoy zero commission fees on transactions, P2P trading, creation of private channels, among many others." },
-    { title: "Fees", desc: "Minimal fees on purchase/sale transactions of services within the platform that will be automatically converted to LVL.Creation of NFTs on the platform itself, payment in LVL. Fees for the sale of NFTs in proportion to commission" },
+    { title: "Access to crowdfunding and Decentralized VC", desc: "In our platform you will be able to invest in startups and companies that are in our ecosystem and which have been previously validated. If you are experienced in startup validations and valuations, you can be a part of our DAO & if you need funds for your startup(Business) you can do it on our platform." },
+    { title: "Access to Staking plans", desc: "With our token you can access to different staking plans section within the platform." },
     { title: "Reward System", desc: "All viewers are rewarded for participating in the ecosystem through different ways. Lively Coin will be used as a blockchain-based exchange of bonus points." }
 ]
 
