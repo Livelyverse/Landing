@@ -12,7 +12,7 @@ export default function Banner() {
                     <h2>LIVELY PLANET</h2>
                 </Col>
                 <Col xs={12} lg={9}>
-                    <span>The Latest Blockchain Powered Solution made for audiovisual creators <br /> with the newest paying systems, entertainment platform & with our own tv program show</span>
+                <span>The first blockchain platform that has its own TV show(Lively World) with the capacity of fundraising for start ups & companies with our new model, “Decentralized Venture”. Apart from our streaming platform for projects´ crowdfunding & audiovisual content creations. <br /> <br />Thus we have media on one hand, and investment on the other hand. And that brings us power.</span>
                 </Col>
 
                 <Col xs={12} lg={8}>
