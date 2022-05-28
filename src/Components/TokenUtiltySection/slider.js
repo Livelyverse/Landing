@@ -41,7 +41,7 @@ const settings = {
 }
 
 const sliderItem = [
-    { title: "Access to crowdfunding and Decentralized VC", desc: "In our platform you will be able to invest in startups and companies that are in our ecosystem and which have been previously validated. If you are experienced in startup validations and valuations, you can be a part of our DAO & if you need funds for your startup(Business) you can do it on our platform." },
+    { title: "Access to crowdfunding and Decentralized VC", desc: "In our platform you will be able to invest on startups and companies that are in our ecosystem and which have been previously validated. If you are experienced in startup validations and valuations, you can be a part of our DAO & if you need funds for your startup(Business) you can do it on our platform." },
     { title: "Access to Staking plans", desc: "With our token you can access to different staking plans section within the platform." },
     { title: "Reward System", desc: "All viewers are rewarded for participating in the ecosystem through different ways. Lively Coin will be used as a blockchain-based exchange of bonus points." }
 ]
