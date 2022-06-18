@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.2",
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
     "axios": "^0.24.0",
@@ -23,8 +24,9 @@
     "react-slick": "^0.28.1",
     "react-table": "^7.7.0",
     "react-tsparticles": "^1.37.4",
-    "redux": "^4.2.0",
+    "redux-persist": "^6.0.0",
     "sass": "^1.43.5",
+    "serve": "^13.0.2",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.3.1",
     "tsparticles": "^1.37.4",
@@ -33,9 +35,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "set  \"GENERATE_SOURCEMAP=true\" && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:dev": "webpack --mode development --env=development ",
+    "build:prod": "webpack --mode production --env=production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -54,6 +58,7 @@
   },
   "devDependencies": {
     "node-sass": "^6.0.1",
-    "redux-devtools": "^3.7.0"
+    "redux-devtools": "^3.7.0",
+    "webpack-cli": "^4.9.2"
   }
 }

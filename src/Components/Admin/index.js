@@ -1,16 +1,16 @@
 import React from "react";
-
 import BackgroundParticles from "../BackgroundParticles";
 import AdminMenu from "./AdminMenu";
 import AdminBody from "./AdminBody";
-import Admin from "../../pages/Admin";
 
-const AdminSection = () => {
+const AdminSection = (props) => {
     return(
         <>
             <BackgroundParticles />
 
-            <AdminMenu />
+            <AdminMenu
+                active={props.menuActive}
+            />
 
             <AdminBody />
         </>

@@ -9,3 +9,7 @@ export const getUserName = () =>{
 export const getAccessToken = () => {
     return Cookie.get('auth');
 }
+
+export const getRefreshToken = () => {
+    return Cookie.get('refresh');
+}

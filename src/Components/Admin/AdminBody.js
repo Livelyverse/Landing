@@ -3,7 +3,7 @@ import React from "react";
 import AdminDashboard from "./AdminDashboard";
 
 const AdminBody = () => {
-    return(
+    return (
         <div className="AdminMain">
             <AdminDashboard />
         </div>
