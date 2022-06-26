@@ -15,7 +15,7 @@ const checkPagination = createSlice({
     reducers: {
         changeOffset: (state, { payload }) => {
             state.offset = payload;
-            state.page = "0";
+            // state.page = "0";
         },
         changePage: (state, { payload }) => {
             state.page = payload;

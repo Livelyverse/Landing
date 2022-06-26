@@ -39,39 +39,39 @@ const Modals = (props) => {
     const [editRoleName, setEditRoleName] = useState();
 
 
-    const userItemDelete = (deleteProps) => {
-        console.log("log delete param", deleteProps);
-        return (
-            deleteUser(deleteProps).then(res => {
-                console.log("log res delete user", res);
-                window.location.reload();
-            }).catch(err => {
-                console.log("log err delete user", err);
-            })
-        )
-    }
+    // const userItemDelete = (deleteProps) => {
+    //     console.log("log delete param", deleteProps);
+    //     return (
+    //         deleteUser(deleteProps).then(res => {
+    //             console.log("log res delete user", res);
+    //             window.location.reload();
+    //         }).catch(err => {
+    //             console.log("log err delete user", err);
+    //         })
+    //     )
+    // }
 
-    const groupItemDelete = (deleteProps) => {
-        return (
-            deleteGroup(deleteProps).then(res => {
-                console.log("log res delete group", res);
-                window.location.reload();
-            }).catch(err => {
-                console.log("log err delete Group", err);
-            })
-        )
-    }
+    // const groupItemDelete = (deleteProps) => {
+    //     return (
+    //         deleteGroup(deleteProps).then(res => {
+    //             console.log("log res delete group", res);
+    //             window.location.reload();
+    //         }).catch(err => {
+    //             console.log("log err delete Group", err);
+    //         })
+    //     )
+    // }
 
-    const roleItemDelete = (deleteProps) => {
-        return (
-            deleteRole(`${deleteProps}`).then(res => {
-                console.log("log res delete role", res);
-                window.location.reload();
-            }).catch(err => {
-                console.log("log err delete role", err);
-            })
-        )
-    }
+    // const roleItemDelete = (deleteProps) => {
+    //     return (
+    //         deleteRole(`${deleteProps}`).then(res => {
+    //             console.log("log res delete role", res);
+    //             window.location.reload();
+    //         }).catch(err => {
+    //             console.log("log err delete role", err);
+    //         })
+    //     )
+    // }
 
     const editUserToggle = (editProps) => {
         const data = {
@@ -301,9 +301,9 @@ const Modals = (props) => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button onClick={(e) => { e.preventDefault(); userItemDelete(props.data.username) }}>
+                    {/* <button onClick={(e) => { e.preventDefault(); userItemDelete(props.data.username) }}>
                         Delete
-                    </button>
+                    </button> */}
                     <button onClick={(e) => { e.preventDefault(); editUserToggle(props.data.id) }}>
                         {showEdit ? "Save Edit" : "Edit"}
                     </button>
@@ -363,9 +363,9 @@ const Modals = (props) => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button onClick={(e) => { e.preventDefault(); groupItemDelete(props.data.id) }}>
+                    {/* <button onClick={(e) => { e.preventDefault(); groupItemDelete(props.data.id) }}>
                         Delete
-                    </button>
+                    </button> */}
                     <button onClick={(e) => { e.preventDefault(); editGroupToggle(props.data.id) }}>
                         {showEdit ? "Save Edit" : "Edit"}
                     </button>
@@ -409,9 +409,9 @@ const Modals = (props) => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <button onClick={(e) => { e.preventDefault(); roleItemDelete(props.data.name) }}>
+                    {/* <button onClick={(e) => { e.preventDefault(); roleItemDelete(props.data.name) }}>
                         Delete
-                    </button>
+                    </button> */}
                     <button onClick={(e) => { e.preventDefault(); editRoleToggle(props.data.id) }}>
                         {showEdit ? "Save Edit" : "Edit"}
                     </button>
@@ -434,30 +434,30 @@ const Modals = (props) => {
                     <div className="addUser">
                         <div>
                             User Name:
-                            <input style={{ marginLeft: "10px" }} placeholder="Enter User Name" onInput={e => setAddUserUserName(e.target.value)}></input>
+                            <input placeholder="Enter User Name" onInput={e => setAddUserUserName(e.target.value)}></input>
                             <span style={userNameRequired ? { display: "inline-block" } : null}>* Required *</span>
                         </div>
                         <div>
                             Password:
-                            <input style={{ marginLeft: "18px" }} placeholder="Enter User Name" onInput={e => setAddUserPassword(e.target.value)}></input>
+                            <input placeholder="Enter User Name" onInput={e => setAddUserPassword(e.target.value)}></input>
                             <span style={passRequired ? { display: "inline-block" } : null}>* Required *</span>
                         </div>
                         <div>
                             First Name:
-                            <input style={{ marginLeft: "10px" }} placeholder="Enter User Name" onInput={e => setAddUserFirstName(e.target.value)}></input>
+                            <input placeholder="Enter User Name" onInput={e => setAddUserFirstName(e.target.value)}></input>
                         </div>
                         <div>
                             Last Name:
-                            <input style={{ marginLeft: "10px" }} placeholder="Enter User Name" onInput={e => setAddUserLastName(e.target.value)}></input>
+                            <input placeholder="Enter User Name" onInput={e => setAddUserLastName(e.target.value)}></input>
                         </div>
                         <div>
                             Group:
-                            <input style={{ marginLeft: "46px" }} placeholder="Enter User Name" onInput={e => setAddUserGroup(e.target.value)}></input>
+                            <input placeholder="Enter User Name" onInput={e => setAddUserGroup(e.target.value)}></input>
                             <span style={groupRequired ? { display: "inline-block" } : null}>* Required *</span>
                         </div>
                         <div>
                             E - mail:
-                            <input style={{ marginLeft: "33px" }} placeholder="Enter User Name" onInput={e => setAddUserEmail(e.target.value)}></input>
+                            <input placeholder="Enter User Name" onInput={e => setAddUserEmail(e.target.value)}></input>
                             <span style={emailRequired ? { display: "inline-block" } : null}>* Required *</span>
                         </div>
                     </div>

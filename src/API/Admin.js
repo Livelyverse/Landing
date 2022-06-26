@@ -44,7 +44,7 @@ export const roleEditData = (data) => {
 //Delete
 
 export const deleteUser = (param) => {
-    const postDeleteUser = `https://livelyplanet.io/api/profile/user/remove/${param}`;
+    const postDeleteUser = `https://livelyplanet.io/api/profile/user/delete/${param}`;
     return axios.post(postDeleteUser, { headers: { 'Authorization': 'Bearer ' + getAccessToken() } });
 }
 

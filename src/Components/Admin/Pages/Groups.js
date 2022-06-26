@@ -103,7 +103,7 @@ const Groups = (props) => {
                 )
             })}
             <div className="addNew">
-                <button onClick={(e) => { e.preventDefault(); handleToggleAdd(); }}>
+                <button className="addNewButton" onClick={(e) => { e.preventDefault(); handleToggleAdd(); }}>
                     + Add new Group
                     {openAdd ? <Modals type={"addGroup"} show={openAdd} /> : null}
                 </button>
@@ -114,7 +114,7 @@ const Groups = (props) => {
                 {/* <Container> */}
                 <Row>
                     <Col xs={6} lg={2}>
-                        <Dropdown>
+                        <Dropdown className="dropdownOffset">
                             <Dropdown.Toggle id="dropdown-basic">
                                 offset: {selector.offset}
                             </Dropdown.Toggle>

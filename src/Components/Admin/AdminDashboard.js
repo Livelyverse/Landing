@@ -56,6 +56,7 @@ const AdminDashboard = () => {
     const getUsersApi = () => {
         const userHolder = [];
         const userPaginate = getPagination;
+        console.log("pagination", getPagination);
         if (userPaginate.sortBy == "name") {
             userPaginate.sortBy = "username"
         }
@@ -89,10 +90,14 @@ const AdminDashboard = () => {
 
     const getGroupApi = () => {
         const groupHolder = [];
-        const groupPaginate = getPagination;
+        const groupPaginate = {...getPagination};
         console.log("group paginate", groupPaginate);
         if (groupPaginate.sortBy == "username") {
             groupPaginate.sortBy = "name";
+        }
+        if (groupPaginate.page != "0") {
+            groupPaginate.page = "0";
+
         }
 
         getGroupData(groupPaginate).then(res => {
@@ -125,9 +130,13 @@ const AdminDashboard = () => {
 
     const getRoleApi = () => {
         const roleHolder = [];
-        const rolePaginate = getPagination;
+        const rolePaginate = {...getPagination};
         if (rolePaginate.sortBy == "username") {
             rolePaginate.sortBy = "name"
+        }
+        if (rolePaginate.page != "0") {
+            rolePaginate.page = "0";
+
         }
 
         getRoleData(getPagination).then(res => {

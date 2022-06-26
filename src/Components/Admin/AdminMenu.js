@@ -73,7 +73,9 @@ const AdminMenu = (props) => {
                                 <Link className={active === 3 ? 'active' : ''} to={'./transaction'}>
                                     Transaction History</Link>
                             </Col>
-
+                            <Col xs={12}>
+                                <Link className={active === 4 ? 'active' : ''} to={'/blogs'}> Blogs </Link>
+                            </Col>
                         </Row>
                     </Offcanvas.Body>
                 </Offcanvas>

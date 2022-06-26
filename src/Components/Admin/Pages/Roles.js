@@ -101,7 +101,7 @@ const Roles = (props) => {
                 )
             })}
             <div className="addNew">
-                <button onClick={(e) => { e.preventDefault(); handleToggleAdd(); }}>
+                <button className="addNewButton" onClick={(e) => { e.preventDefault(); handleToggleAdd(); }}>
                     + Add new Role
                     {openAdd ? <Modals type={"addRole"} show={openAdd} /> : null}
                 </button>
@@ -112,7 +112,7 @@ const Roles = (props) => {
                 {/* <Container> */}
                 <Row>
                     <Col xs={6} lg={2}>
-                        <Dropdown>
+                        <Dropdown className="dropdownOffset">
                             <Dropdown.Toggle id="dropdown-basic">
                                 offset: {selector.offset}
                             </Dropdown.Toggle>
