@@ -10,6 +10,7 @@ const Groups = (props) => {
     const [openItem, setOpenItem] = useState(false);
     const [itemHandler, setItemHandler] = useState();
     const [openAdd, setOpenAdd] = useState(false);
+    const [refresh, setRefresh] = useState(false);
 
     const dispatch = useDispatch();
     const selector = useSelector((store) => store.paginationStatus);
@@ -28,10 +29,36 @@ const Groups = (props) => {
 
     }
 
+    const handelTogglePaginat = () => {
+        setRefresh(!refresh);
+
+    }
+
+    const sortByDispatcherFun = (props) => {
+        dispatch(changeSortBy(props));
+        console.log("sort by", props);
+        handelTogglePaginat();
+    }
+
+    const sortTypeDispatcherFun = (props) => {
+        dispatch(changeSortType(props));
+        console.log("sort type", props);
+        handelTogglePaginat();
+    }
+
+    const offsetDispatcherFun = (props) => {
+        dispatch(changeOffset(props));
+        console.log("offset", props);
+        handelTogglePaginat();
+    }
+
     useEffect(() => {
         console.log("log Groups", props);
+        if (refresh) {
+            window.location.reload();
 
-    }, []);
+        }
+    }, [refresh]);
 
     return (
         <>
@@ -40,14 +67,14 @@ const Groups = (props) => {
                     <Row>
                         <Col xs={6} lg={2}>
                             <Dropdown>
-                                <Dropdown.Toggle>
+                                <Dropdown.Toggle style={{ fontSize: "14px" }}>
                                     Field: {selector.sortBy}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item style={selector.sortBy == "time" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeSortBy("time")); window.location.reload(); }}>
+                                    <Dropdown.Item style={selector.sortBy == "time" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); sortByDispatcherFun("time") }}>
                                         Time
                                     </Dropdown.Item>
-                                    <Dropdown.Item style={selector.sortBy == "name" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeSortBy("username")); window.location.reload(); }}>
+                                    <Dropdown.Item style={selector.sortBy == "username" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); sortByDispatcherFun("name") }}>
                                         User Name
                                     </Dropdown.Item >
                                 </Dropdown.Menu>
@@ -55,14 +82,14 @@ const Groups = (props) => {
                         </Col>
                         <Col xs={6} lg={2}>
                             <Dropdown>
-                                <Dropdown.Toggle>
+                                <Dropdown.Toggle style={{ fontSize: "14px" }}>
                                     Type: {selector.sortType}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
-                                    <Dropdown.Item style={selector.sortType == "ASC" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeSortType("ASC")); window.location.reload(); }}>
+                                    <Dropdown.Item style={selector.sortType == "ASC" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); sortTypeDispatcherFun("ASC") }}>
                                         ASC
                                     </Dropdown.Item>
-                                    <Dropdown.Item style={selector.sortType == "DESC" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeSortType("DESC")); window.location.reload(); }}>
+                                    <Dropdown.Item style={selector.sortType == "DESC" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); sortTypeDispatcherFun("DESC") }}>
                                         DESC
                                     </Dropdown.Item>
                                 </Dropdown.Menu>
@@ -115,20 +142,20 @@ const Groups = (props) => {
                 <Row>
                     <Col xs={6} lg={2}>
                         <Dropdown className="dropdownOffset">
-                            <Dropdown.Toggle id="dropdown-basic">
+                            <Dropdown.Toggle style={{ fontSize: "14px" }} id="dropdown-basic">
                                 offset: {selector.offset}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item style={selector.offset == "10" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeOffset("10")); window.location.reload(); }}>
+                                <Dropdown.Item style={selector.offset == "10" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); offsetDispatcherFun("10"); }}>
                                     10
                                 </Dropdown.Item>
-                                <Dropdown.Item style={selector.offset == "25" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeOffset("25")); window.location.reload(); }}>
+                                <Dropdown.Item style={selector.offset == "25" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); offsetDispatcherFun("25"); }}>
                                     25
                                 </Dropdown.Item>
-                                <Dropdown.Item style={selector.offset == "50" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeOffset("50")); window.location.reload(); }}>
+                                <Dropdown.Item style={selector.offset == "50" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); offsetDispatcherFun("50"); }}>
                                     50
                                 </Dropdown.Item>
-                                <Dropdown.Item style={selector.offset == "100" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); dispatch(changeOffset("100")); window.location.reload(); }}>
+                                <Dropdown.Item style={selector.offset == "100" ? { backgroundColor: "#0588c5", color: "white", border: "1px solid white" } : {}} onClick={(e) => { e.preventDefault(); offsetDispatcherFun("100"); }}>
                                     100
                                 </Dropdown.Item>
                             </Dropdown.Menu>

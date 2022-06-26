@@ -14,11 +14,7 @@ const Users = (props) => {
     const [itemHandler, setItemHandler] = useState();
 
     const dispatch = useDispatch();
-    const selector = useSelector((store) => store.paginationStatus)
-    // const pagination = [selector];
-    // const thirdPagination = [];
-    // console.log("pagination log bala", pagination);
-    // console.log("pagination log 3", thirdPagination);
+    const selector = useSelector((store) => store.paginationStatus);
 
     const Total = props.total;
     const currentPage = props.page;
@@ -40,48 +36,21 @@ const Users = (props) => {
     }
 
     const sortByDispatcherFun = (props) => {
-        // console.log("log pagination1", pagination);
         dispatch(changeSortBy(props));
         console.log("sort by", props);
         handelTogglePaginat();
-        // window.location.reload();
-        // pagination.push(selector);
-        // console.log("log pagination2", pagination);
-        // thirdPagination.push(pagination);
-        // console.log("log pagination3", thirdPagination);
-        // console.log("log pagination30", thirdPagination[0]);
-        // const counter = thirdPagination[0];
-        // console.log("counter", counter);
-        // console.log("counter2", selector);
-
     }
 
     const sortTypeDispatcherFun = (props) => {
-        // console.log("log pagination1", pagination);
         dispatch(changeSortType(props));
         console.log("sort type", props);
         handelTogglePaginat();
-
-        // window.location.reload();
-        // pagination.push(selector);
-        // console.log("log pagination2", pagination);
-        // thirdPagination.push(pagination);
-        // console.log("log pagination3", thirdPagination);
-
     }
 
     const offsetDispatcherFun = (props) => {
-        // console.log("log pagination1", pagination);
         dispatch(changeOffset(props));
         console.log("offset", props);
         handelTogglePaginat();
-
-        // window.location.reload();
-        // pagination.push(selector);
-        // console.log("log pagination2", pagination);
-        // thirdPagination.push(pagination);
-        // console.log("log pagination3", thirdPagination);
-
     }
 
     useEffect(() => {
@@ -92,22 +61,6 @@ const Users = (props) => {
             window.location.reload();
 
         }
-
-
-
-        // pagination.push(selector);
-        // console.log("pagination in effect", pagination);
-        // if(pagination[0].offset != selector.offset) {
-        //     window.location.reload();
-        // } else if (pagination[0].page != selector.page) {
-        //     window.location.reload();
-        // } else if (pagination[0].sortBy != selector.sortBy) {
-        //     window.location.reload();
-        // } else if (pagination[0].sortType != selector.sortType) {   
-        //     window.location.reload();
-        // }
-        // window.location.reload();
-
     }, [refresh]);
 
     return (
@@ -117,7 +70,7 @@ const Users = (props) => {
                     <Row>
                         <Col xs={6} lg={2}>
                             <Dropdown>
-                                <Dropdown.Toggle style={{fontSize: "14px"}}>
+                                <Dropdown.Toggle style={{ fontSize: "14px" }}>
                                     Field: {selector.sortBy}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
@@ -132,7 +85,7 @@ const Users = (props) => {
                         </Col>
                         <Col xs={6} lg={2}>
                             <Dropdown>
-                                <Dropdown.Toggle style={{fontSize: "14px"}}>
+                                <Dropdown.Toggle style={{ fontSize: "14px" }}>
                                     Type: {selector.sortType}
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
@@ -160,7 +113,6 @@ const Users = (props) => {
                 </h1>
             </div>
             {props.dataUsers.map((item) => {
-                // console.log("log data user", props.dataUsers);
                 return (
                     <div className="items">
                         <h1>
@@ -188,11 +140,10 @@ const Users = (props) => {
                     total={Total}
                     page={currentPage}
                 />
-                {/* <Container> */}
                 <Row>
                     <Col xs={6} lg={2}>
                         <Dropdown className="dropdownOffset">
-                            <Dropdown.Toggle style={{fontSize: "14px"}} id="dropdown-basic">
+                            <Dropdown.Toggle style={{ fontSize: "14px" }} id="dropdown-basic">
                                 offset: {selector.offset}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -212,7 +163,6 @@ const Users = (props) => {
                         </Dropdown>
                     </Col>
                 </Row>
-                {/* </Container> */}
             </div>
         </>
     )
