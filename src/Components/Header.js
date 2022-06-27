@@ -16,6 +16,7 @@ import dash from './../img/dash.png';
 import prof from './../img/prof.png';
 import lout from './../img/logout.png';
 import { IsUserLogged } from "./Util/CookieManager";
+import adminProf from "../img/icon-admin.png"
 
 export default function Header(props){
     const [show, setShow] = useState(false);
@@ -68,7 +69,9 @@ export default function Header(props){
                             <Link className={active === 3 ? 'active' : ''} to={'./transaction'}>
                             Transaction History</Link>
                         </Col>
-                        
+                        <Col xs={12}>
+                            <Link className={active === 4 ? 'active' : ''} to={'/blogs'}> Blogs </Link>
+                        </Col>
                     </Row>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -112,6 +115,17 @@ export default function Header(props){
                                                 Profile<img src={prof} />
                                             </Link>
                                         </Dropdown.Item>
+                                        {(() => {
+                                            if (userName == "admin") {
+                                                return(
+                                                    <Dropdown.Item>
+                                                        <Link to={'./admin'}>
+                                                            Admin<img src={adminProf} />
+                                                        </Link>
+                                                    </Dropdown.Item>
+                                                )
+                                            }
+                                        })()}
                                         <Dropdown.Item onClick={(e) => {e.preventDefault(); Logout(userName); }} className="red">
                                                 LogOut <img src={lout} />
                                         </Dropdown.Item>

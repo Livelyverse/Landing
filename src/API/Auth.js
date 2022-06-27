@@ -73,7 +73,14 @@ export const Logout = (user) => {
     Cookie.remove('auth');
     Cookie.remove('userName');
     Cookie.remove('refresh');
-    UserIsNotLogged(user)
+    UserIsNotLogged(user);  
+    window.location.replace('/');
+}
+
+export const LogOutAdmin = () => {
+    Cookie.remove('auth');
+    Cookie.remove('userName');
+    Cookie.remove('refresh');
     window.location.replace('/');
 }
 
@@ -89,6 +96,3 @@ export const LogoutAllUsers = () => {
     Cookie.set('user' , userCookie);
     window.location.replace('/');
 }
-
-
-

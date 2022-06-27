@@ -14,6 +14,8 @@ import ScrollToTop from './Components/Basic/ScrollToTop';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import ChangePassword from './pages/ChangePassword';
+import Admin from './pages/Admin';
+import Blogs from './pages/Blogs';
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
             <Route  path="/planet" component={Dashboard} />
             <Route  path="/profile" component={Profile} />
             <Route  path="/changepassword" component={ChangePassword} />
+            <Route  path="/admin" component={Admin} />
+            <Route  path="/blogs" component={Blogs}/>
             <Route  path="/" component={Home} />
         </Switch>
       </ScrollToTop>

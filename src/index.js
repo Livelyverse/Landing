@@ -4,17 +4,30 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { store } from './Redux/store';
+import { Provider } from 'react-redux';
+
 import { Web3ReactProvider } from '@web3-react/core'
 import Web3 from 'web3'
+import { PersistGate } from 'redux-persist/integration/react';
+import persistStore from 'redux-persist/es/persistStore';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'shards-ui/dist/css/shards.min.css';
 
 function getLibrary(provider) {
   return new Web3(provider)
 }
 
+let persistor = persistStore(store);
+
 ReactDOM.render(
   <Web3ReactProvider getLibrary={getLibrary}>
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
     </React.StrictMode>
   </Web3ReactProvider>,
 
