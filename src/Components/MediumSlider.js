@@ -24,7 +24,10 @@ class Slider extends React.Component {
         {
           data.items.map((count) => {
             if (count.link == "https://medium.com/@LivelyVerse/livelyworld-the-new-program-dedicated-to-blockchain-technology-6751f0692f3e?source=rss-a117dad72655------2") {
-              count.link = "https://medium.com/@LivelyVerse/lively-world-the-new-tv-show-dedicated-to-blockchain-technology-be2597df7945?source=rss-a117dad72655------2"
+              count.link = "https://medium.com/@LivelyVerse/lively-world-the-new-tv-show-dedicated-to-blockchain-technology-be2597df7945?source=rss-a117dad72655------2";
+            }
+            if (count.title == "“LivelyWorld” the new program dedicated to blockchain technology.") {
+              count.title = "“Lively World” the new TV show dedicated to blockchain technology";
             }
           })
         }
