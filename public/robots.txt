@@ -1,3 +1,10 @@
 # https://www.robotstxt.org/robotstxt.html
+# siteMap file
+Sitemap: https://www.livelyplanet.io/sitemap.xml
+
+# disallow all robots to not accessing this url
 User-agent: *
-Disallow:
+Disallow: /planet
+Disallow: /profile
+Disallow: /changepassword
+Disallow: /admin
