@@ -5,7 +5,7 @@ import './components.scss';
 import FeatureCard from "./FeatureCard";
 
 import opensourcee from '../img/feature/opensourcee.png';
-// import charity from '../img/feature/charity.svg';
+import charity from '../img/feature/charity.svg';
 // import entertaining from '../img/feature/entertaining.svg';
 // import funding from '../img/feature/funding.svg';
 // import gaming from '../img/feature/gaming.svg';
