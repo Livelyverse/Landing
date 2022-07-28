@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-
-import Slider from "../Components/MediumSlider";
+ 
 import Layout from "../Components/Basic/Layout";
 import PageTitle from "../Components/Common/PageTitle";
+import MediumSlider from "../Components/MediumSlider";
 
 import loading from "../img/loading.gif"
 
@@ -19,7 +19,7 @@ const Blogs = () => {
         return (
             <Layout containerClassName={'App'} menuActive={4}>
                 <PageTitle title={'Our Blogs'} />
-                <Slider />
+                <MediumSlider />
             </Layout>
         )
     }

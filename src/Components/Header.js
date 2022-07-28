@@ -37,7 +37,7 @@ export default function Header(props){
                         {!isMobile && 
                             <Row>
                                 <Col xs={10}>
-                                    Lively Planet
+                                    Lively Verse
                                 </Col>
                                 <Col xs={2} style={{textAlign:'right'}}>
                                     <img src={drawer} onClick={handleClose} />
