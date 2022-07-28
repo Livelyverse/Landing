@@ -11,7 +11,7 @@ export default function SecondSection(){
                    
                     <Col xs={12} lg={7} className="desc">
                         <h4>Join the ultimate entertaining ecosystem</h4>
-                        <p>Lively provides the opportunity for entrepreneurs to feature their project and give them exposure in our tv program and streaming platform, while gaining validationfrom our investors, funds they need fot their business through our ecosystem and access to  our crowdfunding section.</p>  
+                        <p>Lively provides the opportunity for entrepreneurs to feature their project and give them exposure in our tv program and streaming platform, while gaining validation from our investors, funds they need fot their business through our ecosystem and access to  our crowdfunding section.</p>  
                     </Col>
                     <Col xs={12} lg={5} className="image">
                          <img src={core}/>
