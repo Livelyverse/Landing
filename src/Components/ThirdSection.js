@@ -12,8 +12,8 @@ import gaming from '../img/feature/gaming.svg';
 import market from '../img/feature/market.svg';
 
 
-export default function ThirdSection(){
-    return(
+export default function ThirdSection() {
+    return (
         <Container className="thirdSection" fluid>
             <Row className="title">
                 <h1>Our Ecosystem</h1>
@@ -28,11 +28,11 @@ export default function ThirdSection(){
                 <Col xs={12} lg={3}>
                     <FeatureCard img={entertaining} title="LivelyVerse" shortDesc="Through LivelyVerse, companies and entrepreneurs will be able to empower their projects by accessing TV marketing and being validated by our DAO validators. " desc="Through LivelyVerse, companies and entrepreneurs will be able to empower their projects by accessing TV marketing and being validated by our DAO validators. Obtaining as well, our tokens as a common financial tool for all the companies that join LivelyVerse." />
                 </Col>
-                
+
             </Row>
             <Row className="justify-content-md-center" >
                 <Col xs={12} lg={3}>
-                    <FeatureCard img={charity} title="Technology developments" shortDesc="LivelyPlanet has technology professionals capable of all types of blockchain and artificial intelligence development, with extensive experience and the best prices." desc="LivelyPlanet has technology professionals capable of all types of blockchain and artificial intelligence development, with extensive experience and the best prices. Contact us to find out more " />
+                    <FeatureCard img={charity} title="Technology developments" shortDesc="LivelyVerse has technology professionals capable of all types of blockchain and artificial intelligence development, with extensive experience and the best prices." desc="LivelyVerse has technology professionals capable of all types of blockchain and artificial intelligence development, with extensive experience and the best prices. Contact us to find out more " />
                 </Col>
                 <Col xs={12} lg={3}>
                     <FeatureCard img={blockchain} title="Open Source network" shortDesc="Our ecosystem is based on a decentralised and open source blockchain infrastructure, enabling creativity, innovation and collaboration for continuous software " desc="Our ecosystem is based on a decentralised and open source blockchain infrastructure, enabling creativity, innovation and collaboration for continuous software development." />
@@ -40,7 +40,7 @@ export default function ThirdSection(){
                 <Col xs={12} lg={3}>
                     <FeatureCard img={gaming} title="Entertaining Platform" shortDesc="Our streaming platform will be focused on technology and cryptocurrency content. Both content creators and other users will be able to receive rewards for " desc="Our streaming platform will be focused on technology and cryptocurrency content. Both content creators and other users will be able to receive rewards for different actions within our ecosystem. Any interactions would be rewarded in our system." />
                 </Col>
-                
+
             </Row>
 
         </Container>

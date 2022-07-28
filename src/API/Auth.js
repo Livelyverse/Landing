@@ -44,29 +44,29 @@ axios.interceptors.response.use(
 
 
 export const Register = (data) => {
-    return axios.post(AUTH_PATH+"signup" , data);
+    return axios.post("https://livelyverse.io/api/auth/"+"signup" , data);
 }
 
 export const Login = (data) => {
-    return axios.post(AUTH_PATH+"signin" , data);
+    return axios.post("https://livelyverse.io/api/auth/"+"signin" , data);
 }
 
 export const MailCodeResend = (data) => {
-    return axios.post(AUTH_PATH+"mail/resend" , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}});
+    return axios.post("https://livelyverse.io/api/auth/"+"mail/resend" , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}});
 }
 
 export const MailCodeVerified = (data) => {
-    return axios.post(AUTH_PATH+'mail/verify' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}});
+    return axios.post("https://livelyverse.io/api/auth/"+'mail/verify' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}});
 }
 
 export const RefreshToekn = () => {
     const data = {refresh_token : Cookie.get('refresh')};
-    return axios.post(AUTH_PATH+'refresh' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
+    return axios.post("https://livelyverse.io/api/auth/"+'refresh' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
 }
 
 
 export const ChangePassword = (data) => {
-    return axios.post(AUTH_PATH+'changepassword' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
+    return axios.post("https://livelyverse.io/api/auth/"+'changepassword' , data , {headers : {'Authorization': 'Bearer ' + getAccessToken()}})
 }
 
 export const Logout = (user) => {

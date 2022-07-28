@@ -50,18 +50,18 @@ const DashboardData = () => {
                         <Col xs={12} lg={7} className="dlBtn">
                             <Row >
                                 <Col xs={4} >
-                                    <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyplanet.io/docs/instructionsLVLEnglish.pdf')}}>
+                                    <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyverse.io/docs/instructionsLVLEnglish.pdf')}}>
                                         English
                                     </div>
                                 </Col >
                                 <Col xs={4} >
-                                <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyplanet.io/docs/instructionsLVLSpanish.pdf')}}>
+                                <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyverse.io/docs/instructionsLVLSpanish.pdf')}}>
                                     Spanish
                                         
                                     </div>
                                 </Col>
                                 <Col xs={4} >
-                                <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyplanet.io/docs/instructionsLVLItalian.pdf')}}>
+                                <div className="btn" onClick={(e) => {e.preventDefault(); window.open('https://livelyverse.io/docs/instructionsLVLItalian.pdf')}}>
                                 Italian
                                     </div>
                                 </Col>
