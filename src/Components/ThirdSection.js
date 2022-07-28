@@ -11,7 +11,6 @@ import funding from '../img/feature/funding.svg';
 import gaming from '../img/feature/gaming.svg';
 import market from '../img/feature/market.svg';
 
-
 export default function ThirdSection() {
     return (
         <Container className="thirdSection" fluid>
