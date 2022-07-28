@@ -5,7 +5,7 @@ import './components.scss';
 import FeatureCard from "./FeatureCard";
 
 import opensourcee from '../img/feature/opensourcee.png';
-// import charity from '../img/feature/charity.svg';
+import charity from '../img/feature/charity.svg';
 // import entertaining from '../img/feature/entertaining.svg';
 // import funding from '../img/feature/funding.svg';
 // import gaming from '../img/feature/gaming.svg';
@@ -15,7 +15,6 @@ import Crowdfunding from '../img/feature/Crowdfunding.png'
 import enterteining from '../img/feature/enterteining.png'
 import Livelyverse from '../img/feature/Livelyverse.png'
 import developments from '../img/feature/developments.png'
-
 
 export default function ThirdSection() {
     return (
