@@ -3271,18 +3271,6 @@ $lightBlueColor: #66DAE9;
     }
 }
 
-// .mediumSlider {
-//     background-color: rgba(0, 0, 0, 0.7);
-//     padding: 140px 120px 0 120px;
-//     box-sizing: border-box;
-
-//     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-//         padding: 40px 20px 0 20px;
-
-//     }
-
-// }
-
 .blogDiv {
     width: 100%;
     height: auto;
@@ -3290,18 +3278,33 @@ $lightBlueColor: #66DAE9;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
-    padding: 4% 4% 0 4%;
+    padding: 4% 4% 0 7%;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.7);
 
     .blogCard {
-        width: 420px;
+        width: 30%;
         height: auto;
         margin-left: 25px;
         margin-bottom: 50px;
         height: 450px;
         background-color: white;
         border-radius: 15px;
+
+        @media only screen and (min-width: 768px) and (max-width: 992px) {
+            width: 28%;
+
+        }
+
+        @media only screen and (min-width: 576px) and (max-width: 768px) {
+            width: 45%;
+            
+        }
+
+        @media only screen and (max-width: 576px) {
+            width: 85%;
+            
+        }
 
         .blogCardPic {
             width: 100%;
@@ -3335,16 +3338,71 @@ $lightBlueColor: #66DAE9;
                 font-weight: bold;
                 font-family: sans-serif;
 
+                @media only screen and (min-width : 992px) and (max-width : 1200px) {
+                    font-size: 16px;
+
+                }
+
+                @media only screen and (min-width : 768px) and (max-width : 992px) {
+                    font-size: 13px;
+
+                }
+
+                @media only screen and (min-width : 568px) and (max-width : 768px) {
+                    font-size: 14px;
+
+                }
             }
 
             .authorPic {
-                width: 16%;
-                height: 30%;
+                width: 70px;
+                height: 70px;
                 border-radius: 50%;
                 box-shadow: 0 0 0 0.125rem #fff, 0 0.1875rem 0.4375rem rgb(90 97 105 / 50%);
                 position: absolute;
                 top: -15%;
                 left: 8%;
+
+                @media only screen and (max-width : 1200px) {
+                    width: 60px;
+                    height: 60px;
+
+                }
+
+                // @media only screen and (min-width : 768px) and (max-width : 992px) {
+                //     width: 28%;
+
+                // }
+
+                // @media only screen and (min-width : 568px) and (max-width : 768px) {
+                //     width: 22%;
+
+                // }
+
+                // @media only screen and (max-width: 576px) {
+                //     width: 24%;
+                    
+                // }
+
+            }
+
+            p {
+                margin: 0;
+
+                @media only screen and (min-width : 992px) and (max-width : 1200px) {
+                    font-size: 14px;
+
+                }
+
+                @media only screen and (min-width : 768px) and (max-width : 992px) {
+                    font-size: 12px;
+
+                }
+
+                @media only screen and (min-width: 576px) and (max-width: 768px) {
+                    font-size: 12px;
+                    
+                }
 
             }
         }
@@ -3357,8 +3415,10 @@ $lightBlueColor: #66DAE9;
             flex-flow: row wrap;
             justify-content: flex-start;
             align-items: center;
-            padding: 0 30px;
+            padding: 0 15px;
             box-sizing: border-box;
+
+            
 
             p {
                 display: inline-block;
@@ -3367,13 +3427,32 @@ $lightBlueColor: #66DAE9;
                 color: black;
                 font-weight: bold;
                 font-family: sans-serif;
+                font-size: 12px;
 
+                @media only screen and (min-width : 768px) and (max-width : 992px) {
+                    font-size: 11px;
+
+                }
+
+                @media only screen and (min-width : 568px) and (max-width : 768px) {
+                    font-size: 11px;
+
+                }
             }
 
-            img:nth-of-type(2) {
-                width: 6%;
+            img {
+                width: 18px;
                 margin-left: 5px;
 
+                @media only screen and (min-width : 768px) and (max-width : 992px) {
+                    width: 15px;
+
+                }
+
+                @media only screen and (min-width : 568px) and (max-width : 768px) {
+                    width: 16px;
+
+                }
             }
         }
     }

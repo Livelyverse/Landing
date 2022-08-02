@@ -42,7 +42,6 @@ const MediumSlider = () => {
                 {text.substring(0, 120) + "..."}
                 {/* {console.log("log content", item.item)} */}
               </p>
-              <hr style={{ color: "gray" }}></hr>
             </div>
             <div className="blogDataFooter">
               <img alt="author" src={profile}></img>
